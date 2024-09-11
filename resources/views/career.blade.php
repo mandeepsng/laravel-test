@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
    
-<!-- Mirrored from block.codescandy.com/career.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2024 07:19:53 GMT -->
 <head>
       <!-- Required meta tags -->
       <meta charset="utf-8" />
@@ -995,5 +994,4 @@
       <script src="assets/js/theme.min.js"></script>
    </body>
 
-<!-- Mirrored from block.codescandy.com/career.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2024 07:19:55 GMT -->
 </html>

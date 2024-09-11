@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
    
-<!-- Mirrored from block.codescandy.com/about-v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2024 07:19:41 GMT -->
 <head>
       <!-- Required meta tags -->
       <meta charset="utf-8" />
@@ -1119,5 +1118,4 @@
       <script src="assets/js/vendors/swiper.js"></script>
    </body>
 
-<!-- Mirrored from block.codescandy.com/about-v2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2024 07:19:42 GMT -->
 </html>

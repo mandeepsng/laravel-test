@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
    
-<!-- Mirrored from block.codescandy.com/blog-list-view.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2024 07:19:32 GMT -->
 <head>
       <!-- Required meta tags -->
       <meta charset="utf-8" />
@@ -1018,5 +1017,4 @@
       <script src="assets/js/theme.min.js"></script>
    </body>
 
-<!-- Mirrored from block.codescandy.com/blog-list-view.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2024 07:19:33 GMT -->
 </html>

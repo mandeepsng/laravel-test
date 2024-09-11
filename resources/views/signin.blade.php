@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
    
-<!-- Mirrored from block.codescandy.com/signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2024 07:20:21 GMT -->
 <head>
       <!-- Required meta tags -->
       <meta charset="utf-8" />
@@ -203,5 +202,4 @@
       <script src="assets/js/vendors/password.js"></script>
    </body>
 
-<!-- Mirrored from block.codescandy.com/signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2024 07:20:21 GMT -->
 </html>
