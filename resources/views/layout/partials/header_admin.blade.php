@@ -89,7 +89,7 @@
                             <p class="text-muted mb-0">{{ @$userData->name }}</p>
                         </div>
                     </div>
-                    <a class="dropdown-item" href="{!!route('home')!!}">My Profile</a>
+                    <a class="dropdown-item" href="#">My Profile</a>
                     <a class="dropdown-item signout" href="#">Logout</a>
                 </div>
             </li>

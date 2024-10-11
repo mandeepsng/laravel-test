@@ -3,7 +3,7 @@
    
 <head>
       <!-- Required meta tags -->
-      <meta charset="utf-8" />
+      {{-- <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
       <link rel="stylesheet" href="assets/libs/glightbox/dist/css/glightbox.min.css" />
@@ -15,10 +15,10 @@
       <link rel="mask-icon" href="assets/images/favicon/block-safari-pinned-tab.svg" color="#8b3dff" />
       <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" />
       <meta name="msapplication-TileColor" content="#8b3dff" />
-      <meta name="msapplication-config" content="assets/images/favicon/tile.xml" />
+      <meta name="msapplication-config" content="assets/images/favicon/tile.xml" /> --}}
 
       <!-- Color modes -->
-      <script src="assets/js/vendors/color-modes.js"></script>
+      {{-- <script src="assets/js/vendors/color-modes.js"></script>
 
       <!-- Libs CSS -->
       <link href="assets/libs/simplebar/dist/simplebar.min.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
       <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
 
       <!-- Theme CSS -->
-      <link rel="stylesheet" href="assets/css/theme.min.css" />
+      <link rel="stylesheet" href="assets/css/theme.min.css" /> --}}
 
       <title>About us Template Responsive Website Template | Block</title>
    </head>

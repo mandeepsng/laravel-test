@@ -3,7 +3,7 @@
    
 <head>
       <!-- Required meta tags -->
-      <meta charset="utf-8" />
+      {{-- <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
       <!-- Favicon icon-->
       <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png" />
@@ -29,7 +29,7 @@
       <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
 
       <!-- Theme CSS -->
-      <link rel="stylesheet" href="assets/css/theme.min.css" />
+      <link rel="stylesheet" href="assets/css/theme.min.css" /> --}}
 
       <title>Account Apperance - Responsive Website Template | Block</title>
    </head>

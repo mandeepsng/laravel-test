@@ -1,68 +1,16 @@
-<!-- jQuery -->
-<script src="{!!url('assets_admin/js/jquery-3.2.1.min.js')!!}"></script>
+<script src="{!!url('assets/js/jquery.min.js')!!}"></script>
 
-<!-- Bootstrap Core JS -->
-<script src="{!!url('assets_admin/js/popper.min.js')!!}"></script>
-<script src="{!!url('assets_admin/js/bootstrap.min.js')!!}"></script>
+<script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('assets/libs/simplebar/dist/simplebar.min.js')}}"></script>
+<script src="{{ asset('assets/libs/headhesive/dist/headhesive.min.js')}}"></script>
 
-<!-- Slimscroll JS -->
-<script src="{!!url('assets_admin/plugins/slimscroll/jquery.slimscroll.min.js')!!}"></script>
-@if(Route::is(['pagee']))
-<script src="{!!url('assets_admin/plugins/raphael/raphael.min.js')!!}"></script>
-<script src="{!!url('assets_admin/plugins/morris/morris.min.js')!!}"></script>
-<script src="{!!url('assets_admin/js/chart.morris.js')!!}"></script>
-@endif
-<!-- Form Validation JS -->
-<script src="{!!url('assets_admin/js/form-validation.js')!!}"></script>
-<!-- Mask JS -->
-<script src="{!!url('assets_admin/js/jquery.maskedinput.min.js')!!}"></script>
-<script src="{!!url('assets_admin/js/mask.js')!!}"></script>
-<!-- Select2 JS -->
-<script src="{!!url('assets_admin/js/select2.min.js')!!}"></script>
+<!-- Theme JS -->
+<script src="{{ asset('assets/js/theme.min.js')}}"></script>
 
-<!-- Datetimepicker JS -->
-<script src="{!!url('assets_admin/js/moment.min.js')!!}"></script>
-<script src="{{ asset('/assets_admin/js/datetimepicker-master/jquery.datetimepicker.full.min.js')}}"></script>
-
-<!-- sweetalert JS -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
-
-<!-- Full Calendar JS -->
-<script src="{!!url('assets_admin/js/jquery-ui.min.js')!!}"></script>
-<!--<script src="{!!url('assets_admin/plugins/fullcalendar/fullcalendar.min.js')!!}"></script>-->
-<!--<script src="{!!url('assets_admin/plugins/fullcalendar/jquery.fullcalendar.js')!!}"></script>-->
-<script src="{!!url('assets_admin/js/main.js')!!}"></script>
-<!-- Datatables JS -->
-<script src="{!!url('assets_admin/plugins/datatables/jquery.dataTables.min.js')!!}"></script>
-<script src="{!!url('assets_admin/plugins/datatables/datatables.min.js')!!}"></script>
-
-<script src="{!!url('assets_admin/js/bootstrap-datepicker.min.js')!!}"></script>
-
-<!-- Custom JS -->
-<script src="{!!url('assets_admin/js/script.js?v='.rand(1, 99999))!!}"></script>
-
-<!-- Color Picker JS -->
-<script src="{!!url('assets_admin/js/bootstrap-colorpicker.min.js')!!}"></script>
-<script src="{!!url('assets_admin/js/form-builder.min.js')!!}"></script>
-<script src="{!!url('assets_admin/js/form-render.min.js')!!}"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-<script src="{!!url('assets_admin/js/bootstrap-clockpicker.min.js')!!}"></script>
-<script src="{!!url('assets/js/sweetalert.min.js')!!}"></script>
-<script type="text/javascript" src="{!!url('assets/js/jquery.signature.js')!!}"></script>
-<script src="{!!url('assets/js/trumbowyg.min.js')!!}"></script>
-<script src="{!!url('assets/plugins/trumbowyg.emoji.min.js')!!}"></script>
-<script src="{{asset('assets_admin/plugins/datatables/dataTables.buttons.min.js')}}"></script>
-<script src="{{asset('assets_admin/plugins/datatables/buttons.html5.min.js')}}"></script>
-
-<!-- One of the following themes -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" /> <!-- 'classic' theme -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css" /> <!-- 'monolith' theme -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/nano.min.css" /> <!-- 'nano' theme -->
-
-<!-- Modern or es5 bundle -->
-<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.es5.min.js"></script>
-
+<script src="{{ asset('assets/libs/jarallax/dist/jarallax.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/jarallax.js')}}"></script>
+<script src="{{ asset('assets/libs/parallax-js/dist/parallax.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/parallax.js')}}"></script>
 
 <script type="text/javascript">
     var fields = [{
@@ -353,18 +301,6 @@
 
         // return false;
 
-        $.ajax({
-                url: "{{ route('readnotification') }}",
-                type: 'POST',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    notification_id: notification_id,
-                },
-                success: function (response) {
-                    console.log(response);
-                    // bellnotification();
-                }
-            });
 
             // $(".myLoader").css('display', 'none');
 
@@ -375,18 +311,6 @@
 
     $(document).on('click', '.clear-noti', function(e) {
         e.preventDefault();
-        $.ajax({
-            type: "POST",
-            url: "{!!route('readnotification')!!}",
-            data: {
-                "_token": "{{ csrf_token() }}",
-                notification_id: 'all'
-            },
-            success: function() {
-                bellnotification();
-            }
-        });
-
 
     });
 
@@ -396,24 +320,6 @@
         // $(".myLoader").css('display', 'flex');
         $(".myLoader").css('display', 'block !important').removeClass('hide');
 
-        $.ajax({
-            url: "{{ route('getbellnotification') }}",
-            type: 'GET',
-            success: function (response) {
-                console.log('get bell icon', response);
-                $('.notification-list').html('');
-                $('.notification-list').append(response.html);
-                
-                $('.badge.badge-pill').html(response.count);
-
-                $('#show_badge').hide();
-                if(response.count > 0){
-                    $('#show_badge').show();
-                    // $(".myLoader").css('display', 'none');
-                }
-                // $('.badge.badge-pill').html(response.count);
-            }
-        });
         
         $(".myLoader").css('display', 'none');
     }
@@ -428,4 +334,4 @@
 
 
 </script>
-@include('common_script')
+{{-- @include('common_script') --}}

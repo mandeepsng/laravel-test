@@ -3,7 +3,7 @@
    
 <head>
       <!-- Required meta tags -->
-      <meta charset="utf-8" />
+      {{-- <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
       <link rel="stylesheet" href="assets/libs/glightbox/dist/css/glightbox.min.css" />
@@ -32,7 +32,7 @@
       <link rel="stylesheet" href="assets/fonts/css/boxicons.min.css" />
 
       <!-- Theme CSS -->
-      <link rel="stylesheet" href="assets/css/theme.min.css" />
+      <link rel="stylesheet" href="assets/css/theme.min.css" /> --}}
       
       <title>About us v2 Template - Responsive Website Template | Block</title>
    </head>

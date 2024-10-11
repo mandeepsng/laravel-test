@@ -1,55 +1,17 @@
 <script src="{!!url('assets/js/jquery.min.js')!!}"></script>
 
-<!-- Bootstrap Core JS -->
-<script src="{!!url('assets/js/popper.min.js')!!}"></script>
-<script src="{!!url('assets/js/bootstrap.min.js')!!}"></script>
-<!-- Datetimepicker JS -->
-<script src="{!!url('assets/js/moment.min.js')!!}"></script>
-<script src="{{ url('assets/js/bootstrap-datetimepicker.min.js') }}"></script>
-<script src="{!!url('assets/plugins/daterangepicker/daterangepicker.js')!!}"></script>
-<!-- Full Calendar JS -->
-<script src="{!!url('assets/plugins/jquery-ui/jquery-ui.min.js')!!}"></script>
-<script src="{!!url('assets/plugins/fullcalendar/fullcalendar.min.js')!!}"></script>
-<script src="{!!url('assets/plugins/fullcalendar/jquery.fullcalendar.js')!!}"></script>
-<script src="{!!url('assets_admin/js/bootstrap-datepicker.min.js')!!}"></script>
-<!-- Sticky Sidebar JS -->
-<script src="{!!url('assets/plugins/theia-sticky-sidebar/ResizeSensor.js')!!}"></script>
-<script src="{!!url('assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js')!!}"></script>
-<!-- Select2 JS -->
-<script src="{!!url('assets/plugins/select2/js/select2.min.js')!!}"></script>
-<!-- Fancybox JS -->
-<script src="{!!url('assets/plugins/fancybox/jquery.fancybox.min.js')!!}"></script>
-<!-- Dropzone JS -->
-<script src="{!!url('assets/plugins/dropzone/dropzone.min.js')!!}"></script>
+<script src="{{ asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('assets/libs/simplebar/dist/simplebar.min.js')}}"></script>
+<script src="{{ asset('assets/libs/headhesive/dist/headhesive.min.js')}}"></script>
 
-<!-- Bootstrap Tagsinput JS -->
-<script src="{!!url('assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.js')!!}"></script>
+<!-- Theme JS -->
+<script src="{{ asset('assets/js/theme.min.js')}}"></script>
 
-<!-- Profile Settings JS -->
-<script src="{!!url('assets/js/profile-settings.js')!!}"></script>
-<!-- Circle Progress JS -->
-<script src="{!!url('assets/js/circle-progress.min.js')!!}"></script>
-<!-- Slick JS -->
-<script src="{!!url('assets/js/slick.js')!!}"></script>
+<script src="{{ asset('assets/libs/jarallax/dist/jarallax.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/jarallax.js')}}"></script>
+<script src="{{ asset('assets/libs/parallax-js/dist/parallax.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/parallax.js')}}"></script>
 
-<!-- Custom JS -->
-<script src="{!!url('assets/js/script.js')!!}"></script>
-<script type="text/javascript" src="{!!url('assets/js/jquery.signature.js')!!}"></script>
-
-<script type="text/javascript" src="{!!url('assets_admin/js/form-builder.min.js')!!}"></script>
-
-@if(Route::is(['map-grid','map-list']))
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6adZVdzTvBpE2yBRK8cDfsss8QXChK0I"></script>
-<script src="{!!url('assets/js/map.js')!!}"></script>
-
-@endif
-
-<script src="{!!url('assets_admin/js/bootstrap-clockpicker.min.js')!!}"></script>
-
-<script src="{!!url('assets/js/trumbowyg.min.js')!!}"></script>
-<script src="{!!url('assets/plugins/trumbowyg.emoji.min.js')!!}"></script>
-<script src="{!!url('assets/js/sweetalert.min.js')!!}"></script>
-<script src="{!!url('assets_admin/js/form-render.min.js')!!}"></script>
 <script>
    var fields = [{
         label: 'Signature',
