@@ -36,9 +36,9 @@ Route::get('/', function () {
 // 
 // Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/404-error', function () {
-    return view('404-error');
-});
+// Route::get('/404-error', function () {
+//     return view('404-error');
+// });
 
 Route::get('/404-error', function () { return view('404-error'); });
 Route::get('/about-v2', function () { return view('about-v2'); });

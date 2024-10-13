@@ -199,16 +199,16 @@
         },
         {
             "name": "caseyamcl/guzzle_retry_middleware",
-            "version": "v2.11.0",
+            "version": "v2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/caseyamcl/guzzle_retry_middleware.git",
-                "reference": "319829956ad61be3f48fba8f79e789b92538e56f"
+                "reference": "5867f6e6bda922f2a7aa748ae38bb832e96eb62b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/caseyamcl/guzzle_retry_middleware/zipball/319829956ad61be3f48fba8f79e789b92538e56f",
-                "reference": "319829956ad61be3f48fba8f79e789b92538e56f",
+                "url": "https://api.github.com/repos/caseyamcl/guzzle_retry_middleware/zipball/5867f6e6bda922f2a7aa748ae38bb832e96eb62b",
+                "reference": "5867f6e6bda922f2a7aa748ae38bb832e96eb62b",
                 "shasum": ""
             },
             "require": {
@@ -260,7 +260,7 @@
             ],
             "support": {
                 "issues": "https://github.com/caseyamcl/guzzle_retry_middleware/issues",
-                "source": "https://github.com/caseyamcl/guzzle_retry_middleware/tree/v2.11.0"
+                "source": "https://github.com/caseyamcl/guzzle_retry_middleware/tree/v2.12.0"
             },
             "funding": [
                 {
@@ -268,7 +268,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-09-16T19:01:08+00:00"
+            "time": "2024-10-10T17:30:16+00:00"
         },
         {
             "name": "chrisharrison/php-array-of",
@@ -559,16 +559,16 @@
         },
         {
             "name": "dragonmantank/cron-expression",
-            "version": "v3.3.3",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dragonmantank/cron-expression.git",
-                "reference": "adfb1f505deb6384dc8b39804c5065dd3c8c8c0a"
+                "reference": "8c784d071debd117328803d86b2097615b457500"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/adfb1f505deb6384dc8b39804c5065dd3c8c8c0a",
-                "reference": "adfb1f505deb6384dc8b39804c5065dd3c8c8c0a",
+                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/8c784d071debd117328803d86b2097615b457500",
+                "reference": "8c784d071debd117328803d86b2097615b457500",
                 "shasum": ""
             },
             "require": {
@@ -581,10 +581,14 @@
             "require-dev": {
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^1.0",
-                "phpstan/phpstan-webmozart-assert": "^1.0",
                 "phpunit/phpunit": "^7.0|^8.0|^9.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Cron\\": "src/Cron/"
@@ -608,7 +612,7 @@
             ],
             "support": {
                 "issues": "https://github.com/dragonmantank/cron-expression/issues",
-                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.3.3"
+                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.4.0"
             },
             "funding": [
                 {
@@ -616,7 +620,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-08-10T19:36:49+00:00"
+            "time": "2024-10-09T13:47:03+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -9167,5 +9171,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
