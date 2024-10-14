@@ -227,6 +227,8 @@
 <script src="{{ asset('assets/libs/parallax-js/dist/parallax.min.js')}}"></script>
 <script src="{{ asset('assets/js/vendors/parallax.js')}}"></script>
 
+<script src="assets/libs/rellax/rellax.min.js"></script>
+<script src="assets/js/vendors/rellax.js"></script>
 
 <!-- Libs JS -->
 <script src="{{ asset('assets/libs/glightbox/dist/js/glightbox.min.js')}}"></script>
@@ -242,35 +244,35 @@
 
 <script src="{{ asset('assets/js/vendors/cleave-function.js')}}"></script>
 
-<script src="assets/js/vendors/tab-to-dropdown.js"></script>
-<script src="assets/libs/scrollcue/scrollCue.min.js"></script>
-<script src="assets/js/vendors/scrollcue.js"></script>
+<script src="{{ asset('assets/js/vendors/tab-to-dropdown.js')}}"></script>
+<script src="{{ asset('assets/libs/scrollcue/scrollCue.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/scrollcue.js')}}"></script>
 
 
-<script src="assets/libs/jarallax/dist/jarallax.min.js"></script>
-<script src="assets/js/vendors/jarallax.js"></script>
-<script src="assets/libs/parallax-js/dist/parallax.min.js"></script>
-<script src="assets/js/vendors/parallax.js"></script>
+<script src="{{ asset('assets/libs/jarallax/dist/jarallax.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/jarallax.js')}}"></script>
+<script src="{{ asset('assets/libs/parallax-js/dist/parallax.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/parallax.js')}}"></script>
 <!-- Swiper JS -->
-<script src="assets/libs/swiper/swiper-bundle.min.js"></script>
-<script src="assets/js/vendors/swiper.js"></script>
-<script src="assets/libs/glightbox/dist/js/glightbox.min.js"></script>
-<script src="assets/js/vendors/glight.js"></script>
-<script src="assets/libs/scrollcue/scrollCue.min.js"></script>
-<script src="assets/js/vendors/scrollcue.js"></script>
-<script src="assets/js/vendors/tab-to-dropdown.js"></script>
+<script src="{{ asset('assets/libs/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/swiper.js')}}"></script>
+<script src="{{ asset('assets/libs/glightbox/dist/js/glightbox.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/glight.js')}}"></script>
+<script src="{{ asset('assets/libs/scrollcue/scrollCue.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/scrollcue.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/tab-to-dropdown.js')}}"></script>
 
  <!-- Swiper JS -->
- <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
- <script src="assets/js/vendors/swiper.js"></script>
- <script src="assets/js/vendors/pricing.js"></script>
+ <script src="{{ asset('assets/libs/swiper/swiper-bundle.min.js')}}"></script>
+ <script src="{{ asset('assets/js/vendors/swiper.js')}}"></script>
+ <script src="{{ asset('assets/js/vendors/pricing.js')}}"></script>
 
 
-<script src="assets/libs/plyr/dist/plyr.min.js"></script>
-<script src="assets/js/vendors/plyr.js"></script>
+<script src="{{ asset('assets/libs/plyr/dist/plyr.min.js')}}"></script>
+<script src="{{ asset('assets/js/vendors/plyr.js')}}"></script>
 <script defer src="https://www.youtube.com/iframe_api"></script>
 
-<script src="assets/js/vendors/password.js"></script>
+<script src="{{ asset('assets/js/vendors/password.js')}}"></script>
 
 
 <script type="text/javascript">

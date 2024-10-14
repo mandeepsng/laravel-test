@@ -2,13 +2,13 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light w-100">
        <div class="container px-3">
-          <a class="navbar-brand" href="index.html"><img src="assets/images/logo/logo.svg" alt /></a>
+          <a class="navbar-brand" href="{{ route('welcome')}}"><img src="assets/images/logo/logo.svg" alt /></a>
           <button class="navbar-toggler offcanvas-nav-btn" type="button">
              <i class="bi bi-list"></i>
           </button>
           <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
              <div class="offcanvas-header">
-                <a href="index.html" class="text-inverse"><img src="assets/images/logo/logo.svg" alt /></a>
+                <a href="{{ route('index')}}" class="text-inverse"><img src="assets/images/logo/logo.svg" alt /></a>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
              </div>
              <div class="offcanvas-body pt-0 align-items-center">
@@ -16,20 +16,20 @@
                    <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Landings</a>
                       <ul class="dropdown-menu">
-                         <li><a class="dropdown-item" href="index.html">Landing Overview</a></li>
-                         <li><a class="dropdown-item" href="landing-sass-v1.html">Saas v.1</a></li>
-                         <li><a class="dropdown-item" href="landing-sass-v2.html">Sass v.2</a></li>
+                         <li><a class="dropdown-item" href="{{ route('index')}}">Landing Overview</a></li>
+                         <li><a class="dropdown-item" href="{{ route('landing-sass-v1')}}">Saas v.1</a></li>
+                         <li><a class="dropdown-item" href="{{ route('landing-sass-v2')}}">Sass v.2</a></li>
                          <li>
-                            <a class="dropdown-item" href="landing-it-company.html">
+                            <a class="dropdown-item" href="{{ route('landing-it-company')}}">
                                IT Company
                                <span class="badge text-bg-success ms-2">New</span>
                             </a>
                          </li>
-                         <li><a class="dropdown-item" href="landing-accounting.html">Accounting</a></li>
-                         <li><a class="dropdown-item" href="landing-finance.html">Finance</a></li>
-                         <li><a class="dropdown-item" href="landing-jamstack-agancy.html">Jamstack Agency</a></li>
-                         <li><a class="dropdown-item" href="landing-conference.html">Conference</a></li>
-                         <li><a class="dropdown-item" href="landing-personal.html">Personal</a></li>
+                         <li><a class="dropdown-item" href="{{ route('landing-accounting')}}">Accounting</a></li>
+                         <li><a class="dropdown-item" href="{{ route('landing-finance')}}">Finance</a></li>
+                         <li><a class="dropdown-item" href="{{ route('landing-jamstack-agancy')}}">Jamstack Agency</a></li>
+                         <li><a class="dropdown-item" href="{{ route('landing-conference')}}">Conference</a></li>
+                         <li><a class="dropdown-item" href="{{ route('landing-personal')}}">Personal</a></li>
                       </ul>
                    </li>
                    <li class="nav-item dropdown">
@@ -40,17 +40,17 @@
                                <div>
                                   <div>
                                      <div class="dropdown-header">Blog</div>
-                                     <a class="dropdown-item" href="blog-list-view.html">List View</a>
-                                     <a class="dropdown-item" href="blog.html">Grid View</a>
-                                     <a class="dropdown-item" href="blog-grid-thumbnail.html">Grid View v.2</a>
-                                     <a class="dropdown-item" href="blog-sidebar.html">Sidebar</a>
-                                     <a class="dropdown-item" href="blog-category.html">Category</a>
-                                     <a class="dropdown-item" href="blog-single.html">Single Post</a>
+                                     <a class="dropdown-item" href="{{ route('blog-list-view')}}">List View</a>
+                                     <a class="dropdown-item" href="{{ route('blog')}}">Grid View</a>
+                                     <a class="dropdown-item" href="{{ route('blog-grid-thumbnail')}}">Grid View v.2</a>
+                                     <a class="dropdown-item" href="{{ route('blog-sidebar')}}">Sidebar</a>
+                                     <a class="dropdown-item" href="{{ route('blog-category')}}">Category</a>
+                                     <a class="dropdown-item" href="{{ route('blog-single')}}">Single Post</a>
                                   </div>
                                   <div class="mt-3">
                                      <div class="dropdown-header">About</div>
-                                     <a class="dropdown-item" href="about.html">About v.1</a>
-                                     <a class="dropdown-item" href="about-v2.html">About v.2</a>
+                                     <a class="dropdown-item" href="{{ route('about')}}">About v.1</a>
+                                     <a class="dropdown-item" href="{{ route('about-v2')}}">About v.2</a>
                                   </div>
                                </div>
                             </div>
@@ -58,21 +58,21 @@
                                <div class="mt-3 mt-lg-0">
                                   <div>
                                      <div class="dropdown-header">Service</div>
-                                     <a class="dropdown-item" href="service-v1.html">Service v.1</a>
-                                     <a class="dropdown-item" href="service-v2.html">Service v.2</a>
-                                     <a class="dropdown-item" href="service-v3.html">Service v.3</a>
+                                     <a class="dropdown-item" href="{{ route('service-v1')}}">Service v.1</a>
+                                     <a class="dropdown-item" href="{{ route('service-v2')}}">Service v.2</a>
+                                     <a class="dropdown-item" href="{{ route('service-v3')}}">Service v.3</a>
                                   </div>
                                   <div class="mt-3">
                                      <div class="dropdown-header">Events</div>
 
-                                     <a class="dropdown-item" href="events.html">List</a>
-                                     <a class="dropdown-item" href="event-single.html">Single</a>
+                                     <a class="dropdown-item" href="{{ route('events')}}">List</a>
+                                     <a class="dropdown-item" href="{{ route('event-single')}}">Single</a>
                                   </div>
                                   <div class="mt-3">
                                      <div class="dropdown-header">Contact</div>
 
-                                     <a class="dropdown-item" href="contact-1.html">Contact Us</a>
-                                     <a class="dropdown-item" href="contact-2.html">Contact Sales</a>
+                                     <a class="dropdown-item" href="{{ route('contact-1')}}">Contact Us</a>
+                                     <a class="dropdown-item" href="{{ route('contact-2')}}">Contact Sales</a>
                                   </div>
                                </div>
                             </div>
@@ -81,18 +81,18 @@
                                   <div>
                                      <div class="dropdown-header">Portfolio</div>
 
-                                     <a class="dropdown-item" href="portfolio.html">Grid View</a>
+                                     <a class="dropdown-item" href="{{ route('portfolio')}}">Grid View</a>
 
-                                     <a class="dropdown-item" href="portfolio-single.html">Single View</a>
+                                     <a class="dropdown-item" href="{{ route('portfolio-single')}}">Single View</a>
                                   </div>
                                   <div class="mt-3">
                                      <div class="dropdown-header">Pricing</div>
-                                     <a class="dropdown-item" href="pricing-v1.html">Pricing v.1</a>
-                                     <a class="dropdown-item" href="pricing-v2.html">Pricing v.2</a>
+                                     <a class="dropdown-item" href="{{ route('pricing-v1')}}">Pricing v.1</a>
+                                     <a class="dropdown-item" href="{{ route('pricing-v2')}}">Pricing v.2</a>
                                   </div>
                                   <div class="mt-3">
                                      <div class="dropdown-header">Career</div>
-                                     <a class="dropdown-item" href="career.html">Career</a>
+                                     <a class="dropdown-item" href="{{ route('career')}}">Career</a>
                                   </div>
                                </div>
                             </div>
@@ -100,13 +100,13 @@
                                <div class="mt-3 mt-lg-0">
                                   <div>
                                      <div class="dropdown-header">Integration</div>
-                                     <a class="dropdown-item" href="integration.html">Grid View</a>
-                                     <a class="dropdown-item" href="integration-single.html">Single</a>
+                                     <a class="dropdown-item" href="{{ route('integration')}}">Grid View</a>
+                                     <a class="dropdown-item" href="{{ route('integration-single')}}">Single</a>
                                   </div>
                                   <div class="mt-3">
                                      <div>
                                         <div class="dropdown-header">Case Study</div>
-                                        <a class="dropdown-item" href="case-study.html">Grid View</a>
+                                        <a class="dropdown-item" href="{{ route('case-study')}}">Grid View</a>
                                      </div>
                                   </div>
                                </div>
@@ -119,7 +119,7 @@
                       <div class="dropdown-menu p-4">
                          <div class="row row-cols-xl-6 row-cols-lg-5 row-cols-1 gx-lg-4">
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/hero.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/hero">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/hero-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -127,7 +127,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/navbar.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/navbar">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/header-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -135,7 +135,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/about.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/about">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/about-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -143,7 +143,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/blog.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/blog">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/blog-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -151,7 +151,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/carousel.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/carousel">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/carousel-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -159,7 +159,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/case-study.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/case-study">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/case-study-bootstrap.svg" alt="" />
                                   </div>
@@ -167,7 +167,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/cta.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/cta">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/call-to-action-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -175,7 +175,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/clients.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/clients">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/clients-logo-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -183,7 +183,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/contact.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/contact">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/contact-section-example.svg" alt="" />
                                   </div>
@@ -191,25 +191,25 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/form.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/form">
                                   <div class="rounded d-none d-lg-block mb-lg-2"><img class="w-100 rounded-2" src="assets/images/block/form-snippets-bootstrap.svg" alt="" /></div>
                                   <span>Form</span>
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/faq.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/faq">
                                   <div class="rounded d-none d-lg-block mb-lg-2"><img class="w-100 rounded-2" src="assets/images/block/faq-section-example.svg" alt="" /></div>
                                   <span>FAQ</span>
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/team.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/team">
                                   <div class="rounded d-none d-lg-block mb-lg-2"><img class="w-100 rounded-2" src="assets/images/block/team-snippets-bootstrap.svg" alt="" /></div>
                                   <span>Team</span>
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/footer.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/footer">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/footer-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -217,7 +217,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/features.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/features">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/feature-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -225,7 +225,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/integration.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/integration">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/integration-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -233,7 +233,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/industry.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/industry">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/industry-bootstrap.svg" alt="" />
                                   </div>
@@ -241,7 +241,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/location.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/location">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/location-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -249,7 +249,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/portfolio.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/portfolio">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/portfolio-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -257,7 +257,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/process.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/process">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/process-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -265,7 +265,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/pricing.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/pricing">
                                   <div class="rounded d-none d-lg-block mb-lg-2 bg-gray-200">
                                      <img class="w-100 rounded-2" src="assets/images/block/pricing-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -274,7 +274,7 @@
                             </div>
 
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/facts.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/facts">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/stats-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -282,7 +282,7 @@
                                </a>
                             </div>
                             <div class="col">
-                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/testimonails.html">
+                               <a class="dropdown-item d-block px-0 mb-lg-3" href="blocks/testimonails">
                                   <div class="rounded d-none d-lg-block mb-lg-2">
                                      <img class="w-100 rounded-2" src="assets/images/block/testimonial-snippets-bootstrap.svg" alt="" />
                                   </div>
@@ -295,54 +295,54 @@
                    <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Accounts</a>
                       <ul class="dropdown-menu">
-                         <li><a class="dropdown-item" href="account-profile.html">Profile</a></li>
-                         <li><a class="dropdown-item" href="account-security.html">Security</a></li>
-                         <li><a class="dropdown-item" href="account-billing.html">Billing</a></li>
-                         <li><a class="dropdown-item" href="account-team.html">Team</a></li>
-                         <li><a class="dropdown-item" href="account-notification.html">Notifications</a></li>
-                         <li><a class="dropdown-item" href="account-app-integration.html">Integration</a></li>
-                         <li><a class="dropdown-item" href="account-device-session.html">Session</a></li>
-                         <li><a class="dropdown-item" href="account-social-links.html">Social</a></li>
-                         <li><a class="dropdown-item" href="account-appearance.html">Appearance</a></li>
+                         <li><a class="dropdown-item" href="{{ route('account-profile')}}">Profile</a></li>
+                         <li><a class="dropdown-item" href="{{ route('account-security')}}">Security</a></li>
+                         <li><a class="dropdown-item" href="{{ route('account-billing')}}">Billing</a></li>
+                         <li><a class="dropdown-item" href="{{ route('account-team')}}">Team</a></li>
+                         <li><a class="dropdown-item" href="{{ route('account-notification')}}">Notifications</a></li>
+                         <li><a class="dropdown-item" href="{{ route('account-app-integration')}}">Integration</a></li>
+                         <li><a class="dropdown-item" href="{{ route('account-device-session')}}">Session</a></li>
+                         <li><a class="dropdown-item" href="{{ route('account-social-links')}}">Social</a></li>
+                         <li><a class="dropdown-item" href="{{ route('account-appearance')}}">Appearance</a></li>
                          <li class="dropdown-submenu dropend">
                             <a class="dropdown-item dropdown-toggle" href="#">Authentication</a>
                             <ul class="dropdown-menu">
                                <li class="dropdown-header">Simple</li>
 
                                <li>
-                                  <a class="dropdown-item" href="signin.html">Sign In</a>
+                                  <a class="dropdown-item" href="{{ route('signin')}}">Sign In</a>
                                </li>
                                <li>
-                                  <a class="dropdown-item" href="signup.html">Sign Up</a>
+                                  <a class="dropdown-item" href="{{ route('signup')}}">Sign Up</a>
                                </li>
                                <li>
-                                  <a class="dropdown-item" href="forget-password.html">Forget Password</a>
+                                  <a class="dropdown-item" href="{{ route('forget-password')}}">Forget Password</a>
                                </li>
                                <li>
-                                  <a class="dropdown-item" href="reset-password.html">Reset Password</a>
+                                  <a class="dropdown-item" href="{{ route('reset-password')}}">Reset Password</a>
                                </li>
                                <li>
-                                  <a class="dropdown-item" href="otp-varification.html">OTP Varification</a>
+                                  <a class="dropdown-item" href="{{ route('otp-varification')}}">OTP Varification</a>
                                </li>
                                <li><hr class="dropdown-divider" /></li>
                                <li class="dropdown-header">Side Cover</li>
 
                                <li>
-                                  <a class="dropdown-item" href="signin-v2.html">Sign In</a>
+                                  <a class="dropdown-item" href="{{ route('signin-v2')}}">Sign In</a>
                                </li>
 
                                <li>
-                                  <a class="dropdown-item" href="signup-v2.html">Sign Up</a>
+                                  <a class="dropdown-item" href="{{ route('signup-v2')}}">Sign Up</a>
                                </li>
 
                                <li>
-                                  <a class="dropdown-item" href="forget-password-v2.html">Forget Password</a>
+                                  <a class="dropdown-item" href="{{ route('forget-password-v2')}}">Forget Password</a>
                                </li>
                                <li>
-                                  <a class="dropdown-item" href="reset-password-v2.html">Reset Password</a>
+                                  <a class="dropdown-item" href="{{ route('reset-password-v2')}}">Reset Password</a>
                                </li>
                                <li>
-                                  <a class="dropdown-item" href="otp-varification-v2.html">OTP Varification</a>
+                                  <a class="dropdown-item" href="{{ route('otp-varification-v2')}}">OTP Varification</a>
                                </li>
                             </ul>
                          </li>
@@ -350,10 +350,10 @@
                             <a class="dropdown-item dropdown-toggle" href="#">Utility</a>
                             <ul class="dropdown-menu">
                                <li>
-                                  <a class="dropdown-item" href="404-error.html">404 Error</a>
+                                  <a class="dropdown-item" href="{{ route('404-error')}}">404 Error</a>
                                </li>
                                <li>
-                                  <a class="dropdown-item" href="changelog.html">Changelog</a>
+                                  <a class="dropdown-item" href="{{ route('changelog')}}">Changelog</a>
                                </li>
                             </ul>
                          </li>
@@ -362,7 +362,7 @@
                    <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Docs</a>
                       <div class="dropdown-menu dropdown-menu-md" aria-labelledby="navbarDropdown">
-                         <a class="dropdown-item mb-3 text-body" href="docs/index.html">
+                         <a class="dropdown-item mb-3 text-body" href="docs/index">
                             <div class="d-flex align-items-center">
                                <i class="bi bi-file-text fs-4 text-primary"></i>
                                <div class="ms-3 lh-1">
@@ -372,7 +372,7 @@
                             </div>
                          </a>
 
-                         <a class="dropdown-item text-body" href="docs/changelog.html">
+                         <a class="dropdown-item text-body" href="docs/changelog">
                             <div class="d-flex align-items-center">
                                <i class="bi bi-clipboard fs-4 text-primary"></i>
                                <div class="ms-3 lh-1">
@@ -388,8 +388,8 @@
                    </li>
                 </ul>
                 <div class="mt-3 mt-lg-0 d-flex align-items-center">
-                   <a href="signin.html" class="btn btn-light mx-2">Login</a>
-                   <a href="signup.html" class="btn btn-primary">Create account</a>
+                   <a href="{{ route('signin')}}" class="btn btn-light mx-2">Login</a>
+                   <a href="{{ route('signup')}}" class="btn btn-primary">Create account</a>
                 </div>
              </div>
           </div>
