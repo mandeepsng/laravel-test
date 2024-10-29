@@ -150,7 +150,7 @@
 
                 <span class="text-primary"><a href="#">Block Bootstrap 5 Theme</a></span>
                 | Designed by
-                <span class="text-primary"><a href="#">CodesCandy</a></span>
+                <span class="text-primary"><a href="#">SaasFast</a></span>
              </div>
           </div>
           <div class="col-md-3">

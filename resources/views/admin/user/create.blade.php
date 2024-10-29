@@ -1,15 +1,15 @@
 @extends('layout.mainlayout_admin')
 
-   @section('content')
-
+@section('content')
+  
    <div class="col-lg-9 col-md-8">
       <div class="mb-4">
-         <h1 class="mb-0 h3">Profile</h1>
+         <h1 class="mb-0 h3"> Create User </h1>
       </div>
       <div class="card border-0 shadow-sm mb-4">
          <div class="card-body p-lg-5">
             <div class="mb-5">
-               <h4 class="mb-1">Profile Picture</h4>
+               <h4 class="mb-1">User Picture</h4>
                <p class="mb-0 fs-6">Upload a picture to make your profile stand out and let people recognize your comments and contributions easily!</p>
             </div>
             <div class="d-flex align-items-center">
@@ -35,7 +35,7 @@
                </div>
                <div class="col-lg-6 col-md-12">
                   <label for="profileLastNameInput" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" id="profileLastNameInput" value="Chauhan" required />
+                  <input type="text" class="form-control" id="profileLastNameInput" value="Singh" required />
                   <div class="invalid-feedback">Please enter lastname.</div>
                </div>
                <div class="col-lg-6">
@@ -100,4 +100,5 @@
       </div>
    </div>
 
+       
 @endsection

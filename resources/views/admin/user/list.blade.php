@@ -2,9 +2,13 @@
 
 @section('content')
 
+
    <div class="col-lg-9 col-md-8">
       <div class="mb-4">
          <h1 class="mb-0 h3">Teams</h1>
+      </div>
+      <div class="col-12">
+         <a href="{{ route('user.create') }}" class="btn btn-primary" type="submit">Create</a>
       </div>
       <div class="card border-0 shadow-sm mb-4">
          <div class="card-body p-lg-5">
@@ -81,7 +85,7 @@
                         <td><span>Front End Developer</span></td>
                         <td></td>
                         <td>
-                           <a href="#" class="btn btn-sm btn-dark me-2">Edit</a>
+                           <a href="{{ route('user.edit', 2) }}" class="btn btn-sm btn-dark me-2">Edit</a>
                            <a href="#" class="btn btn-sm btn-light">Remove</a>
                         </td>
                      </tr>
