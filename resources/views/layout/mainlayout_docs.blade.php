@@ -12,22 +12,7 @@
             @include('layout.partials.header_admin')
             @include('layout.partials.nav_admin')
         @endif
-
-        <main>
-            <!--Account profile Start-->
-            <section class="py-lg-7 py-5 bg-light-subtle">
-               <div class="container">
-                  <div class="row">
-
-                    @include('layout.partials.sidebar_admin')
-                    @yield('content')
-
-                    </div>
-                </div>
-            </section>
-            <!--Account profile end-->
-            </main>
-            <!-- Footer -->
+            @yield('content')
             @include('layout.partials.footer_admin-scripts')
             @yield('script')
             @include('layout.partials.common-scripts')
