@@ -23,7 +23,12 @@ Route::get('/', function () {
 
 
 // Auth::routes();
-// Route::get('/', [ShopifyAppController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store'])->name('register');
+
+
+Route::get('/signup', [RegisterController::class, 'index'])->name('signup');
+// Route::get('/signup', function () { return view('signup'); })->name('signup');
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -96,7 +101,6 @@ Route::get('/service-v2', function () { return view('service-v2'); })->name('ser
 Route::get('/service-v3', function () { return view('service-v3'); })->name('service-v3');
 Route::get('/signin-v2', function () { return view('signin-v2'); })->name('signin-v2');
 Route::get('/signup-v2', function () { return view('signup-v2'); })->name('signup-v2');
-Route::get('/signup', function () { return view('signup'); })->name('signup');
 Route::get('/welcome', function () { return view('welcome'); })->name('welcome');
 
 
