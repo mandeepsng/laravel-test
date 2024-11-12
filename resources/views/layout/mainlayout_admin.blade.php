@@ -19,7 +19,9 @@
                <div class="container">
                   <div class="row">
 
-                    @include('layout.partials.sidebar_admin')
+                    @if(!Route::is(['signin', 'signup', 'welcome', 'landing-sass-v1' ]))
+                        @include('layout.partials.sidebar_admin')
+                    @endif
                     @yield('content')
 
                     </div>
