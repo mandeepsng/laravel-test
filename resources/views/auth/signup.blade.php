@@ -25,11 +25,18 @@
                <div class="col-xl-5 col-lg-6 col-md-8 col-12">
                   <div class="card shadow-sm mb-3">
                      <div class="card-body">
-                        <form class="needs-validation mb-6" novalidate>
+                        <form class="needs-validation mb-6" novalidate method="POST" action="{{ route('register') }}">
+                           @csrf
+
                            <div class="mb-3">
                               <label for="signupFullnameInput" class="form-label">Full Name</label>
-                              <input type="text" class="form-control" id="signupFullnameInput" required />
+                              <input type="text" class="form-control" id="signupFullnameInput" required name="name" value="{{ old('name') }}" required autocomplete="name" autofocus />
                               <div class="invalid-feedback">Please enter full name</div>
+                              @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                            </div>
 
                            <div class="mb-3">
@@ -37,21 +44,31 @@
                                  Email
                                  <span class="text-danger">*</span>
                               </label>
-                              <input type="email" class="form-control" id="signupEmailInput" required />
+                              <input type="email" class="form-control" id="signupEmailInput" name="email" value="{{ old('email') }}" required autocomplete="email" />
                               <div class="invalid-feedback">Please enter email.</div>
+
+                              @error('email')
+                                 <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                            </div>
                            <div class="mb-3">
                               <label for="formSignUpPassword" class="form-label">Password</label>
                               <div class="password-field position-relative">
-                                 <input type="password" class="form-control fakePassword" id="formSignUpPassword" required />
+                                 <input type="password" class="form-control fakePassword" id="formSignUpPassword" name="password" required autocomplete="new-password" />
                                  <span><i class="bi bi-eye-slash passwordToggler"></i></span>
                                  <div class="invalid-feedback">Please enter password.</div>
+
+                                 @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                               </div>
                            </div>
                            <div class="mb-3">
                               <label for="formSignUpConfirmPassword" class="form-label">Confirm Password</label>
                               <div class="password-field position-relative">
-                                 <input type="password" class="form-control fakePassword" id="formSignUpConfirmPassword" required />
+                                 <input type="password" class="form-control fakePassword" id="formSignUpConfirmPassword" name="password_confirmation" required autocomplete="new-password" />
                                  <span><i class="bi bi-eye-slash passwordToggler"></i></span>
                                  <div class="invalid-feedback">Please enter password.</div>
                               </div>
