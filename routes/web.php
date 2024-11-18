@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController, ShopifyAppController };
+use App\Http\Controllers\{HomeController, ShopifyAppController, UserController };
 use App\Http\Controllers\Auth\{RegisterController , LoginController};
 
 /*
@@ -107,10 +107,18 @@ Route::get('/welcome', function () { return view('welcome'); })->name('welcome')
 Route::get('/signin', function () { return view('signin'); })->name('signin');
 Route::get('/my-profile', function () { return view('account-profile'); })->name('account-profile');
 Route::get('/user-list', function () { return view('admin.user.list'); })->name('user.list');
-Route::get('/edit-user/{id}', function () { return view('admin.user.edit'); })->name('user.edit');
+
+
+// Route::get('/userjson', function () { return view('admin.user.list'); })->name('user.list');
+Route::get('/userjson', [UserController::class, 'userjson'])->name('userjson');
+Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('user.edit');
+
+
+// Route::get('/user/{id}', function () { return view('admin.user.edit'); })->name('user.edit');
 Route::get('/create-user', function () { return view('admin.user.create'); })->name('user.create');
 Route::get('/home', function () { return view('admin.dashboard.home'); })->name('home');
 
+Route::resource('users', UserController::class);
 
 
 

@@ -123,6 +123,6 @@ class RegisterController extends Controller
         // Log in the user
         auth()->login($user);
 
-        return redirect('/dashboard'); // Redirect to the user's dashboard or a welcome page
+        return redirect('/home'); // Redirect to the user's dashboard or a welcome page
     }
 }
