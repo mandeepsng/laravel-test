@@ -84,7 +84,7 @@ class UserController extends Controller
                 "email" => $record->email,
                 "name" => $record->name,
                 "role" => "Front End Developer",
-                "avatar" => "assets/images/avatar/avatar-1.jpg",
+                "avatar" => "/assets/images/avatar/avatar-1.jpg",
                 "action" => '<div class="actions text-end"><a class="btn btn-secondary" href="/admin/inventory/'.$id.'"><i class="fa fa-cogs"></i> Inventory </a> </div>',
                     "search_keyword" => NULL
                 );
@@ -130,18 +130,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+
+        // dd('sdfdf');
+
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:8|confirmed',
+            // 'password' => 'required|min:8|confirmed',
         ]);
 
         $user = User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
-            'password' => bcrypt($validatedData['password']),
+            // 'password' => bcrypt($validatedData['password']),
         ]);
 
+
+
+        
         return redirect()->route('users.index')->with('success', 'User created successfully!');
     }
 
@@ -187,7 +193,12 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return redirect()->route('users.index')->with('success', 'User deleted successfully!');
+        return response()->json([
+            'success' => true,
+            'message' => 'User deleted successfully!'
+        ], 200);
+
+        // return redirect()->route('users.index')->with('success', 'User deleted successfully!');
     }
 
 }

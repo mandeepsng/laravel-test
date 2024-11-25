@@ -442,7 +442,7 @@
                <div class="row">
                   <div class="col-lg-3 col-md-4">
                      <div class="d-flex align-items-center mb-4 justify-content-center justify-content-md-start">
-                        <img src="assets/images/avatar/avatar-1.jpg" alt="avatar" class="avatar avatar-lg rounded-circle" />
+                        <img src="{{ ('/assets/images/avatar/avatar-1.jpg') }}" alt="avatar" class="avatar avatar-lg rounded-circle" />
                         <div class="ms-3">
                            <h5 class="mb-0">Jitu Chauhan</h5>
                            <small>Personal account</small>
