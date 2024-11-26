@@ -388,8 +388,29 @@
                    </li>
                 </ul>
                 <div class="mt-3 mt-lg-0 d-flex align-items-center">
-                   <a href="{{ route('signin')}}" class="btn btn-light mx-2">Login</a>
-                   <a href="{{ route('signup')}}" class="btn btn-primary">Create account</a>
+
+                  @guest
+                        @if (Route::has('login'))
+                              <a href="{{ route('signin')}}" class="btn btn-light mx-2">{{ __('Login') }}</a>
+                        @endif
+
+                        @if (Route::has('register'))
+                              <a href="{{ route('signup')}}" class="btn btn-primary">{{ __('Register') }}</a>
+                        @endif
+                  @else
+                        <a class="btn btn-primary" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                              {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                              @csrf
+                        </form>
+                  @endguest
+
+                   {{-- <a href="{{ route('signin')}}" class="btn btn-light mx-2">Login</a> --}}
+                   {{-- <a href="{{ route('signup')}}" class="btn btn-primary">Create account</a> --}}
                 </div>
              </div>
           </div>
