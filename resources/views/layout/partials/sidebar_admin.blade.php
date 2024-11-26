@@ -53,6 +53,18 @@
           <li class="nav-item">
              <a class="nav-link" href="account-profile">
                 <i class="align-bottom bx bx-user"></i>
+                <span class="ms-2">Role List</span>
+             </a>
+          </li>
+          <li class="nav-item">
+             <a class="nav-link" href="account-profile">
+                <i class="align-bottom bx bx-user"></i>
+                <span class="ms-2">Permissions</span>
+             </a>
+          </li>
+          <li class="nav-item">
+             <a class="nav-link" href="account-profile">
+                <i class="align-bottom bx bx-user"></i>
                 <span class="ms-2">Profile</span>
              </a>
           </li>
