@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController, ShopifyAppController, UserController };
+use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController };
 use App\Http\Controllers\Auth\{RegisterController , LoginController};
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,26 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register')
 
 
 Route::get('/signup', [RegisterController::class, 'index'])->name('signup');
+Route::get('/login', [LoginController::class, 'index'])->name('signin');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+Route::middleware(['auth', 'auth.session'])->group(function () {
+
+    Route::prefix('admin')->group(function () {
+
+        Route::get('/home', function () { return view('admin.dashboard.home'); })->name('home');
+        // Route::get('/user-list', function () { return view('admin.user.list'); })->name('user.list');
+        Route::resource('users', UserController::class);
+
+        Route::resource('roles', RoleController::class);
+
+    });
+
+
+});
+
 // Route::get('/signup', function () { return view('signup'); })->name('signup');
 
 // Route::get('/', function () {
@@ -104,9 +126,9 @@ Route::get('/signup-v2', function () { return view('signup-v2'); })->name('signu
 Route::get('/welcome', function () { return view('welcome'); })->name('welcome');
 
 
-Route::get('/signin', function () { return view('signin'); })->name('signin');
+// Route::get('/signin', function () { return view('signin'); })->name('signin');
 Route::get('/my-profile', function () { return view('account-profile'); })->name('account-profile');
-Route::get('/user-list', function () { return view('admin.user.list'); })->name('user.list');
+// Route::get('/user-list', function () { return view('admin.user.list'); })->name('user.list');
 
 
 // Route::get('/userjson', function () { return view('admin.user.list'); })->name('user.list');
@@ -116,9 +138,7 @@ Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('user.edit'
 
 // Route::get('/user/{id}', function () { return view('admin.user.edit'); })->name('user.edit');
 Route::get('/create-user', function () { return view('admin.user.create'); })->name('user.create');
-Route::get('/home', function () { return view('admin.dashboard.home'); })->name('home');
 
-Route::resource('users', UserController::class);
 
 
 

@@ -1,8 +1,8 @@
 <div class="col-lg-3 col-md-4">
     <div class="d-flex align-items-center mb-4 justify-content-center justify-content-md-start">
-       <img src="assets/images/avatar/avatar-1.jpg" alt="avatar" class="avatar avatar-lg rounded-circle" />
+       <img src="/assets/images/avatar/avatar-1.jpg" alt="avatar" class="avatar avatar-lg rounded-circle" />
        <div class="ms-3">
-          <h5 class="mb-0">Mandeep Singh</h5>
+          <h5 class="mb-0">{{ @Auth::user()->name }}</h5>
           <small>Personal account</small>
        </div>
     </div>
@@ -45,7 +45,7 @@
              </a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href=" {{ route('user.list') }} ">
+             <a class="nav-link" href=" {{ route('users.index') }} ">
                 <i class="align-bottom bx bx-home"></i>
                 <span class="ms-2">User List</span>
              </a>
@@ -63,6 +63,18 @@
              </a>
           </li>
           
+          <li class="nav-item">
+             <a class="nav-link" href="account-profile">
+                <i class="align-bottom bx bx-user"></i>
+                <span class="ms-2">Role List</span>
+             </a>
+          </li>
+          <li class="nav-item">
+             <a class="nav-link" href="account-profile">
+                <i class="align-bottom bx bx-user"></i>
+                <span class="ms-2">Permissions</span>
+             </a>
+          </li>
           <li class="nav-item">
              <a class="nav-link" href="account-profile">
                 <i class="align-bottom bx bx-user"></i>

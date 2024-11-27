@@ -8,6 +8,7 @@
       </div>
       <div class="col-12">
          <a href="{{ route('user.create') }}" class="btn btn-primary" type="submit">Create</a>
+
       </div>
       <div class="card border-0 shadow-sm mb-4">
          <div class="card-body p-lg-5">
@@ -199,13 +200,15 @@
             })
             .then(response => response.json())
             .then(data => {
-                  if (data.success) {
-                     alert('User removed successfully!');
-                     // Refresh the table or remove the row
-                     $('.datatable_server').DataTable().ajax.reload();
-                  } else {
-                     alert('Failed to remove user.');
-                  }
+               console.log(data.status);
+               if (data.success) {
+                  // alert(data.message); // 'User deleted successfully!'
+                  // $('.datatable_server').DataTable().ajax.reload();
+                  $('.datatable_server').DataTable().ajax.reload(null, false);
+
+               } else {
+                  alert('Failed to remove user.');
+               }
             });
          }
       }
