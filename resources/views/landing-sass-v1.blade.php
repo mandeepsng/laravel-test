@@ -159,6 +159,24 @@
       </div>
       <!--Trusted worldwide end-->
 
+      <!--Subscription section start-->
+      <section class="subscription">
+         <div class="absolute">
+
+         </div>
+         <div class="container">
+         <div class="flex flex-col items-center">
+            <h2 class="inline text-4xl font-semibold"> 
+                Save weeks of development for every new laravel project 
+            </h2>
+            <p class="max-w-4xl mt-4 text-lg sm:text-center"> 
+               This is a powerful Laravel Starter Kit that allows developers to create web applications quickly and efficiently. 
+            </p>
+         </div>
+         </div>         
+      </section>
+      <!--Subscription section end-->
+
       <!--Features start-->
       <section class="my-xl-7 py-5" data-cue="fadeIn">
          <div class="container">
