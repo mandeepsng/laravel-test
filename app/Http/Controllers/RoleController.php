@@ -141,4 +141,77 @@ class RoleController extends Controller
         return redirect()->route('roles.index')
                         ->with('message','Role deleted successfully');
     }
+
+
+    public function rolejson(Request $request)
+    {
+        // dd($request->all());
+
+        $draw = $request->get('draw');
+        $start = $request->get("start");
+        $rowperpage = $request->get("length"); // Rows display per page
+
+        $columnIndex_arr = $request->get('order');
+        $columnName_arr = $request->get('columns');
+        $order_arr = $request->get('order');
+        $search_arr = $request->get('search');
+
+        $columnIndex = $columnIndex_arr[0]['column']; // Column index
+        $columnName = $columnName_arr[$columnIndex]['data']; // Column name
+        $columnSortOrder = $order_arr[0]['dir']; // asc or desc
+        $searchValue = $search_arr['value']; // Search value
+
+        // Total records
+        $totalRecords = Role::select('count(*) as allcount')->count();
+
+        $newCounting = Role::select('count(*) as allcount');
+
+        $newrecords = Role::orderBy($columnName,$columnSortOrder);
+
+        if($searchValue){
+            $newCounting->orWhere('sku', "LIKE", "%".$searchValue."%");
+            $newrecords->orWhere('sku', "LIKE", "%".$searchValue."%");
+        }
+
+        foreach($columnName_arr as $allColumn){
+            if(isset($allColumn['search']['value'])){
+                $newCounting->where($allColumn['data'], 'like', '%' .$allColumn['search']['value'] . '%');
+                $newrecords->where($allColumn['data'], 'like', '%' .$allColumn['search']['value'] . '%');
+            }
+        }
+
+        $totalRecordswithFilter = $newCounting->count();
+        $records = $newrecords->select('roles.*')
+        ->skip($start)
+        ->take($rowperpage)
+        ->get();
+
+
+        $data_arr = array();
+        $sno = $start+1;
+        foreach($records as $record){
+            $sku = $record->sku;
+            $id = $record->id;
+          
+
+            $data_arr[] = array(
+                "id" => $record->id,
+                "name" => $record->name,
+                "role" => "Front End Developer",
+                "avatar" => "/assets/images/avatar/avatar-1.jpg",
+                "action" => '<div class="actions text-end"><a class="btn btn-secondary" href="/admin/inventory/'.$id.'"><i class="fa fa-cogs"></i> Inventory </a> </div>',
+                    "search_keyword" => NULL
+                );
+        }
+
+
+        $response = array(
+            "draw" => intval($draw),
+            "iTotalRecords" => $totalRecords,
+            "iTotalDisplayRecords" => $totalRecordswithFilter,
+            "aaData" => $data_arr
+        );
+        return json_encode($response);
+       
+    }
 }

@@ -41,6 +41,17 @@
                   <div class="invalid-feedback">Please enter email.</div>
                </div>
                
+               <div class="col-lg-6 col-md-12">
+                  <label for="profileRoleInput" class="form-label">Role</label>
+                  <select class="form-select" id="profileRoleInput" name="roles[]" multiple required>
+                     <option selected disabled value="">Choose...</option>
+                     @foreach($roles as $role)
+                        <option value="{{ $role }}">{{ $role }}</option>
+                     @endforeach
+                  </select>
+                  <div class="invalid-feedback">Please select a role.</div>
+               </div>
+               
                {{-- <div class="col-lg-6">
                   <label for="profilePhoneInput" class="form-label">Phone</label>
                   <input type="text" class="form-control input-phone" id="profilePhoneInput" placeholder="+1 4XX XXX XXXX" required />
