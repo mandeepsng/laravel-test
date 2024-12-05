@@ -17,7 +17,7 @@
                <h4 class="mb-1">Team members</h4>
                <p class="mb-0 fs-6">List of members in your team with their roles.</p>
             </div>
-            <div class="table-responsive">
+            <div class="table-responsive mb-5">
                <table class="datatable_server table table-centered td table-centered th table-lg text-nowrap">
                   <thead>
                      <tr>
@@ -122,6 +122,7 @@
                   orderable: false
             }
          ],
+         
          // Pagination related
          drawCallback: function(settings) {
             var api = this.api();
@@ -157,6 +158,7 @@
                         api.page(parseInt($(this).text()) - 1).draw(false);
                      });
             }
+
          }
          
       });
