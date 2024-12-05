@@ -42,7 +42,28 @@
                   <input type="text" class="form-control" id="profileLastNameInput" name="email" value="{{ $user->email }}" required />
                   <div class="invalid-feedback">Please enter email.</div>
                </div>
+               
+               {{-- <div class="col-lg-6 col-md-12">
+                  <label for="profileRoleInput" class="form-label">Role</label>
+                  <select class="form-select" name="role" id="profileRoleInput" required>
+                     <option selected disabled value="">Choose...</option>
+                     @foreach($roles as $role)
+                     <option value="{{ $role->id }}" {{ $user->role_id == $role->id ? 'selected' : '' }}>{{ $role->name }}</option>
+                     @endforeach
+                  </select>
+                  <div class="invalid-feedback">Please select a role.</div>
+               </div> --}}
 
+                  <div class="col-lg-6 col-md-12">
+                    <label for="profileRoleInput" class="form-label">Role</label>
+                    <select class="form-select" id="profileRoleInput" name="roles[]" multiple required>
+                      <option selected disabled value="">Choose...</option>
+                      @foreach($roles as $role)
+                        <option value="{{ $role }}" {{ in_array($role, $userRole) ? 'selected' : '' }}>{{ $role }}</option>
+                      @endforeach
+                    </select>
+                    <div class="invalid-feedback">Please select a role.</div>
+                  </div>
 
                {{-- <div class="col-lg-6">
                   <label for="profilePhoneInput" class="form-label">Phone</label>

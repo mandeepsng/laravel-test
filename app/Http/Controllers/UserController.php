@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Role;
 
 
 class UserController extends Controller
@@ -76,6 +77,13 @@ class UserController extends Controller
         foreach($records as $record){
             $sku = $record->sku;
             $id = $record->id;
+
+            $role = null;
+            if(!empty($record->getRoleNames())){
+                foreach($record->getRoleNames() as $v){
+                    $role = "<label class='badge badge-success btn-custom'>$v</label>";
+                }
+            }
           
             // dd($record);
 
@@ -83,7 +91,7 @@ class UserController extends Controller
                 "id" => $record->id,
                 "email" => $record->email,
                 "name" => $record->name,
-                "role" => "Front End Developer",
+                "role" => $role,
                 "avatar" => "/assets/images/avatar/avatar-1.jpg",
                 "action" => '<div class="actions text-end"><a class="btn btn-secondary" href="/admin/inventory/'.$id.'"><i class="fa fa-cogs"></i> Inventory </a> </div>',
                     "search_keyword" => NULL
@@ -122,7 +130,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create'); // Return a form view for creating a user
+        $roles = Role::pluck('name','name')->all();
+        return view('admin.user.create', compact('roles')); // Return a form view for creating a user
     }
 
     /**
@@ -145,7 +154,7 @@ class UserController extends Controller
             // 'password' => bcrypt($validatedData['password']),
         ]);
 
-
+        $user->assignRole($request->input('roles'));
 
         
         return redirect()->route('users.index')->with('success', 'User created successfully!');
@@ -164,8 +173,12 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $roles = Role::pluck('name','name')->all();
+        $userRole = $user->roles->pluck('name','name')->all();
+    
+        return view('admin.user.edit',compact('user','roles','userRole'));
 
-        return view('admin.user.edit', compact('user')); // Return a form view for editing
+        // return view('admin.user.edit', compact('user')); // Return a form view for editing
     }
 
     /**

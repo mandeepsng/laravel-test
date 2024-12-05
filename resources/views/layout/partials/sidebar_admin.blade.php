@@ -45,13 +45,13 @@
              </a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href=" {{ route('users.index') }} ">
+             <a class="nav-link" href="{{ route('users.index') }}">
                 <i class="align-bottom bx bx-home"></i>
                 <span class="ms-2">User List</span>
              </a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href="account-profile">
+             <a class="nav-link" href="{{ route('roles.index') }}">
                 <i class="align-bottom bx bx-user"></i>
                 <span class="ms-2">Role List</span>
              </a>
