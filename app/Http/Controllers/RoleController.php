@@ -214,4 +214,14 @@ class RoleController extends Controller
         return json_encode($response);
        
     }
+
+
+    public function permissions(Request $request): View
+    {
+
+        $permissions = Permission::paginate(10);
+        return view('admin.roles.permissions', compact('permissions'))
+            ->with('i', ($request->input('page', 1) - 1) * 10);
+        }
+        
 }
