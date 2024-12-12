@@ -4,17 +4,17 @@
 
    <div class="col-lg-9 col-md-8">
       <div class="mb-4">
-         <h1 class="mb-0 h3">Teams</h1>
+         <h1 class="mb-0 h3">User</h1>
       </div>
       <div class="col-12">
-         <a href="{{ route('user.create') }}" class="btn btn-primary" type="submit">Create</a>
+         <a href="{{ route('users.create') }}" class="btn btn-primary" type="submit">Create</a>
 
       </div>
 
       <div class="card border-0 mb-4 shadow-sm">
          <div class="card-body p-lg-5">
             <div class="mb-5">
-               <h4 class="mb-1">Team members</h4>
+               <h4 class="mb-1">User List</h4>
                <p class="mb-0 fs-6">List of members in your team with their roles.</p>
             </div>
             <div class="table-responsive mb-5">

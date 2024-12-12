@@ -13,7 +13,7 @@
                <p class="mb-0 fs-6">Upload a picture to make your profile stand out and let people recognize your comments and contributions easily!</p>
             </div>
             <div class="d-flex align-items-center">
-               <img src="assets/images/avatar/avatar-1.jpg" alt="avatar" class="avatar avatar-lg rounded-circle" />
+               <img src="/assets/images/avatar/avatar-1.jpg" alt="avatar" class="avatar avatar-lg rounded-circle" />
                <div class="ms-4">
                   <h5 class="mb-0">Your photo</h5>
                   <small>Allowed *.jpeg, *.jpg, *.png, *.gif max size of 4 MB</small>

@@ -12,7 +12,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
              </div>
              <div class="offcanvas-body pt-0 align-items-center">
+
                 <ul class="navbar-nav mx-auto align-items-lg-center">
+                   @guest 
                    <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Landings</a>
                       <ul class="dropdown-menu">
@@ -386,7 +388,10 @@
                          </a>
                       </div>
                    </li>
+                   @endguest
                 </ul>
+                  
+
                 <div class="mt-3 mt-lg-0 d-flex align-items-center">
 
                   @guest

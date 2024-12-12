@@ -187,14 +187,14 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
 
-        // dd($user);
-
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
         ]);
 
         $user->update($validatedData);
+
+        $user->assignRole($request->input('roles'));
 
         return redirect()->route('users.index')->with('success', 'User updated successfully!');
     }
