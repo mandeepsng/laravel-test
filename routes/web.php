@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController };
+use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController};
 use App\Http\Controllers\Auth\{RegisterController , LoginController};
 use Illuminate\Support\Facades\Auth;
 
@@ -42,9 +42,22 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('/home', function () { return view('admin.dashboard.home'); })->name('home');
         // Route::get('/user-list', function () { return view('admin.user.list'); })->name('user.list');
         Route::resource('users', UserController::class);
+        Route::resource('permissions', PermissionController::class);
+
+
+
+        // Route::get('/userjson', function () { return view('admin.user.list'); })->name('user.list');
+        Route::get('/userjson', [UserController::class, 'userjson'])->name('userjson');
+        Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('user.edit');
+
+
+        // Route::get('/user/{id}', function () { return view('admin.user.edit'); })->name('user.edit');
+        // Route::get('/create-user', function () { return view('admin.user.create'); })->name('user.create');
+
 
         Route::resource('roles', RoleController::class);
-
+        Route::get('/roles/json', [RoleController::class, 'rolejson'])->name('roles.json');
+        // Route::get('/permissions', [RoleController::class, 'permissions'])->name('roles.permissions');
     });
 
 
@@ -130,14 +143,6 @@ Route::get('/welcome', function () { return view('welcome'); })->name('welcome')
 Route::get('/my-profile', function () { return view('account-profile'); })->name('account-profile');
 // Route::get('/user-list', function () { return view('admin.user.list'); })->name('user.list');
 
-
-// Route::get('/userjson', function () { return view('admin.user.list'); })->name('user.list');
-Route::get('/userjson', [UserController::class, 'userjson'])->name('userjson');
-Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('user.edit');
-
-
-// Route::get('/user/{id}', function () { return view('admin.user.edit'); })->name('user.edit');
-Route::get('/create-user', function () { return view('admin.user.create'); })->name('user.create');
 
 
 

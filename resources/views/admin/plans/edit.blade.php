@@ -57,6 +57,37 @@
 
             {!! Form::close() !!}
 
+            <!-- Form to update an existing Stripe subscription plan -->
+            {!! Form::open(['route' => 'stripe.updatePlan', 'method' => 'POST']) !!}
+               @csrf
+               <div class="col-lg-6 col-md-12">
+                  <label for="planIdInput" class="form-label">Plan ID</label>
+                  <input type="text" class="form-control" id="planIdInput" name="plan_id" required />
+                  <div class="invalid-feedback">Please enter plan ID.</div>
+               </div>
+               <div class="col-lg-6 col-md-12">
+                  <label for="planNameInput" class="form-label">Plan Name</label>
+                  <input type="text" class="form-control" id="planNameInput" name="plan_name" required />
+                  <div class="invalid-feedback">Please enter plan name.</div>
+               </div>
+               <div class="col-lg-6 col-md-12">
+                  <label for="planAmountInput" class="form-label">Amount (in cents)</label>
+                  <input type="number" class="form-control" id="planAmountInput" name="amount" required />
+                  <div class="invalid-feedback">Please enter amount.</div>
+               </div>
+               <div class="col-lg-6 col-md-12">
+                  <label for="planIntervalInput" class="form-label">Interval</label>
+                  <select class="form-control" id="planIntervalInput" name="interval" required>
+                     <option value="month">Monthly</option>
+                     <option value="year">Yearly</option>
+                  </select>
+                  <div class="invalid-feedback">Please select interval.</div>
+               </div>
+               <div class="col-12 mt-4">
+                  <button class="btn btn-primary me-2" type="submit">Update Plan</button>
+               </div>
+            {!! Form::close() !!}
+
          </div>
       </div>
    </div>

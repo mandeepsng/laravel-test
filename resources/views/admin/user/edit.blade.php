@@ -13,7 +13,7 @@
                <p class="mb-0 fs-6">Upload a picture to make your profile stand out and let people recognize your comments and contributions easily!</p>
             </div>
             <div class="d-flex align-items-center">
-               <img src="assets/images/avatar/avatar-1.jpg" alt="avatar" class="avatar avatar-lg rounded-circle" />
+               <img src="/assets/images/avatar/avatar-1.jpg" alt="avatar" class="avatar avatar-lg rounded-circle" />
                <div class="ms-4">
                   <h5 class="mb-0">Your photo</h5>
                   <small>Allowed *.jpeg, *.jpg, *.png, *.gif max size of 4 MB</small>
@@ -42,7 +42,28 @@
                   <input type="text" class="form-control" id="profileLastNameInput" name="email" value="{{ $user->email }}" required />
                   <div class="invalid-feedback">Please enter email.</div>
                </div>
+               
+               {{-- <div class="col-lg-6 col-md-12">
+                  <label for="profileRoleInput" class="form-label">Role</label>
+                  <select class="form-select" name="role" id="profileRoleInput" required>
+                     <option selected disabled value="">Choose...</option>
+                     @foreach($roles as $role)
+                     <option value="{{ $role->id }}" {{ $user->role_id == $role->id ? 'selected' : '' }}>{{ $role->name }}</option>
+                     @endforeach
+                  </select>
+                  <div class="invalid-feedback">Please select a role.</div>
+               </div> --}}
 
+                  <div class="col-lg-6 col-md-12">
+                    <label for="profileRoleInput" class="form-label">Role</label>
+                    <select class="form-select" id="profileRoleInput" name="roles[]" multiple required>
+                      <option selected disabled value="">Choose...</option>
+                      @foreach($roles as $role)
+                        <option value="{{ $role }}" {{ in_array($role, $userRole) ? 'selected' : '' }}>{{ $role }}</option>
+                      @endforeach
+                    </select>
+                    <div class="invalid-feedback">Please select a role.</div>
+                  </div>
 
                {{-- <div class="col-lg-6">
                   <label for="profilePhoneInput" class="form-label">Phone</label>

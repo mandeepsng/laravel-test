@@ -27,7 +27,7 @@
                      </tr>
                </thead>
                   <tbody>
-                     @forelse ($roles as $key => $role)
+                     @forelse ($permissions as $key => $role)
                      <tr>
                         <td>{{ ++$i }}</td>
                         <td>{{ $role->name }}</td>
@@ -56,7 +56,7 @@
                </table>
             </div>
             <!-- Custom Pagination Section -->
-            <nav aria-label="Page navigation example">
+            {{-- <nav aria-label="Page navigation example">
                <ul class="pagination">
                   <li class="page-item" id="prevPage"><a class="page-link" href="#">Previous</a></li>
                   <li class="page-item"><a class="page-link" href="#" id="page1">1</a></li>
@@ -64,7 +64,27 @@
                   <li class="page-item"><a class="page-link" href="#" id="page3">3</a></li>
                   <li class="page-item" id="nextPage"><a class="page-link" href="#">Next</a></li>
                </ul>
+            </nav> --}}
+
+            <!-- Laravel Dynamic Pagination -->
+         @if ($permissions->lastPage() > 1)
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                <li class="page-item {{ ($permissions->currentPage() == 1) ? ' disabled' : '' }}">
+                    <a class="page-link" href="{{ $permissions->url(1) }}">Previous</a>
+                </li>
+                @for ($i = 1; $i <= $permissions->lastPage(); $i++)
+                    <li class="page-item {{ ($permissions->currentPage() == $i) ? ' active' : '' }}">
+                        <a class="page-link" href="{{ $permissions->url($i) }}">{{ $i }}</a>
+                    </li>
+                @endfor
+                <li class="page-item {{ ($permissions->currentPage() == $permissions->lastPage()) ? ' disabled' : '' }}">
+                    <a class="page-link" href="{{ $permissions->url($permissions->currentPage()+1) }}">Next</a>
+                </li>
+                </ul>
             </nav>
+        @endif
+
          </div>
       </div>
    </div>

@@ -4,7 +4,7 @@
 
    <div class="col-lg-9 col-md-8">
       <div class="mb-4">
-         <h1 class="mb-0 h3">Teams</h1>
+         <h1 class="mb-0 h3">Manage Subscription and Token Packs</h1>
       </div>
       <div class="col-12">
          <a href="{{ route('roles.create') }}" class="btn btn-primary" type="submit">Create</a>

@@ -4,43 +4,17 @@
 
    <div class="col-lg-9 col-md-8">
       <div class="mb-4">
-         <h1 class="mb-0 h3">Teams</h1>
+         <h1 class="mb-0 h3">User</h1>
       </div>
       <div class="col-12">
-         <a href="{{ route('user.create') }}" class="btn btn-primary" type="submit">Create</a>
+         <a href="{{ route('users.create') }}" class="btn btn-primary" type="submit">Create</a>
 
       </div>
-      <div class="card border-0 shadow-sm mb-4">
-         <div class="card-body p-lg-5">
-            <div class="mb-5">
-               <h4 class="mb-1">Add team members</h4>
-               <p class="fs-6 mb-0">Invite as many team members as you need to help run this account. Learn More</p>
-            </div>
-            <form class="row g-3 needs-validation" novalidate>
-               <div class="col-lg-6 col-md-12">
-                  <label for="formGroupEmailInput" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="formGroupEmailInput" placeholder="Team member’s email" required />
-                  <div class="invalid-feedback">Please enter an email.</div>
-               </div>
-               <div class="col-lg-6 col-md-12">
-                  <label for="formGroupRoleInput" class="form-label">Role</label>
-                  <select class="form-select" id="formGroupRoleInput" required>
-                     <option selected disabled value="">Role</option>
-                     <option value="Owner">Owner</option>
-                     <option value="Front End Developer">Front End Developer</option>
-                     <option value="Full Stack Developer">Full Stack Developer</option>
-                  </select>
-               </div>
-               <div class="col-12">
-                  <button class="btn btn-primary" type="submit">Send Invitation</button>
-               </div>
-            </form>
-         </div>
-      </div>
+
       <div class="card border-0 mb-4 shadow-sm">
          <div class="card-body p-lg-5">
             <div class="mb-5">
-               <h4 class="mb-1">Team members</h4>
+               <h4 class="mb-1">User List</h4>
                <p class="mb-0 fs-6">List of members in your team with their roles.</p>
             </div>
             <div class="table-responsive mb-5">
@@ -65,13 +39,12 @@
             <!-- Custom Pagination Section -->
             <nav aria-label="Page navigation example">
                <ul class="pagination">
-                  <li class="page-item" id="prevPage"><a class="page-link" href="#">Previous</a></li>
-                  <li class="page-item"><a class="page-link" href="#" id="page1">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#" id="page2">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#" id="page3">3</a></li>
-                  <li class="page-item" id="nextPage"><a class="page-link" href="#">Next</a></li>
+                   <li class="page-item" id="prevPage"><a class="page-link" href="#">Previous</a></li>
+                   <li class="page-item" id="nextPage"><a class="page-link" href="#">Next</a></li>
                </ul>
-            </nav>
+           </nav>
+
+
          </div>
       </div>
    </div>
@@ -169,13 +142,25 @@
                $('#nextPage').removeClass('disabled');
             }
 
-            // Update the page numbers
-            $('#page1').text(pageInfo.page + 1);
-            $('#page2').text(pageInfo.page + 2);
-            $('#page3').text(pageInfo.page + 3);
+            // Clear existing page numbers
+            $('.pagination .page-number').remove();
 
+            // Add new page numbers
+            var startPage = Math.max(pageInfo.page - 1, 0);
+            var endPage = Math.min(pageInfo.page + 1, pageInfo.pages - 1);
+
+            for (var i = startPage; i <= endPage; i++) {
+               var pageNumber = i + 1;
+               var activeClass = pageInfo.page === i ? 'active' : '';
+               $('<li class="page-item page-number ' + activeClass + '"><a class="page-link" href="#">' + pageNumber + '</a></li>')
+                     .insertBefore('#nextPage')
+                     .on('click', function() {
+                        api.page(parseInt($(this).text()) - 1).draw(false);
+                     });
+            }
 
          }
+         
       });
 
       // Handle "Previous" and "Next" buttons for custom pagination

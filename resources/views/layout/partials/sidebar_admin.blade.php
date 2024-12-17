@@ -45,20 +45,20 @@
              </a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href=" {{ route('users.index') }} ">
+             <a class="nav-link" href="{{ route('users.index') }}">
                 <i class="align-bottom bx bx-home"></i>
-                <span class="ms-2">User List</span>
+                <span class="ms-2">User Management</span>
              </a>
           </li>
          
           <li class="nav-item">
-             <a class="nav-link" href="account-profile">
+             <a class="nav-link" href="{{ route('roles.index') }}">
                 <i class="align-bottom bx bx-user"></i>
                 <span class="ms-2">Role List</span>
              </a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href="account-profile">
+             <a class="nav-link" href="{{ route('permissions.index') }}">
                 <i class="align-bottom bx bx-user"></i>
                 <span class="ms-2">Permissions</span>
              </a>
@@ -79,6 +79,12 @@
              <a class="nav-link" href="account-billing">
                 <i class="align-bottom bx bx-credit-card-front"></i>
                 <span class="ms-2">Billing</span>
+             </a>
+          </li>
+          <li class="nav-item">
+             <a class="nav-link" href="account-billing">
+                <i class="align-bottom bx bx-credit-card-front"></i>
+                <span class="ms-2">Stripe</span>
              </a>
           </li>
           <li class="nav-item">
@@ -118,10 +124,20 @@
              </a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href="index">
-                <i class="align-bottom bx bx-log-out"></i>
-                <span class="ms-2">Sign Out</span>
-             </a>
+             
+
+             <a class="nav-link" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+               <i class="align-bottom bx bx-log-out"></i>
+               <span class="ms-2">{{ __('Logout') }}</span>
+                  
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+            </form>
+
           </li>
        </ul>
     </div>
