@@ -1,0 +1,18 @@
+blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
+    margin: 0;
+}
+.mt-4 {
+    margin-top: 1rem;
+}
+.lg\:mt-20 {
+    margin-top: 5rem;
+}
+.flex {
+    display: flex;
+}
+.flex-col {
+    flex-direction: column;
+}
+.items-center {
+    align-items: center;
+}
