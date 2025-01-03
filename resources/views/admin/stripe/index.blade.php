@@ -7,14 +7,14 @@
          <h1 class="mb-0 h3">Manage Subscription and Token Packs</h1>
       </div>
       <div class="col-12">
-         <a href="{{ route('roles.create') }}" class="btn btn-primary" type="submit">Create</a>
+         <a href="{{ route('stripe.create') }}" class="btn btn-primary" type="submit">Create</a>
 
       </div>
       
       <div class="card border-0 mb-4 shadow-sm">
          <div class="card-body p-lg-5">
             <div class="mb-5">
-               <h4 class="mb-1">Team members</h4>
+               <h4 class="mb-1">Plans</h4>
                <p class="mb-0 fs-6">List of members in your team with their roles.</p>
             </div>
             <div class="table-responsive">
@@ -23,24 +23,28 @@
                      <tr>
                      <th>No</th>
                         <th>Name</th>
+                        <th>amount</th>
+                        <th>interval</th>
                         <th width="280px">Action</th>
                      </tr>
                </thead>
                   <tbody>
-                     @forelse ($roles as $key => $role)
+                     @forelse ($plans as $key => $p)
                      <tr>
                         <td>{{ ++$i }}</td>
-                        <td>{{ $role->name }}</td>
+                        <td>{{ $p->name }}</td>
+                        <td>{{ $p->amount }}</td>
+                        <td>{{ $p->interval }}</td>
                         <td>
-                           <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
-                           @can('role-edit')
-                              <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
-                           @endcan
-                           @can('role-delete')
-                              {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
+                           <a class="btn btn-info" href="{{ route('roles.show',$p->id) }}">Show</a>
+                           {{-- @can('role-edit') --}}
+                              <a class="btn btn-primary" href="{{ route('stripe.editSubscriptionPlan',$p->id) }}">Edit</a>
+                           {{-- @endcan --}}
+                           {{-- @can('role-delete') --}}
+                              {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $p->id],'style'=>'display:inline']) !!}
                                  {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                               {!! Form::close() !!}
-                           @endcan
+                           {{-- @endcan --}}
                         </td>
                      </tr>
                      @empty
@@ -55,16 +59,26 @@
                      </tbody>
                </table>
             </div>
-            <!-- Custom Pagination Section -->
-            <nav aria-label="Page navigation example">
-               <ul class="pagination">
-                  <li class="page-item" id="prevPage"><a class="page-link" href="#">Previous</a></li>
-                  <li class="page-item"><a class="page-link" href="#" id="page1">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#" id="page2">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#" id="page3">3</a></li>
-                  <li class="page-item" id="nextPage"><a class="page-link" href="#">Next</a></li>
-               </ul>
-            </nav>
+
+            <!-- Laravel Dynamic Pagination -->
+            @if ($plans->lastPage() > 1)
+               <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                  <li class="page-item {{ ($plans->currentPage() == 1) ? ' disabled' : '' }}">
+                     <a class="page-link" href="{{ $plans->url(1) }}">Previous</a>
+                  </li>
+                  @for ($i = 1; $i <= $plans->lastPage(); $i++)
+                     <li class="page-item {{ ($plans->currentPage() == $i) ? ' active' : '' }}">
+                           <a class="page-link" href="{{ $plans->url($i) }}">{{ $i }}</a>
+                     </li>
+                  @endfor
+                  <li class="page-item {{ ($plans->currentPage() == $plans->lastPage()) ? ' disabled' : '' }}">
+                     <a class="page-link" href="{{ $plans->url($plans->currentPage()+1) }}">Next</a>
+                  </li>
+                  </ul>
+               </nav>
+            @endif
+
          </div>
       </div>
    </div>

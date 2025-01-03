@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Models;
@@ -12,6 +11,7 @@ class SubscriptionPlan extends Model
 
     protected $fillable = [
         'stripe_plan_id',
+        'stripe_price_id',
         'name',
         'amount',
         'currency',

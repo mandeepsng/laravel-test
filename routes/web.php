@@ -1,9 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController};
+use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController, StripeController, WebhookController };
 use App\Http\Controllers\Auth\{RegisterController , LoginController};
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+use App\Http\Middleware\Subscribed;
+use Stripe\Checkout\Session;
+use Stripe\Customer;
+use Laravel\Cashier\Cashier;
 
 
 /*
@@ -58,10 +63,103 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::resource('roles', RoleController::class);
         Route::get('/roles/json', [RoleController::class, 'rolejson'])->name('roles.json');
         // Route::get('/permissions', [RoleController::class, 'permissions'])->name('roles.permissions');
+
+
+        Route::get('/stripe', [StripeController::class, 'index'])->name('stripe.index');
+        Route::get('/stripe/create', [StripeController::class, 'create'])->name('stripe.create');
+        Route::get('/stripe/editSubscriptionPlan/{id}', [StripeController::class, 'editSubscriptionPlan'])->name('stripe.editSubscriptionPlan');
+        Route::post('/stripe/createPlan', [StripeController::class, 'createSubscriptionPlan'])->name('stripe.createPlan');
+        Route::post('/stripe/updateSubscriptionPlan/{id}', [StripeController::class, 'updateSubscriptionPlan'])->name('stripe.updateSubscriptionPlan');
+        // Route::put('/subscription-plans/{id}', [SubscriptionPlanController::class, 'updateSubscriptionPlan'])->name('subscription-plans.update');
+
+
     });
 
 
 });
+
+Route::get('/dashboard', function () {
+    // ...
+})->middleware([Subscribed::class]);
+
+Route::get('/subscription-checkout', function (Request $request) {
+
+    // dd($request->user()->id);
+    return $request->user()
+        ->newSubscription('default', 'price_1QYNFkSA6v11N8PDpyztuSMl')
+        ->trialDays(5)
+        ->allowPromotionCodes()
+        ->checkout([
+            'success_url' => route('your-success-route'),
+            'cancel_url' => route('your-cancel-route'),
+            'metadata' => ['user_id' => $request->user()->id],
+        ]);
+        
+});
+
+Route::post('/user/subscribe', function (Request $request) {
+    $request->user()->newSubscription(
+        'default', 'price_1QYNFkSA6v11N8PDpyztuSMl'
+    )->create($request->paymentMethodId);
+ 
+    // ...
+});
+
+// Route::get('/billing', function (Request $request) {
+//     return $request->user()->redirectToBillingPortal(route('dashboard'));
+// })->middleware(['auth'])->name('billing');
+
+Route::get('/billing', function (Request $request) {
+    $user = $request->user();
+
+    dd($user);
+
+    // Ensure the user has a Stripe customer ID
+    if (!$user->stripe_id) {
+        $user->createAsStripeCustomer();
+    }
+
+    return $user->redirectToBillingPortal(route('dashboard'));
+})->middleware(['auth'])->name('billing');
+
+Route::get('/product-checkout', function (Request $request) {
+    return $request->user()->checkout(['price_1QZ59RSA6v11N8PDGfiGCsjQ' => 1], [
+        'success_url' => route('checkout-success').'?session_id={CHECKOUT_SESSION_ID}',
+        'cancel_url' => route('your-cancel-route'),
+    ]);
+});
+
+Route::get('/about2', function () { return view('about'); })->name('your-success-route');
+Route::get('/404-error2', function () { return view('404-error'); })->name('your-cancel-route');
+
+Route::get('/customer/{id}', function (Request $request) {
+    $customer = $request->user()->asStripeCustomer();
+
+    return response()->json($customer['email']);
+});
+
+Route::get('/cashier/{id}', function (Request $request) {
+    $user = $request->user();
+
+    // $user->createAsStripeCustomer();
+    $user = Cashier::findBillable('cus_RRFiqqfYaFtXBU');
+
+
+    return response()->json($user);
+});
+
+Route::get('/checkout-success', function (Request $request) {
+    $checkoutSession = $request->user()->stripe()->checkout->sessions->retrieve($request->get('session_id'));
+ 
+    return view('checkout.success', ['checkoutSession' => $checkoutSession]);
+})->name('checkout-success');
+
+
+// Route::post('/webhook', [WebhookController::class, 'handleWebhook'])->middleware('verify.webhook.signature');
+Route::post('/webhook', [WebhookController::class, 'handleWebhook']);
+
+
+
 
 // Route::get('/signup', function () { return view('signup'); })->name('signup');
 
