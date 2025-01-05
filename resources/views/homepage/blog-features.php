@@ -2,8 +2,10 @@
 <section class="my-xl-7 py-5">
     <div class="container pb-lg-5">
         <div class="flex flex-col items-center">
-            <h2 class="inline text-4xl font-semibold"> Preserve days of development for new laravel project </h2>
-            <p class="max-w-4xl mt-4 text-lg sm:text-center"> Boilerplate is a powerful Laravel Starter Kit that allows developers to create web applications quickly and efficiently. </p>
+            <h2 class="inline text-4xl font-semibold">  The thing that you need for Blog and SEO  </h2>
+            <p class="max-w-4xl mt-4 text-lg sm:text-center"> 
+                The Saas has everything you need to start a blog and quickly index your content on search engines. 
+            </p>
         </div>
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-12 order-lg-2 order-1" data-cue="slideInLeft">
@@ -38,10 +40,12 @@
             </div>
             <div class="col-lg-5 offset-lg-1 col-md-6 col-12 order-lg-2" data-cue="slideInRight">
                 <div class="mt-md-5">
-                    <small class="text-primary text-uppercase ls-md fw-semibold">Payments</small>
+                    <small class="text-primary text-uppercase ls-md fw-semibold">Blog</small>
                     <div class="mb-5 mt-4">
-                        <h2 class="mb-3">Subscriptions & Payments</h2>
-                        <p class="lead mb-0">Easily manage recurring and one-time transactions with ease. Handle subscriptions, process single payments, access the customer billing portal, integrate webhooks for real-time updates, and monitor order and subscription statistics.</p>
+                        <h2 class="mb-3">Blog Pages</h2>
+                        <p class="lead mb-0">
+                         SEO-optimized blog pages ready for use, with an intuitive admin panel for effortless article management.                
+                        </p>
                     </div>
                     <ul class="list-unstyled mb-5">
                         <li class="mb-2 d-flex">
@@ -49,24 +53,58 @@
                                 <path
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                             </svg>
-                            <span class="ms-2">Focus on ultricies, as it enhances dignity.</span>
+                            <span class="ms-2">Blog Pages</span>
                         </li>
                         <li class="mb-2 d-flex">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
                                 <path
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                             </svg>
-                            <span class="ms-2">Enable possibilities. You may find yourself in that realm.</span>
+                            <span class="ms-2">Article Pages</span>
                         </li>
                         <li class="mb-2 d-flex">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
                                 <path
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                             </svg>
-                            <span class="ms-2">Enhances flexible premium possibilities for a price .</span>
+                            <span class="ms-2">Offers flexible premium options at an affordable price.</span>
+                        </li>
+                        <li class="mb-2 d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <span class="ms-2">Management through admin</span>
+                        </li>
+                        <li class="mb-2 d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <span class="ms-2">Meta tags to rank on Google</span>
+                        </li>
+                        <li class="mb-2 d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <span class="ms-2">OpenGraph Images and Tags for Social Media</span>
+                        </li>
+                        <li class="mb-2 d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <span class="ms-2">Auto-included in sitemap</span>
+                        </li>
+                        <li class="mb-2 d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <span class="ms-2">SchemaOrg Markup for Rich Snippets</span>
                         </li>
                     </ul>
-
                     <a href="#" class="icon-link icon-link-hover">
                         <span>Learn More</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -81,10 +119,12 @@
         <div class="row align-items-center lg:mt-20">
             <div class="col-lg-6 col-md-6 col-12 order-lg-2 order-1" data-cue="slideInLeft">
             <div class="mt-md-5">
-                    <small class="text-primary text-uppercase ls-md fw-semibold">Auth</small>
+                    <small class="text-primary text-uppercase ls-md fw-semibold">SEO</small>
                     <div class="mb-5 mt-4">
-                        <h2 class="mb-3">Registration, Social Auth, Magic Links</h2>
-                        <p class="lead mb-0">Access multiple authentication options. Traditional login and registration, a user dashboard, social authentication through Google, GitHub, and Twitter, magic link login, and secure protected routes to enhance user experience and security.</p>
+                        <h2 class="mb-3">SEO, Sitemaps, SchemaOrg</h2>
+                        <p class="lead mb-0">
+                         SEO is crucial for any website. Larafast has built-in SEO features to help you rank higher on search engines. 
+                        </p>
                     </div>
                     <ul class="list-unstyled mb-5">
                         <li class="mb-2 d-flex">
@@ -92,21 +132,49 @@
                                 <path
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                             </svg>
-                            <span class="ms-2">Fusce ultricies velit fel dignissim</span>
+                            <span class="ms-2"> SEO Meta Tags</span>
                         </li>
                         <li class="mb-2 d-flex">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
                                 <path
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                             </svg>
-                            <span class="ms-2">Suspendisse potenti. Mauris et ipsum odio.</span>
+                            <span class="ms-2"> Twitter Cards</span>
                         </li>
                         <li class="mb-2 d-flex">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
                                 <path
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                             </svg>
-                            <span class="ms-2">Pellentesque imperdiet blandit pretium.</span>
+                            <span class="ms-2"> Dynamic Open Graph Images</span>
+                        </li>
+                        <li class="mb-2 d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <span class="ms-2">Open Graph tags for social media</span>
+                        </li>
+                        <li class="mb-2 d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <span class="ms-2">  Automatic sitemap generation</span>
+                        </li>
+                        <li class="mb-2 d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <span class="ms-2">  Schema.org markup</span>
+                        </li>
+                        <li class="mb-2 d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                            </svg>
+                            <span class="ms-2">Blog and Articles with SEO</span>
                         </li>
                     </ul>
 
@@ -185,10 +253,12 @@
             </div>
             <div class="col-lg-5 offset-lg-1 col-md-6 col-12 order-lg-2" data-cue="slideInRight">
                 <div class="mt-md-5">
-                    <small class="text-primary text-uppercase ls-md fw-semibold">Admin</small>
+                    <small class="text-primary text-uppercase ls-md fw-semibold">Themes</small>
                     <div class="mb-5 mt-4">
-                        <h2 class="mb-3">Admin Dashboard Powered by FilamentPHP</h2>
-                        <p class="lead mb-0">Manage your platform with a robust admin dashboard powered by amazing FilamentPHP. Tools for user management, blog and article oversight, order and subscription tracking, and detailed statistical analysis to ensure smooth and informed operations.</p>
+                        <h2 class="mb-3">More Themes</h2>
+                        <p class="lead mb-0">
+                        Seamlessly integrate essential tools with our SaaS platform to streamline workflows and enhance productivity. Unlock a unified digital ecosystem that drives innovation and accelerates business growth.
+                        </p>
                     </div>
                     <ul class="list-unstyled mb-5">
                         <li class="mb-2 d-flex">
@@ -196,21 +266,14 @@
                                 <path
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                             </svg>
-                            <span class="ms-2">Fusce ultricies velit fel dignissim</span>
+                            <span class="ms-2"> Easy switching between themes.</span>
                         </li>
                         <li class="mb-2 d-flex">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
                                 <path
                                     d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
                             </svg>
-                            <span class="ms-2">Suspendisse potenti. Mauris et ipsum odio.</span>
-                        </li>
-                        <li class="mb-2 d-flex">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill text-success mt-1" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
-                            </svg>
-                            <span class="ms-2">Pellentesque imperdiet blandit pretium.</span>
+                            <span class="ms-2"> Extendable and customizable.</span>
                         </li>
                     </ul>
 
