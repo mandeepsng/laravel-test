@@ -10,14 +10,11 @@
       @include('homepage.subscribtion')
       <!--Subscription section end-->
 
-      <!--Trusted worldwide start-->
-      @include('homepage.collaborate')
-      <!--Trusted worldwide end-->
-
-
       <!--Features start-->
       @include('homepage.features')
       <!--Features end-->
+
+      @include('homepage.blog-features')
 
       @include('homepage.subscribtion-package')
 
