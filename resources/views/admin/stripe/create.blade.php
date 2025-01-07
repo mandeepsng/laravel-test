@@ -7,7 +7,6 @@
          <h1 class="mb-0 h3"> Add Role </h1>
       </div>
       
-
       @if (count($errors) > 0)
          <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -26,35 +25,6 @@
                <p class="mb-0 fs-6">Edit your personal information and address.</p>
             </div>
 
-            {!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
-            {{-- <form class="row g-3 needs-validation" novalidate action="{{ route('users.store') }}" method="POST"> --}}
-               @csrf
-
-               <div class="col-lg-6 col-md-12">
-                  <label for="profileFirstNameInput" class="form-label"> Name</label>
-                  <input type="text" class="form-control" id="profileFirstNameInput" name="name" required />
-                  <div class="invalid-feedback">Please enter role name.</div>
-               </div>
-               
-               <div class="col-lg-6 col-md-12">
-                  <label for="profileStateInput" class="form-label">Permission:</label>
-                     <br/>
-                     @foreach($permission as $value)
-                     <label>{{ Form::checkbox('permission[]', $value->name, false, array('class' => 'name')) }}
-                        {{ $value->name }}</label>
-                        <br/>
-							@endforeach
-                  <div class="invalid-feedback">Please select state / region.</div>
-               </div>
-
-               <div class="col-12 mt-4">
-                  <button class="btn btn-primary me-2" type="submit">Save Changes</button>
-                  <button class="btn btn-light" type="submit">Cancel</button>
-               </div>
-            {{-- </form> --}}
-
-            {!! Form::close() !!}
-
             <!-- Form to create a new Stripe subscription plan -->
             {!! Form::open(['route' => 'stripe.createPlan', 'method' => 'POST']) !!}
                @csrf
@@ -69,12 +39,22 @@
                   <div class="invalid-feedback">Please enter amount.</div>
                </div>
                <div class="col-lg-6 col-md-12">
-                  <label for="planIntervalInput" class="form-label">Interval</label>
-                  <select class="form-control" id="planIntervalInput" name="interval" required>
-                     <option value="month">Monthly</option>
-                     <option value="year">Yearly</option>
+                  <label for="planTrialDaysInput" class="form-label">Trial Days</label>
+                  <input type="number" class="form-control" id="planTrialDaysInput" name="trial_days" required />
+                  <div class="invalid-feedback">Please enter trial days.</div>
+               </div>
+               <div class="col-lg-6 col-md-12">
+                  <label for="planTypeInput" class="form-label">Type</label>
+                  <select class="form-control" id="planTypeInput" name="interval" required>
+                     <option value="monthly">Monthly</option>
+                     <option value="one-time">One-time</option>
                   </select>
-                  <div class="invalid-feedback">Please select interval.</div>
+                  <div class="invalid-feedback">Please select type.</div>
+               </div>
+               <div class="col-lg-6 col-md-12">
+                  <label for="planFeaturesInput" class="form-label">Features</label>
+                  <textarea class="form-control" id="planFeaturesInput" name="features" rows="3" required></textarea>
+                  <div class="invalid-feedback">Please enter features.</div>
                </div>
                <div class="col-12 mt-4">
                   <button class="btn btn-primary me-2" type="submit">Create Plan</button>

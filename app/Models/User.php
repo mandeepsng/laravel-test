@@ -11,11 +11,12 @@ use Osiset\ShopifyApp\Contracts\ShopModel as IShopModel;
 use Osiset\ShopifyApp\Traits\ShopModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Permission\Traits\HasRoles;
+use Laravel\Cashier\Billable;
 
 
 class User extends Authenticatable implements IShopModel
 {
-    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, ShopModel, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes, ShopModel, HasRoles, Billable;
 
     /**
      * The attributes that are mass assignable.

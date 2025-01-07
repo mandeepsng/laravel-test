@@ -69,12 +69,12 @@
                 <span class="ms-2">Profile</span>
              </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
              <a class="nav-link" aria-current="page" href="account-security">
                 <i class="align-bottom bx bx-lock-alt"></i>
                 <span class="ms-2">Security</span>
              </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
              <a class="nav-link" href="account-billing">
                 <i class="align-bottom bx bx-credit-card-front"></i>
@@ -82,47 +82,47 @@
              </a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href="account-billing">
+             <a class="nav-link" href="{{ route('stripe.index') }}">
                 <i class="align-bottom bx bx-credit-card-front"></i>
                 <span class="ms-2">Stripe</span>
              </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
              <a class="nav-link" href="account-team">
                 <i class="align-bottom bx bx-user-plus"></i>
                 <span class="ms-2">Team</span>
              </a>
-          </li>
-          <li class="nav-item">
+          </li> --}}
+          {{-- <li class="nav-item">
              <a class="nav-link" href="account-notification">
                 <i class="align-bottom bx bx-bell"></i>
                 <span class="ms-2">Notifications</span>
              </a>
-          </li>
-          <li class="nav-item">
+          </li> --}}
+          {{-- <li class="nav-item">
              <a class="nav-link" href="account-app-integration">
                 <i class="align-bottom bx bx-box"></i>
                 <span class="ms-2">Integration</span>
              </a>
-          </li>
-          <li class="nav-item">
+          </li> --}}
+          {{-- <li class="nav-item">
              <a class="nav-link" href="account-device-session">
                 <i class="align-bottom bx bx-time"></i>
                 <span class="ms-2">Session</span>
              </a>
-          </li>
-          <li class="nav-item">
+          </li> --}}
+          {{-- <li class="nav-item">
              <a class="nav-link" href="account-social-links">
                 <i class="align-bottom bx bx-link"></i>
                 <span class="ms-2">Social</span>
              </a>
-          </li>
-          <li class="nav-item">
+          </li> --}}
+          {{-- <li class="nav-item">
              <a class="nav-link" href="account-appearance">
                 <i class="align-bottom bx bx-palette"></i>
                 <span class="ms-2">Appearance</span>
              </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
              
 

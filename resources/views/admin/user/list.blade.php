@@ -8,7 +8,12 @@
       </div>
       <div class="col-12">
          <a href="{{ route('users.create') }}" class="btn btn-primary" type="submit">Create</a>
-
+         
+         <a href="{{ route('billing', ['plan' => 2, 'shop' => Auth::user()->name]) }}">
+            <button style="padding:15px 25px;border:none;color:#007F5F;font- 
+              weight:700;font-size:20px;border-radius:10px;">Choose Plan</button>
+          </a>
+          
       </div>
 
       <div class="card border-0 mb-4 shadow-sm">
@@ -17,6 +22,12 @@
                <h4 class="mb-1">User List</h4>
                <p class="mb-0 fs-6">List of members in your team with their roles.</p>
             </div>
+            {{-- {{ $user->subscribed() }} --}}
+            @if (Auth::check())
+               <p>Welcome, {{ Auth::user()->name }}!</p>
+            @else
+               <p>Please log in to see user details.</p>
+            @endif
             <div class="table-responsive mb-5">
                <table class="datatable_server table table-centered td table-centered th table-lg text-nowrap">
                   <thead>
