@@ -1,8 +1,7 @@
 @extends('layout.mainlayout_admin')
 
 @section('content')
-   <main>
-      <div class="pattern-square"></div>
+   
       <!--Pageheader start-->
       <section class="py-5 py-lg-8">
          <div class="container">
@@ -95,5 +94,4 @@
             </ul>
          </div>
       </div>
-   </main>
 @endsection

@@ -48,22 +48,10 @@
                       <div class="collapse d-lg-block" id="collapseLanding" data-bs-parent="#ft-links">
                          <ul class="list-unstyled mb-0 py-3 py-lg-0">
                             <li class="mb-2">
-                               <a href="index.html" class="text-decoration-none text-reset">Saas</a>
+                               <a href="/landing-sass-v1" class="text-decoration-none text-reset">Saas</a>
                             </li>
                             <li class="mb-2">
-                               <a href="#!" class="text-decoration-none text-reset">Software Company</a>
-                            </li>
-                            <li class="mb-2">
-                               <a href="landing-finance.html" class="text-decoration-none text-reset">Finance</a>
-                            </li>
-                            <li class="mb-2">
-                               <a href="landing-jamstack-agancy.html" class="text-decoration-none text-reset">Digital Agency</a>
-                            </li>
-                            <li class="mb-2">
-                               <a href="landing-conference.html" class="text-decoration-none text-reset">Conference</a>
-                            </li>
-                            <li class="mb-2">
-                               <a href="#!" class="text-decoration-none text-reset">App Template</a>
+                               <a href="/about" class="text-decoration-none text-reset">Software Company</a>
                             </li>
                          </ul>
                       </div>
@@ -85,19 +73,16 @@
                    <div class="collapse d-lg-block" id="collapseAccounts" data-bs-parent="#ft-links">
                       <ul class="list-unstyled mb-0 py-3 py-lg-0">
                          <li class="mb-2">
-                            <a href="signup.html" class="text-decoration-none text-reset">Register</a>
+                            <a href="#" class="text-decoration-none text-reset">Register</a>
                          </li>
                          <li class="mb-2">
-                            <a href="signin.html" class="text-decoration-none text-reset">Login</a>
+                            <a href="/login" class="text-decoration-none text-reset">Login</a>
                          </li>
                          <li class="mb-2">
-                            <a href="forget-password.html" class="text-decoration-none text-reset">Forgot Password</a>
+                            <a href="/forget-password" class="text-decoration-none text-reset">Forgot Password</a>
                          </li>
                          <li class="mb-2">
-                            <a href="reset-password.html" class="text-decoration-none text-reset">Reset Password</a>
-                         </li>
-                         <li class="mb-2">
-                            <a href="#!" class="text-decoration-none text-reset">Profile</a>
+                            <a href="/account-profile" class="text-decoration-none text-reset">Profile</a>
                          </li>
                       </ul>
                    </div>
@@ -118,22 +103,10 @@
                    <div class="collapse d-lg-block" id="collapseResources" data-bs-parent="#ft-links">
                       <ul class="list-unstyled mb-0 py-3 py-lg-0">
                          <li class="mb-2">
-                            <a href="docs/index.html" class="text-decoration-none text-reset">Docs</a>
+                            <a href="#" class="text-decoration-none text-reset">Docs</a>
                          </li>
                          <li class="mb-2">
-                            <a href="#!" class="text-decoration-none text-reset">Support</a>
-                         </li>
-                         <li class="mb-2">
-                            <a href="changelog.html" class="text-decoration-none text-reset">Changelog</a>
-                         </li>
-                         <li class="mb-2">
-                            <a href="#!" class="text-decoration-none text-reset">Help Center</a>
-                         </li>
-                         <li class="mb-2">
-                            <a href="#!" class="text-decoration-none text-reset">Community</a>
-                         </li>
-                         <li class="mb-2">
-                            <a href="#!" class="text-decoration-none text-reset">Webinars</a>
+                            <a href="#" class="text-decoration-none text-reset">Support</a>
                          </li>
                       </ul>
                    </div>
