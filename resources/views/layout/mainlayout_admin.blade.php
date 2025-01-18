@@ -19,7 +19,7 @@
                <div class="container">
                   <div class="row">
 
-                    @if(!Route::is(['signin', 'signup', 'welcome', 'landing-sass-v1' ]))
+                    @if(!Route::is(['signin', 'signup', 'welcome', 'landing-sass-v1', 'forget-password']))
                         @include('layout.partials.sidebar_admin')
                     @endif
                     @yield('content')
