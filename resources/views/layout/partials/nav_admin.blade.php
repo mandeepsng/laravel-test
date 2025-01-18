@@ -14,8 +14,12 @@
              <div class="offcanvas-body pt-0 align-items-center">
 
                 <ul class="navbar-nav mx-auto align-items-lg-center">
+                   <li><a class="dropdown-item" href="{{ route('pricing')}}">Pricing</a></li>
+                   <li><a class="dropdown-item" href="{{ route('landing-sass-v1')}}">Reviews</a></li>
+                   <li><a class="dropdown-item" href="{{ route('landing-sass-v1')}}">FAQ</a></li>
+                   
                    @guest 
-                   <li class="nav-item dropdown">
+                   {{-- <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Landings</a>
                       <ul class="dropdown-menu">
                          <li><a class="dropdown-item" href="{{ route('index')}}">Landing Overview</a></li>
@@ -387,7 +391,7 @@
                             </div>
                          </a>
                       </div>
-                   </li>
+                   </li> --}}
                    @endguest
                 </ul>
                   

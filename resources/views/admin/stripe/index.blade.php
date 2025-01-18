@@ -41,7 +41,7 @@
                               <a class="btn btn-primary" href="{{ route('stripe.editSubscriptionPlan',$p->id) }}">Edit</a>
                            {{-- @endcan --}}
                            {{-- @can('role-delete') --}}
-                              {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $p->id],'style'=>'display:inline']) !!}
+                              {!! Form::open(['method' => 'DELETE','route' => ['stripe.destroy', $p->id],'style'=>'display:inline']) !!}
                                  {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                               {!! Form::close() !!}
                            {{-- @endcan --}}

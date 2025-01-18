@@ -64,7 +64,7 @@
              </a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href="account-profile">
+             <a class="nav-link" href="{{ route('account-profile') }}">
                 <i class="align-bottom bx bx-user"></i>
                 <span class="ms-2">Profile</span>
              </a>
@@ -75,12 +75,12 @@
                 <span class="ms-2">Security</span>
              </a>
           </li> --}}
-          <li class="nav-item">
+          {{-- <li class="nav-item">
              <a class="nav-link" href="account-billing">
                 <i class="align-bottom bx bx-credit-card-front"></i>
                 <span class="ms-2">Billing</span>
              </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
              <a class="nav-link" href="{{ route('stripe.index') }}">
                 <i class="align-bottom bx bx-credit-card-front"></i>

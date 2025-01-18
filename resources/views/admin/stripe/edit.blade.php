@@ -27,7 +27,9 @@
             </div>
 
             <!-- Form to update an existing Stripe subscription plan -->
-            {!! Form::open(['route' => 'stripe.updateSubscriptionPlan', 'method' => 'POST']) !!}
+
+            {!! Form::open(['route' => ['stripe.updateSubscriptionPlan', $plan->id], 'method' => 'POST']) !!}
+            
                @csrf
                <div class="col-lg-6 col-md-12">
                   <label for="planIdInput" class="form-label">Plan ID</label>

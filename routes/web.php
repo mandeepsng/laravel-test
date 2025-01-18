@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController, StripeController, WebhookController };
+use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController, StripeController, WebhookController, PlanController };
 use App\Http\Controllers\Auth\{RegisterController , LoginController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -23,7 +23,7 @@ use Laravel\Cashier\Cashier;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing-sass-v1');
 });
 
 // Route::get('/notification', [HomeController::class, 'notification'])->name('notifications');
@@ -87,7 +87,7 @@ Route::get('/subscription-checkout', function (Request $request) {
     // dd($request->user()->id);
     return $request->user()
         ->newSubscription('default', 'price_1QYNFkSA6v11N8PDpyztuSMl')
-        ->trialDays(5)
+        // ->trialDays(5)
         ->allowPromotionCodes()
         ->checkout([
             'success_url' => route('your-success-route'),
@@ -96,6 +96,89 @@ Route::get('/subscription-checkout', function (Request $request) {
         ]);
         
 });
+
+
+Route::get('/check-subscription', function (Request $request) {
+    $user = $request->user(); // Get the authenticated user
+
+    if ($user->subscribed('default')) {
+        return response()->json([
+            'subscribed' => true,
+            'message' => 'User is subscribed to the default plan.',
+        ]);
+    }
+
+    return response()->json([
+        'subscribed' => false,
+        'message' => 'User is not subscribed to the default plan.',
+    ]);
+});
+
+
+Route::get('/subscription-checkout/{price_id}', function (Request $request) {
+
+    // dd($request->user()->id);
+    return $request->user()
+        ->newSubscription('default', $request->price_id)
+        // ->trialDays(5)
+        ->allowPromotionCodes()
+        ->checkout([
+            'success_url' => route('checkout-success') . '?session_id={CHECKOUT_SESSION_ID}',
+            'cancel_url' => route('checkout-cancel'),
+            'metadata' => ['user_id' => $request->user()->id],
+        ]);
+        
+});
+
+
+Route::get('/checkout-success', function (Request $request) {
+
+    try {
+        $user = Auth::user();
+        $sessionId = $request->get('session_id');
+        
+        if (!$sessionId) {
+            throw new \Exception('No session ID provided');
+        }
+        
+        // Retrieve the Stripe Checkout Session
+        $session = \Stripe\Checkout\Session::retrieve($sessionId);
+        
+        dd($session);
+        
+        // Retrieve the PaymentIntent ID from the session
+        $paymentIntentId = $session->payment_intent;
+        
+        // Retrieve the PaymentIntent to get the PaymentMethod ID
+        $paymentIntent = \Stripe\PaymentIntent::retrieve($paymentIntentId);
+        $paymentMethodId = $paymentIntent->payment_method;
+        
+        // Attach the PaymentMethod to the user (if not already)
+        $user->addPaymentMethod($paymentMethodId);
+
+        // Optionally, set the payment method as default
+        $user->updateDefaultPaymentMethod($paymentMethodId);
+        
+        // Handle success response (e.g., redirect to subscriptions page)
+        return redirect()->route('subscriptions')->with('success', 'Subscription activated successfully!');
+        
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', $e->getMessage());
+    }
+
+})->name('checkout-success');
+
+// Route::get('/checkout-success', function (Request $request) {
+//     $checkoutSession = $request->user()->stripe()->checkout->sessions->retrieve($request->get('session_id'));
+ 
+//     return view('checkout.success', ['checkoutSession' => $checkoutSession]);
+// })->name('checkout-success');
+
+Route::get('/checkout-cancel', function () {
+    return view('checkout.cancel');
+})->name('checkout-cancel');
+
+
 
 Route::post('/user/subscribe', function (Request $request) {
     $request->user()->newSubscription(
@@ -148,16 +231,14 @@ Route::get('/cashier/{id}', function (Request $request) {
     return response()->json($user);
 });
 
-Route::get('/checkout-success', function (Request $request) {
-    $checkoutSession = $request->user()->stripe()->checkout->sessions->retrieve($request->get('session_id'));
- 
-    return view('checkout.success', ['checkoutSession' => $checkoutSession]);
-})->name('checkout-success');
+
 
 
 // Route::post('/webhook', [WebhookController::class, 'handleWebhook'])->middleware('verify.webhook.signature');
 Route::post('/webhook', [WebhookController::class, 'handleWebhook']);
 
+Route::post('/handle-one-time-payment', [StripeController::class, 'handleSubscription']);
+Route::get('/pricing', [PlanController::class, 'index'])->name('pricing');
 
 
 
@@ -239,6 +320,7 @@ Route::get('/welcome', function () { return view('welcome'); })->name('welcome')
 
 // Route::get('/signin', function () { return view('signin'); })->name('signin');
 Route::get('/my-profile', function () { return view('account-profile'); })->name('account-profile');
+Route::get('/test', function () { return view('test'); })->name('test');
 // Route::get('/user-list', function () { return view('admin.user.list'); })->name('user.list');
 
 

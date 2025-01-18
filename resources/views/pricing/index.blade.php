@@ -1,5 +1,24 @@
+@extends('layout.mainlayout_admin')
 
-<section class="pt-4 mt-lg-n8">
+@section('content')
+   <main>
+      <div class="pattern-square"></div>
+      <!--Pageheader start-->
+      <section class="py-5 py-lg-8">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
+                  <div class="text-center">
+                     <h1 class="mb-1 mb-lg-3">Get Started Today</h1>
+                     <p class="mb-0">Pick Your Perfect Plan</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--Pageheader end-->
+      <!--Pricing start-->
+      <section class="pt-4 mt-lg-n8">
          <div class="container price-wrapper">
             <div class="row">
                <div class="col-12 z-1">
@@ -90,7 +109,7 @@
                               </li>
                            </ul>
                            <div class="d-grid mt-6">
-                              <a href="{{ url('/subscription-checkout/price_1QYMfRSA6v11N8PDakfsphXF') }}" class="btn btn-primary">Get started now free trial</a>
+                              <a href="#" class="btn btn-primary">Get started now free trial</a>
                            </div>
                         </div>
                      </div>
@@ -212,7 +231,12 @@
                               </li>
                            </ul>
                            <div class="d-grid mt-6">
-                              <a href="{{ url('/subscription-checkout/price_1QYMfRSA6v11N8PDakfsphXF') }}" class="btn btn-primary">$5.99 /month</a>
+                            @guest
+                                <a href="{{ route('login') }}" class="btn btn-primary">$5.99 /month</a>
+                            @else
+                                <a href="/subscription-checkout/price_1QYNFkSA6v11N8PDpyztuSMl" class="btn btn-primary">$5.99 /month</a>
+
+                            @endguest
                            </div>
                         </div>
                      </div>
@@ -344,3 +368,199 @@
             </div>
          </div>
       </section>
+      <!--Pricing end-->
+      <!--Trusted start-->
+      <section class="my-xl-9 my-4">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
+                  <div class="text-center mb-7">
+                     <h2>Trusted by 30,000+ businesses.</h2>
+                     <p class="mb-0">Thousands of startups and organizations use Block to improve the productivity of their sales team and create more opportunities.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-10 offset-lg-1 col-12">
+                  <div class="swiper logoSwiper">
+                     <div class="swiper-wrapper mb-7">
+                        <div class="swiper-slide">
+                           <figure class="text-center mb-4 mb-lg-0">
+                              <img src="assets/images/client-logo/clients-logo-1.svg" alt="logo" />
+                           </figure>
+                        </div>
+                        <div class="swiper-slide">
+                           <figure class="text-center mb-4 mb-lg-0">
+                              <img src="assets/images/client-logo/clients-logo-2.svg" alt="logo" />
+                           </figure>
+                        </div>
+                        <div class="swiper-slide">
+                           <figure class="text-center mb-4 mb-lg-0">
+                              <img src="assets/images/client-logo/clients-logo-3.svg" alt="logo" />
+                           </figure>
+                        </div>
+                        <div class="swiper-slide">
+                           <figure class="text-center mb-4 mb-lg-0">
+                              <img src="assets/images/client-logo/clients-logo-4.svg" alt="logo" />
+                           </figure>
+                        </div>
+                        <div class="swiper-slide">
+                           <figure class="text-center mb-4 mb-lg-0">
+                              <img src="assets/images/client-logo/clients-logo-5.svg" alt="logo" />
+                           </figure>
+                        </div>
+                     </div>
+                     <div class="swiper-pagination"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--Trusted end-->
+      <!--Asked question start-->
+      <section class="mb-xl-9 mb-4">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                  <div class="text-center mb-7">
+                     <h2>Frequently asked questions</h2>
+                     <p class="mb-0">
+                        Can’t find any answer for your question?
+                        <br />
+                        Ask our
+                        <a href="#" class="text-primary">customer support</a>
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-10 offset-lg-1 col-md-12 col-12">
+                  <div class="accordion" id="accordionExample">
+                     <div class="border mb-2 rounded-3 p-3">
+                        <h2 class="h5 mb-0">
+                           <a
+                              href="#"
+                              class="text-reset d-flex justify-content-between align-items-center"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne"
+                              aria-expanded="false"
+                              aria-controls="collapseOne">
+                              Can I trial block before paying?
+                              <span class="chevron-arrow"><i class="bi bi-chevron-down"></i></span>
+                           </a>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                           <div class="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae harum adipisci possimus et. Iusto pariatur iste nam incidunt ratione modi.</div>
+                        </div>
+                     </div>
+
+                     <div class="border mb-2 rounded-3 p-3">
+                        <h2 class="h5 mb-0">
+                           <a
+                              href="#"
+                              class="text-reset d-flex justify-content-between align-items-center"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseTwo"
+                              aria-expanded="true"
+                              aria-controls="collapseTwo">
+                              How are additional plan billed?
+                              <span class="chevron-arrow"><i class="bi bi-chevron-down"></i></span>
+                           </a>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                           <div class="mt-3">
+                              Sed urna felis, dapibus quis leo nec, luctus auctor augue. Nam gravida placerat sem vitae rutrum. Integer accumsan, enim et facilisis eleifend, ante ligula ornare
+                              nulla, sed pharetra tortor diam eget magna.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="border mb-2 rounded-3 p-3">
+                        <h2 class="h5 mb-0">
+                           <a
+                              href="#"
+                              class="text-reset d-flex justify-content-between align-items-center"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseThree"
+                              aria-expanded="false"
+                              aria-controls="collapseThree">
+                              When should I change my plan?
+                              <span class="chevron-arrow"><i class="bi bi-chevron-down"></i></span>
+                           </a>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                           <div class="mt-3">
+                              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore tenetur cum doloremque iusto molestiae. Minus beatae quam cumque modi quidem asperiores aliquam
+                              pariatur in iste.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="border mb-2 rounded-3 p-3">
+                        <h2 class="h5 mb-0">
+                           <a
+                              href="#"
+                              class="text-reset d-flex justify-content-between align-items-center"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseFour"
+                              aria-expanded="false"
+                              aria-controls="collapseFour">
+                              What payment methods do you offer?
+                              <span class="chevron-arrow"><i class="bi bi-chevron-down"></i></span>
+                           </a>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                           <div class="mt-3">
+                              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore tenetur cum doloremque iusto molestiae. Minus beatae quam cumque modi quidem asperiores aliquam
+                              pariatur in iste.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="border mb-2 rounded-3 p-3">
+                        <h2 class="h5 mb-0">
+                           <a
+                              href="#"
+                              class="text-reset d-flex justify-content-between align-items-center"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseFive"
+                              aria-expanded="false"
+                              aria-controls="collapseFive">
+                              What is your refund policy?
+                              <span class="chevron-arrow"><i class="bi bi-chevron-down"></i></span>
+                           </a>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                           <div class="mt-3">
+                              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore tenetur cum doloremque iusto molestiae. Minus beatae quam cumque modi quidem asperiores aliquam
+                              pariatur in iste.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="border mb-2 rounded-3 p-3">
+                        <h2 class="h5 mb-0">
+                           <a
+                              href="#"
+                              class="text-reset d-flex justify-content-between align-items-center"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseSix"
+                              aria-expanded="false"
+                              aria-controls="collapseSix">
+                              How are paid plans billed when moving other plan?
+                              <span class="chevron-arrow"><i class="bi bi-chevron-down"></i></span>
+                           </a>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                           <div class="mt-3">
+                              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore tenetur cum doloremque iusto molestiae. Minus beatae quam cumque modi quidem asperiores aliquam
+                              pariatur in iste.
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!--Asked question end-->
+   </main>
+@endsection
+
+

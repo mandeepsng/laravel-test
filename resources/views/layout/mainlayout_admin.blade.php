@@ -19,7 +19,8 @@
                <div class="container">
                   <div class="row">
 
-                    @if(!Route::is(['signin', 'signup', 'welcome', 'landing-sass-v1', 'forget-password']))
+                    {{-- @if(!Route::is(['signin', 'signup', 'welcome', 'landing-sass-v1', 'test' ])) --}}
+                    @if(Route::is(['home', 'users.index', 'roles.index', 'permissions.index', 'stripe.index', 'account-profile' ]))
                         @include('layout.partials.sidebar_admin')
                     @endif
                     @yield('content')

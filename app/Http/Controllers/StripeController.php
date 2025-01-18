@@ -9,6 +9,8 @@ use App\Models\SubscriptionPlan;
 use Stripe\Stripe;
 use Stripe\Product;
 use Stripe\Price;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\RedirectResponse;
 
 class StripeController extends Controller
 {
@@ -28,11 +30,28 @@ class StripeController extends Controller
         return view('admin.stripe.create');
     }
 
+
+    public function destroy($id): RedirectResponse
+    {
+        if($id == 1){
+            return redirect()->route('roles.index')
+                        ->with('message','Super Admin cannot deleted!');
+        }
+        DB::table("roles")->where('id',$id)->delete();
+        return redirect()->route('roles.index')
+                        ->with('message','Role deleted successfully');
+    }
     
 
     public function handleOneTimePayment(Request $request)
     {
+
         $user = User::find($request->user_id);
+
+        // assign subscribe to user using cashier
+        $user->newSubscription('default', 'price_1JGJ9vHbJbJ9vHbJbJ9vHbJb')->create($request->payment_method);
+
+        dd( $request->all() , $user);
         $paymentMethod = $request->payment_method;
 
         $user->charge(1000, $paymentMethod); // Charge $10.00
@@ -44,10 +63,35 @@ class StripeController extends Controller
         $user = User::find($request->user_id);
         $paymentMethod = $request->payment_method;
 
-        $planId = 'plan_ABC123XYZ'; 
+        $planId = 'price_1QZ59RSA6v11N8PDGfiGCsjQ'; 
         $user->newSubscription('default', $planId)->create($paymentMethod);
         return response()->json(['message' => 'Subscription successful']);
     }
+
+
+    public function handleSubscription2(Request $request)
+    {
+        $user = User::find(50);
+
+        // Ensure the user has a Stripe customer ID
+        if (!$user->stripe_id) {
+            $user->createAsStripeCustomer();
+        }
+
+        $paymentMethod = $request->payment_method;
+
+        // Attach the payment method to the customer
+        $user->updateDefaultPaymentMethod('pm_1QZ6PHSA6v11N8PDoCgzqeQs');
+
+        // Plan ID for subscription
+        $planId = 'price_1QZ59RSA6v11N8PDGfiGCsjQ';
+
+        // Create the subscription
+        $user->newSubscription('default', $planId)->create($paymentMethod);
+
+        return response()->json(['message' => 'Subscription successful']);
+    }
+
 
     public function editSubscriptionPlan($id)
     {
@@ -55,37 +99,13 @@ class StripeController extends Controller
         return view('admin.stripe.edit',compact('plan'));
     }
 
-    // Function to handle updating the subscription plan
-    public function updateSubscriptionPlan2(Request $request)
-    {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
-
-        // Stripe::setApiKey(config('cashier.secret'));
-
-
-        $product = Product::update($request->plan_id, [
-            'name' => $request->plan_name,
-        ]);
-
-        $price = Price::create([
-            'product' => $product->id,
-            'unit_amount' => $request->amount,
-            'currency' => 'usd',
-            'recurring' => ['interval' => $request->interval],
-        ]);
-
-        // Update the plan in the database
-        $plan = SubscriptionPlan::where('stripe_plan_id', $request->plan_id)->first();
-        $plan->update([
-            'name' => $request->plan_name,
-            'amount' => $request->amount,
-            'interval' => $request->interval,
-        ]);
-
-        return response()->json(['message' => 'Subscription plan updated successfully', 'product' => $product, 'price' => $price]);
-    }
-
-
+    /**
+     * updateSubscriptionPlan = Update the subscription plan in Stripe on DB
+     *
+     * @param  mixed $request
+     * @param  mixed $planId
+     * @return void
+     */
     public function updateSubscriptionPlan(Request $request, $planId)
     {
         // Set your Stripe API key
@@ -94,8 +114,14 @@ class StripeController extends Controller
         // Fetch the plan details from your database
         $subscriptionPlan = SubscriptionPlan::findOrFail($planId);
 
+        // dd($subscriptionPlan->stripe_plan_id);
+
         // Update the Stripe product
-        Product::update($subscriptionPlan->stripe_product_id, [
+        if (!$subscriptionPlan->stripe_plan_id) {
+            return response()->json(['message' => 'Invalid Stripe product ID'], 400);
+        }
+
+        Product::update($subscriptionPlan->stripe_plan_id, [
             'name' => $request->plan_name,
             // 'description' => $request->description, // Optional description
         ]);
@@ -109,7 +135,7 @@ class StripeController extends Controller
                 'recurring' => [
                     'interval' => $request->interval, // 'month', 'year', etc.
                 ],
-                'product' => $subscriptionPlan->stripe_product_id,
+                'product' => $subscriptionPlan->stripe_plan_id,
             ]);
 
             // Update the database with the new price ID
