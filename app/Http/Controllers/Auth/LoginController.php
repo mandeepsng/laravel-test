@@ -30,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -45,6 +45,11 @@ class LoginController extends Controller
 
     public function index()
     {
+        // Store the intended URL in the session
+        if (!session()->has('url.intended')) {
+            session(['url.intended' => url()->previous()]);
+        }
+
         return view('auth.signin');
     }
 
@@ -59,9 +64,12 @@ class LoginController extends Controller
  
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            // dd('loggedin');
-            // return redirect()->intended('home');
-            return redirect()->route('users.index');
+
+            // Redirect to the intended URL or default
+            return redirect()->intended($this->redirectTo);
+
+            // return $this->authenticated($request, Auth::user());
+            // return redirect()->route('users.index');
         }
  
         return back()->withErrors([
@@ -81,6 +89,19 @@ class LoginController extends Controller
         return redirect('/');
     }
 
+
+    /**
+     * The user has been authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function authenticated(Request $request, $user)
+    {
+        // Redirect to the intended URL or default to $redirectTo
+        return redirect()->intended($this->redirectTo);
+    }
 
 
 }
