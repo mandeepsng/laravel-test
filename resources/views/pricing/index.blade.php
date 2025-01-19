@@ -234,7 +234,7 @@
                             @guest
                                 <a href="{{ route('login') }}" class="btn btn-primary">$5.99 /month</a>
                             @else
-                                <a href="/subscription-checkout/price_1QYNFkSA6v11N8PDpyztuSMl" class="btn btn-primary">$5.99 /month</a>
+                                <a href="/subscription-checkout/price_1QigRsSFFW9BkkgshPFUlYFZ" class="btn btn-primary">$5.99 /month</a>
 
                             @endguest
                            </div>

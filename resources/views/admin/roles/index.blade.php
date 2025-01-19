@@ -45,9 +45,7 @@
                      </tr>
                      @empty
                         <tr>
-                           <td></td>
-                           <td>no data</td>
-                           <td></td>
+                           <td colspan="3" class="text-center">No plans available.</td>
                         </tr>
                      @endforelse
 
