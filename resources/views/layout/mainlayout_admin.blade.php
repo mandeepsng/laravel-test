@@ -20,7 +20,7 @@
                   <div class="row">
 
                     {{-- @if(!Route::is(['signin', 'signup', 'welcome', 'landing-sass-v1', 'test' ])) --}}
-                    @if(Route::is(['home', 'users.index', 'roles.index', 'permissions.index', 'stripe.index', 'account-profile' , 'admin.home']))
+                    @if(Route::is(['home', 'users.index', 'roles.index', 'permissions.index', 'stripe.index', 'account-profile' , 'admin.home', 'stripe.create']))
                         @include('layout.partials.sidebar_admin')
                     @endif
                     @yield('content')

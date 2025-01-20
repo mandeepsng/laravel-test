@@ -183,7 +183,7 @@ class StripeController extends Controller
         $price = Price::create([
             'product' => $product->id,
             'unit_amount' => $request->amount,
-            'currency' => 'inr',
+            'currency' => 'usd', //usd , inr
             'recurring' => [
                 'interval' => 'month', // Frequency: 'day', 'week', 'month', or 'year'
                 // 'trial_period_days' => $request->trial_days, // Add trial period days

@@ -87,11 +87,11 @@ Route::get('/subscription-checkout', function (Request $request) {
 
     // dd($request->user()->id);
     return $request->user()
-        ->newSubscription('default', 'price_1QYNFkSA6v11N8PDpyztuSMl')
+        ->newSubscription('default', 'price_1QiynQSEZ4ohhC8JpBhd6TF4')
         // ->trialDays(5)
         ->allowPromotionCodes()
         ->checkout([
-            'success_url' => route('your-success-route'),
+            'success_url' => route('checkout-success') . '?session_id={CHECKOUT_SESSION_ID}',
             'cancel_url' => route('your-cancel-route'),
             'metadata' => ['user_id' => $request->user()->id],
         ]);
