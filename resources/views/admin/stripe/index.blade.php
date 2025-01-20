@@ -41,17 +41,17 @@
                               <a class="btn btn-primary" href="{{ route('stripe.editSubscriptionPlan',$p->id) }}">Edit</a>
                            {{-- @endcan --}}
                            {{-- @can('role-delete') --}}
-                              {!! Form::open(['method' => 'DELETE','route' => ['stripe.destroy', $p->id],'style'=>'display:inline']) !!}
-                                 {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                              {!! Form::close() !!}
+                              <form action="{{ route('stripe.destroy', $p->id) }}" method="POST" style="display:inline;">
+                                 @csrf
+                                 @method('DELETE')
+                                 <button type="submit" class="btn btn-danger">Delete</button>
+                             </form>
                            {{-- @endcan --}}
                         </td>
                      </tr>
                      @empty
                         <tr>
-                           <td></td>
-                           <td>no data</td>
-                           <td></td>
+                           <td colspan="5" class="text-center">No plans available.</td>
                         </tr>
                      @endforelse
 
