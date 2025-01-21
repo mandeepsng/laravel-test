@@ -132,7 +132,7 @@ Route::get('/subscription-checkout/{price_id}', function (Request $request) {
 });
 
 
-Route::get('/checkout-success', function (Request $request) {
+Route::get('/checkout-success2', function (Request $request) {
 
     try {
         $user = Auth::user();
@@ -167,13 +167,13 @@ Route::get('/checkout-success', function (Request $request) {
         return redirect()->back()->with('error', $e->getMessage());
     }
 
-})->name('checkout-success');
+})->name('checkout-success2');
 
-// Route::get('/checkout-success', function (Request $request) {
-//     $checkoutSession = $request->user()->stripe()->checkout->sessions->retrieve($request->get('session_id'));
+Route::get('/checkout-success', function (Request $request) {
+    $checkoutSession = $request->user()->stripe()->checkout->sessions->retrieve($request->get('session_id'));
  
-//     return view('checkout.success', ['checkoutSession' => $checkoutSession]);
-// })->name('checkout-success');
+    return view('success-page', ['checkoutSession' => $checkoutSession]);
+})->name('checkout-success');
 
 Route::get('/checkout-cancel', function () {
     return view('checkout.cancel');
