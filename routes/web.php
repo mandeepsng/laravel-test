@@ -44,7 +44,8 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
     Route::prefix('admin')->group(function () {
 
-        Route::get('/home', function () { return view('admin.dashboard.home'); })->name('admin.home');
+        Route::get('/home', [UserController::class, 'home_user'] )->name('admin.home');
+
         // Route::get('/user-list', function () { return view('admin.user.list'); })->name('user.list');
         Route::resource('users', UserController::class);
         Route::resource('permissions', PermissionController::class);
@@ -121,7 +122,7 @@ Route::get('/subscription-checkout/{price_id}', function (Request $request) {
     // dd($request->user()->id);
     return $request->user()
         ->newSubscription('default', $request->price_id)
-        // ->trialDays(5)
+        ->trialDays(5)
         ->allowPromotionCodes()
         ->checkout([
             'success_url' => route('checkout-success') . '?session_id={CHECKOUT_SESSION_ID}',
@@ -180,6 +181,15 @@ Route::get('/checkout-cancel', function () {
 })->name('checkout-cancel');
 
 
+// billing portal
+// Route::get('/billing-portal', function (Request $request) {
+//     return $request->user()->redirectToBillingPortal();
+// });
+
+Route::get('/billing-portal', function (Request $request) {
+    return $request->user()->redirectToBillingPortal(route('billing'));
+});
+
 
 Route::post('/user/subscribe', function (Request $request) {
     $request->user()->newSubscription(
@@ -196,7 +206,7 @@ Route::post('/user/subscribe', function (Request $request) {
 Route::get('/billing', function (Request $request) {
     $user = $request->user();
 
-    dd($user);
+    // dd($user);
 
     // Ensure the user has a Stripe customer ID
     if (!$user->stripe_id) {
