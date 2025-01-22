@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController, StripeController, WebhookController, PlanController };
+use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController, StripeController, WebhookController, PlanController, BlogPostController };
 use App\Http\Controllers\Auth\{RegisterController , LoginController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -57,10 +57,6 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('user.edit');
 
 
-        // Route::get('/user/{id}', function () { return view('admin.user.edit'); })->name('user.edit');
-        // Route::get('/create-user', function () { return view('admin.user.create'); })->name('user.create');
-
-
         Route::resource('roles', RoleController::class);
         Route::get('/roles/json', [RoleController::class, 'rolejson'])->name('roles.json');
         // Route::get('/permissions', [RoleController::class, 'permissions'])->name('roles.permissions');
@@ -74,6 +70,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::post('/stripe/updateSubscriptionPlan/{id}', [StripeController::class, 'updateSubscriptionPlan'])->name('stripe.updateSubscriptionPlan');
         // Route::put('/subscription-plans/{id}', [SubscriptionPlanController::class, 'updateSubscriptionPlan'])->name('subscription-plans.update');
 
+        Route::resource('blog', BlogPostController::class);
 
     });
 
@@ -119,7 +116,6 @@ Route::get('/check-subscription', function (Request $request) {
 
 Route::get('/subscription-checkout/{price_id}', function (Request $request) {
 
-    // dd($request->user()->id);
     return $request->user()
         ->newSubscription('default', $request->price_id)
         ->trialDays(5)
@@ -132,43 +128,6 @@ Route::get('/subscription-checkout/{price_id}', function (Request $request) {
         
 });
 
-
-Route::get('/checkout-success2', function (Request $request) {
-
-    try {
-        $user = Auth::user();
-        $sessionId = $request->get('session_id');
-        
-        if (!$sessionId) {
-            throw new \Exception('No session ID provided');
-        }
-        
-        // Retrieve the Stripe Checkout Session
-        $session = \Stripe\Checkout\Session::retrieve($sessionId);
-        
-        dd($session);
-        
-        // Retrieve the PaymentIntent ID from the session
-        $paymentIntentId = $session->payment_intent;
-        
-        // Retrieve the PaymentIntent to get the PaymentMethod ID
-        $paymentIntent = \Stripe\PaymentIntent::retrieve($paymentIntentId);
-        $paymentMethodId = $paymentIntent->payment_method;
-        
-        // Attach the PaymentMethod to the user (if not already)
-        $user->addPaymentMethod($paymentMethodId);
-
-        // Optionally, set the payment method as default
-        $user->updateDefaultPaymentMethod($paymentMethodId);
-        
-        // Handle success response (e.g., redirect to subscriptions page)
-        return redirect()->route('subscriptions')->with('success', 'Subscription activated successfully!');
-        
-    } catch (\Exception $e) {
-        return redirect()->back()->with('error', $e->getMessage());
-    }
-
-})->name('checkout-success2');
 
 Route::get('/checkout-success', function (Request $request) {
     $checkoutSession = $request->user()->stripe()->checkout->sessions->retrieve($request->get('session_id'));
