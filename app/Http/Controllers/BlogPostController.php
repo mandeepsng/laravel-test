@@ -42,6 +42,7 @@ class BlogPostController extends Controller
     // Show the form for editing the specified blog post
     public function edit($id)
     {
+
         $blogPost = BlogPost::findOrFail($id);
         return view('admin.blog.edit', compact('blogPost'));
     }
