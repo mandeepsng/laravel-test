@@ -24,55 +24,8 @@
                   <div class="col-lg-6 offset-lg-1 col-md-6 col-12" data-cue="slideInRight">
                      <div class="position-relative rellax" data-rellax-percentage="1" data-rellax-speed="0.8" data-disable-parallax-down="md">
                         <figure>
-                           <img src="assets/images/landings/saas/saas-img-1.jpg" alt="landing" class="img-fluid rounded-4" />
+                           <img src="assets/images/landings/saas/workflow-img.jpg" alt="landing" class="img-fluid rounded-4" />
                         </figure>
-                        <div class="flex-column position-absolute bottom-0 mx-lg-4 mb-4 d-flex align-items-center justify-content-between ms-2">
-                           <div
-                              class="w-100 d-flex align-items-center p-2 justify-content-between bg-white mb-2 rounded-4 ms-2 ms-lg-7 rellax"
-                              data-rellax-percentage="0.4"
-                              data-rellax-speed="0.4"
-                              data-disable-parallax-down="md">
-                              <div class="d-flex align-items-center">
-                                 <img src="assets/images/avatar/avatar-1.jpg" alt="avatar" class="avatar avatar-sm rounded-circle me-2" />
-                                 <h6 class="mb-0 text-truncate">Jitu Doe</h6>
-                              </div>
-                              <div>
-                                 <div class="ms-lg-7 ps-lg-6">
-                                    <div class="bg-primary bg-opacity-25 fs-6 text-primary rounded-pill badge">Designer</div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div
-                              class="w-100 d-flex align-items-center p-2 justify-content-between bg-white mb-2 rounded-4 rellax"
-                              data-rellax-percentage="0.5"
-                              data-rellax-speed="0.5"
-                              data-disable-parallax-down="md">
-                              <div class="d-flex align-items-center">
-                                 <img src="assets/images/avatar/avatar-2.jpg" alt="avatar" class="avatar avatar-sm rounded-circle me-2" />
-                                 <h6 class="mb-0 text-truncate">Anita Par</h6>
-                              </div>
-                              <div>
-                                 <div class="ms-lg-7 ps-lg-6">
-                                    <div class="bg-info bg-opacity-25 text-info rounded-pill badge fs-6">UI Developer</div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div
-                              class="w-100 d-flex align-items-center p-2 justify-content-between bg-white mb-2 rounded-4 rellax ms-4 ms-lg-7"
-                              data-rellax-percentage="0.6"
-                              data-rellax-speed="0.6"
-                              data-disable-parallax-down="md">
-                              <div class="d-flex align-items-center">
-                                 <img src="assets/images/avatar/avatar-4.jpg" alt="avatar" class="avatar avatar-sm rounded-circle me-2" />
-                                 <h6 class="mb-0 text-truncate">Sandip</h6>
-                              </div>
-                              <div>
-                                 <div class="ms-lg-7 ps-lg-6">
-                                    <div class="bg-success bg-opacity-25 text-success rounded-pill badge fs-6">Stack Developer</div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
                      </div>
                   </div>
                </div>
