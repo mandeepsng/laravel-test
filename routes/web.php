@@ -44,7 +44,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
     Route::prefix('admin')->group(function () {
 
-        Route::get('/home', function () { return view('admin.dashboard.home'); })->name('home');
+        Route::get('/home', function () { return view('admin.dashboard.home'); })->name('admin.home');
         // Route::get('/user-list', function () { return view('admin.user.list'); })->name('user.list');
         Route::resource('users', UserController::class);
         Route::resource('permissions', PermissionController::class);
@@ -67,6 +67,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
         Route::get('/stripe', [StripeController::class, 'index'])->name('stripe.index');
         Route::get('/stripe/create', [StripeController::class, 'create'])->name('stripe.create');
+        Route::delete('/stripe/{id}', [StripeController::class, 'destroy'])->name('stripe.destroy');
         Route::get('/stripe/editSubscriptionPlan/{id}', [StripeController::class, 'editSubscriptionPlan'])->name('stripe.editSubscriptionPlan');
         Route::post('/stripe/createPlan', [StripeController::class, 'createSubscriptionPlan'])->name('stripe.createPlan');
         Route::post('/stripe/updateSubscriptionPlan/{id}', [StripeController::class, 'updateSubscriptionPlan'])->name('stripe.updateSubscriptionPlan');
@@ -86,11 +87,11 @@ Route::get('/subscription-checkout', function (Request $request) {
 
     // dd($request->user()->id);
     return $request->user()
-        ->newSubscription('default', 'price_1QYNFkSA6v11N8PDpyztuSMl')
+        ->newSubscription('default', 'price_1QiynQSEZ4ohhC8JpBhd6TF4')
         // ->trialDays(5)
         ->allowPromotionCodes()
         ->checkout([
-            'success_url' => route('your-success-route'),
+            'success_url' => route('checkout-success') . '?session_id={CHECKOUT_SESSION_ID}',
             'cancel_url' => route('your-cancel-route'),
             'metadata' => ['user_id' => $request->user()->id],
         ]);
@@ -258,6 +259,7 @@ Route::get('/pricing', [PlanController::class, 'index'])->name('pricing');
 // Route::get('/404-error', function () {
 //     return view('404-error');
 // });
+Route::get('/account-home', function () { return view('account-home'); })->name('account-home');
 
 Route::get('/404-error', function () { return view('404-error'); })->name('404-error');
 Route::get('/about-v2', function () { return view('about-v2'); })->name('about-v2');
@@ -266,7 +268,6 @@ Route::get('/account-app-integration', function () { return view('account-app-in
 Route::get('/account-appearance', function () { return view('account-appearance'); })->name('account-appearance');
 Route::get('/account-billing', function () { return view('account-billing'); })->name('account-billing');
 Route::get('/account-device-session', function () { return view('account-device-session'); })->name('account-device-session');
-Route::get('/account-home', function () { return view('account-home'); })->name('account-home');
 Route::get('/account-notification', function () { return view('account-notification'); })->name('account-notification');
 Route::get('/account-profile', function () { return view('account-profile'); })->name('account-profile');
 Route::get('/account-security', function () { return view('account-security'); })->name('account-security');

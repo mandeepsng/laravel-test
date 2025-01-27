@@ -1,7 +1,7 @@
 @extends('layout.mainlayout_admin')
 
 @section('content')
-    
+
    <div class="col-lg-9 col-md-8">
       <div class="mb-4">
          <h1 class="mb-0 h3">Hey, Jitu! Welcome to Block.</h1>

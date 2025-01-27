@@ -31,15 +31,22 @@ class StripeController extends Controller
     }
 
 
+    //create destroy function for stripe
     public function destroy($id): RedirectResponse
     {
-        if($id == 1){
-            return redirect()->route('roles.index')
-                        ->with('message','Super Admin cannot deleted!');
+         // Ensure the record exists before attempting to delete
+        $subscriptionPlan = SubscriptionPlan::find($id);
+
+        if (!$subscriptionPlan) {
+            return redirect()->route('stripe.index')
+                ->with('error', 'Subscription plan not found.');
         }
-        DB::table("roles")->where('id',$id)->delete();
-        return redirect()->route('roles.index')
-                        ->with('message','Role deleted successfully');
+
+        $subscriptionPlan->delete();
+
+        return redirect()->route('stripe.index')
+            ->with('success', 'Subscription plan deleted successfully.');
+
     }
     
 
@@ -166,7 +173,7 @@ class StripeController extends Controller
     // Function to create a new subscription plan in Stripe
     public function createSubscriptionPlan(Request $request)
     {
-        Stripe::setApiKey(env('STRIPED_KEY_SECRET'));
+        Stripe::setApiKey(env('STRIPE_SECRET'));
 
         $product = Product::create([
             'name' => $request->plan_name,
@@ -176,7 +183,7 @@ class StripeController extends Controller
         $price = Price::create([
             'product' => $product->id,
             'unit_amount' => $request->amount,
-            'currency' => 'inr',
+            'currency' => 'usd', //usd , inr
             'recurring' => [
                 'interval' => 'month', // Frequency: 'day', 'week', 'month', or 'year'
                 // 'trial_period_days' => $request->trial_days, // Add trial period days
@@ -222,7 +229,7 @@ class StripeController extends Controller
         try {
             // Set your Stripe API key
             // Stripe::setApiKey(config('cashier.secret'));
-            Stripe::setApiKey(env('STRIPED_KEY_SECRET'));
+            Stripe::setApiKey(env('STRIPE_SECRET'));
 
             // Step 1: Create a product
             $product = Product::create([

@@ -39,7 +39,7 @@
     <div class="collapse d-md-block" id="collapseAccountMenu">
        <ul class="nav flex-column nav-account">
           <li class="nav-item">
-             <a class="nav-link" href="{{ route('home') }}">
+             <a class="nav-link" href="{{ route('admin.home') }}">
                 <i class="align-bottom bx bx-home"></i>
                 <span class="ms-2">Home</span>
              </a>

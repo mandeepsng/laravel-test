@@ -407,7 +407,7 @@
                               <a href="{{ route('signup')}}" class="btn btn-primary">{{ __('Register') }}</a>
                         @endif
                   @else
-                        <a class="btn btn-primary" href="{{ route('logout') }}"
+                        <a class="btn btn-primary me-2" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                           document.getElementById('logout-form').submit();">
                               {{ __('Logout') }}
@@ -416,6 +416,11 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                               @csrf
                         </form>
+
+                        <a class="btn btn-primary" href="{{ route('admin.home') }}">
+                              {{ __('Dashboard') }}
+                        </a>
+                  
                   @endguest
 
                    {{-- <a href="{{ route('signin')}}" class="btn btn-light mx-2">Login</a> --}}
