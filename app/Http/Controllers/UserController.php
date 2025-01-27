@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\{User, SubscriptionPlan};
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
 
 
 class UserController extends Controller
@@ -212,6 +213,32 @@ class UserController extends Controller
         ], 200);
 
         // return redirect()->route('users.index')->with('success', 'User deleted successfully!');
+    }
+
+
+    public function home_user()
+    {
+        // Get all subscription plans
+        $plans = SubscriptionPlan::pluck('name', 'stripe_price_id')->all();
+
+        // Get the current subscription
+        $subscription = Auth::user()->subscription('default');
+
+        // Handle the case where the user does not have an active subscription
+        if ($subscription) {
+            // Map the subscription's Stripe price ID to a plan name
+            $planName = $plans[$subscription->stripe_price] ?? 'Unknown Plan';
+
+                // Retrieve subscription dates
+            $trialEndsAt = $subscription->trial_ends_at; // Trial end date
+            $endsAt = $subscription->ends_at; // End date if canceled
+        } else {
+            $planName = 'No Active Plan';
+            $trialEndsAt = null;
+            $endsAt = null;
+        }
+
+        return view('admin.dashboard.home', compact('plans', 'subscription', 'planName',  'trialEndsAt', 'endsAt'));
     }
 
 }

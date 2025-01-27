@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController, StripeController, WebhookController, PlanController };
+use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController, StripeController, WebhookController, PlanController, BlogPostController };
 use App\Http\Controllers\Auth\{RegisterController , LoginController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -44,7 +44,8 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 
     Route::prefix('admin')->group(function () {
 
-        Route::get('/home', function () { return view('admin.dashboard.home'); })->name('admin.home');
+        Route::get('/home', [UserController::class, 'home_user'] )->name('admin.home');
+
         // Route::get('/user-list', function () { return view('admin.user.list'); })->name('user.list');
         Route::resource('users', UserController::class);
         Route::resource('permissions', PermissionController::class);
@@ -54,10 +55,6 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         // Route::get('/userjson', function () { return view('admin.user.list'); })->name('user.list');
         Route::get('/userjson', [UserController::class, 'userjson'])->name('userjson');
         Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('user.edit');
-
-
-        // Route::get('/user/{id}', function () { return view('admin.user.edit'); })->name('user.edit');
-        // Route::get('/create-user', function () { return view('admin.user.create'); })->name('user.create');
 
 
         Route::resource('roles', RoleController::class);
@@ -73,6 +70,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::post('/stripe/updateSubscriptionPlan/{id}', [StripeController::class, 'updateSubscriptionPlan'])->name('stripe.updateSubscriptionPlan');
         // Route::put('/subscription-plans/{id}', [SubscriptionPlanController::class, 'updateSubscriptionPlan'])->name('subscription-plans.update');
 
+        Route::resource('blog', BlogPostController::class);
 
     });
 
@@ -118,10 +116,9 @@ Route::get('/check-subscription', function (Request $request) {
 
 Route::get('/subscription-checkout/{price_id}', function (Request $request) {
 
-    // dd($request->user()->id);
     return $request->user()
         ->newSubscription('default', $request->price_id)
-        // ->trialDays(5)
+        ->trialDays(5)
         ->allowPromotionCodes()
         ->checkout([
             'success_url' => route('checkout-success') . '?session_id={CHECKOUT_SESSION_ID}',
@@ -133,52 +130,24 @@ Route::get('/subscription-checkout/{price_id}', function (Request $request) {
 
 
 Route::get('/checkout-success', function (Request $request) {
-
-    try {
-        $user = Auth::user();
-        $sessionId = $request->get('session_id');
-        
-        if (!$sessionId) {
-            throw new \Exception('No session ID provided');
-        }
-        
-        // Retrieve the Stripe Checkout Session
-        $session = \Stripe\Checkout\Session::retrieve($sessionId);
-        
-        dd($session);
-        
-        // Retrieve the PaymentIntent ID from the session
-        $paymentIntentId = $session->payment_intent;
-        
-        // Retrieve the PaymentIntent to get the PaymentMethod ID
-        $paymentIntent = \Stripe\PaymentIntent::retrieve($paymentIntentId);
-        $paymentMethodId = $paymentIntent->payment_method;
-        
-        // Attach the PaymentMethod to the user (if not already)
-        $user->addPaymentMethod($paymentMethodId);
-
-        // Optionally, set the payment method as default
-        $user->updateDefaultPaymentMethod($paymentMethodId);
-        
-        // Handle success response (e.g., redirect to subscriptions page)
-        return redirect()->route('subscriptions')->with('success', 'Subscription activated successfully!');
-        
-    } catch (\Exception $e) {
-        return redirect()->back()->with('error', $e->getMessage());
-    }
-
-})->name('checkout-success');
-
-// Route::get('/checkout-success', function (Request $request) {
-//     $checkoutSession = $request->user()->stripe()->checkout->sessions->retrieve($request->get('session_id'));
+    $checkoutSession = $request->user()->stripe()->checkout->sessions->retrieve($request->get('session_id'));
  
-//     return view('checkout.success', ['checkoutSession' => $checkoutSession]);
-// })->name('checkout-success');
+    return view('success-page', ['checkoutSession' => $checkoutSession]);
+})->name('checkout-success');
 
 Route::get('/checkout-cancel', function () {
     return view('checkout.cancel');
 })->name('checkout-cancel');
 
+
+// billing portal
+// Route::get('/billing-portal', function (Request $request) {
+//     return $request->user()->redirectToBillingPortal();
+// });
+
+Route::get('/billing-portal', function (Request $request) {
+    return $request->user()->redirectToBillingPortal(route('billing'));
+});
 
 
 Route::post('/user/subscribe', function (Request $request) {
@@ -196,7 +165,7 @@ Route::post('/user/subscribe', function (Request $request) {
 Route::get('/billing', function (Request $request) {
     $user = $request->user();
 
-    dd($user);
+    // dd($user);
 
     // Ensure the user has a Stripe customer ID
     if (!$user->stripe_id) {

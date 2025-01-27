@@ -87,6 +87,12 @@
                 <span class="ms-2">Stripe</span>
              </a>
           </li>
+          <li class="nav-item">
+             <a class="nav-link" href="{{ route('blog.index') }}">
+                <i class="align-bottom bx bx-credit-card-front"></i>
+                <span class="ms-2">Blogs</span>
+             </a>
+          </li>
           {{-- <li class="nav-item">
              <a class="nav-link" href="account-team">
                 <i class="align-bottom bx bx-user-plus"></i>
