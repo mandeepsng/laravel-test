@@ -44,11 +44,11 @@
                <div class="bg-light-subtle p-md-4 p-2 rounded-4 border scene" data-relative-input="true">
                   <div data-depth="0.09">
                      <figure data-cues="zoomIn" data-delay="900">
-                        <img src="assets/images/landings/saas/app-screen-1.jpg" alt="landing" class="w-100 rounded-4 shadow border" />
+                        <img src="assets/images/landings/saas/admin-dashboard.webp" alt="landing" class="w-100 rounded-4 shadow border" />
                      </figure>
                   </div>
                </div>
-               <div class="position-absolute top-50 mt-n10 start-0 ms-n4 d-none d-lg-block">
+               <!-- <div class="position-absolute top-50 mt-n10 start-0 ms-n4 d-none d-lg-block">
                   <div class="badge text-bg-info text-white-stablepx-3 py-2 fs-6 rounded-pill">Developer</div>
                   <div class="position-absolute top-0 end-0 mt-n3 me-n3">
                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +87,7 @@
                            fill="#8B3DFF" />
                      </svg>
                   </div>
-               </div>
+               </div> -->
             </div>
          </div>
       </div>

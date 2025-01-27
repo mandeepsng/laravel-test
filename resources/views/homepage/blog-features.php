@@ -11,31 +11,8 @@
             <div class="col-lg-6 col-md-6 col-12 order-lg-2 order-1" data-cue="slideInLeft">
                 <div class="position-relative rellax mb-7 mb-lg-0" data-rellax-percentage="1" data-rellax-speed="0.8" data-disable-parallax-down="md">
                     <figure>
-                        <img src="assets/images/landings/saas/saas-img-2.jpg" alt="landing" class="img-fluid rounded-4" />
+                        <img src="assets/images/landings/saas/admin-dashboard.webp" alt="landing" class="img-fluid rounded-4" />
                     </figure>
-                    <div class="d-flex flex-column position-absolute bottom-0 ms-4 mb-4">
-                        <img
-                            src="assets/images/avatar/avatar-1.jpg"
-                            alt="avatar"
-                            class="avatar avatar-lg rounded-circle border border-white border-2 mb-2 rellax"
-                            data-rellax-percentage="0.4"
-                            data-rellax-speed="0.4"
-                            data-disable-parallax-down="md" />
-                        <img
-                            src="assets/images/avatar/avatar-2.jpg"
-                            alt="avatar"
-                            class="avatar avatar-lg rounded-circle border border-white border-2 mb-2 rellax"
-                            data-rellax-percentage="0.5"
-                            data-rellax-speed="0.5"
-                            data-disable-parallax-down="md" />
-                        <img
-                            src="assets/images/avatar/avatar-3.jpg"
-                            alt="avatar"
-                            class="avatar avatar-lg rounded-circle border border-white border-2 rellax"
-                            data-rellax-percentage="0.6"
-                            data-rellax-speed="0.6"
-                            data-disable-parallax-down="md" />
-                    </div>
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1 col-md-6 col-12 order-lg-2" data-cue="slideInRight">
@@ -188,35 +165,11 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-5 offset-lg-1 col-md-6 col-12 order-lg-2" data-cue="slideInRight">
-               
+            <div class="col-lg-5 offset-lg-1 col-md-6 col-12 order-lg-2" data-cue="slideInRight">               
                 <div class="position-relative rellax mb-7 mb-lg-0" data-rellax-percentage="1" data-rellax-speed="0.8" data-disable-parallax-down="md">
                     <figure>
-                        <img src="assets/images/landings/saas/saas-img-2.jpg" alt="landing" class="img-fluid rounded-4" />
+                        <img src="assets/images/landings/saas/Seo-image.jpeg" alt="landing" class="img-fluid rounded-4" />
                     </figure>
-                    <div class="d-flex flex-column position-absolute bottom-0 ms-4 mb-4">
-                        <img
-                            src="assets/images/avatar/avatar-1.jpg"
-                            alt="avatar"
-                            class="avatar avatar-lg rounded-circle border border-white border-2 mb-2 rellax"
-                            data-rellax-percentage="0.4"
-                            data-rellax-speed="0.4"
-                            data-disable-parallax-down="md" />
-                        <img
-                            src="assets/images/avatar/avatar-2.jpg"
-                            alt="avatar"
-                            class="avatar avatar-lg rounded-circle border border-white border-2 mb-2 rellax"
-                            data-rellax-percentage="0.5"
-                            data-rellax-speed="0.5"
-                            data-disable-parallax-down="md" />
-                        <img
-                            src="assets/images/avatar/avatar-3.jpg"
-                            alt="avatar"
-                            class="avatar avatar-lg rounded-circle border border-white border-2 rellax"
-                            data-rellax-percentage="0.6"
-                            data-rellax-speed="0.6"
-                            data-disable-parallax-down="md" />
-                    </div>
                 </div>
             </div>   
         </div>
@@ -224,31 +177,9 @@
             <div class="col-lg-6 col-md-6 col-12 order-lg-2 order-1" data-cue="slideInLeft">
                 <div class="position-relative rellax mb-7 mb-lg-0" data-rellax-percentage="1" data-rellax-speed="0.8" data-disable-parallax-down="md">
                     <figure>
-                        <img src="assets/images/landings/saas/saas-img-2.jpg" alt="landing" class="img-fluid rounded-4" />
+                        <img src="assets/images/landings/saas/website-theme.jpg" alt="landing" class="img-fluid rounded-4" />
                     </figure>
-                    <div class="d-flex flex-column position-absolute bottom-0 ms-4 mb-4">
-                        <img
-                            src="assets/images/avatar/avatar-1.jpg"
-                            alt="avatar"
-                            class="avatar avatar-lg rounded-circle border border-white border-2 mb-2 rellax"
-                            data-rellax-percentage="0.4"
-                            data-rellax-speed="0.4"
-                            data-disable-parallax-down="md" />
-                        <img
-                            src="assets/images/avatar/avatar-2.jpg"
-                            alt="avatar"
-                            class="avatar avatar-lg rounded-circle border border-white border-2 mb-2 rellax"
-                            data-rellax-percentage="0.5"
-                            data-rellax-speed="0.5"
-                            data-disable-parallax-down="md" />
-                        <img
-                            src="assets/images/avatar/avatar-3.jpg"
-                            alt="avatar"
-                            class="avatar avatar-lg rounded-circle border border-white border-2 rellax"
-                            data-rellax-percentage="0.6"
-                            data-rellax-speed="0.6"
-                            data-disable-parallax-down="md" />
-                    </div>
+                  
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1 col-md-6 col-12 order-lg-2" data-cue="slideInRight">
