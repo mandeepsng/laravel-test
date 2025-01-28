@@ -16,7 +16,7 @@
                 <ul class="navbar-nav mx-auto align-items-lg-center">
                    <li><a class="dropdown-item" href="{{ route('pricing')}}">Pricing</a></li>
                    <li><a class="dropdown-item" href="{{ route('landing-sass-v1')}}">Reviews</a></li>
-                   <li><a class="dropdown-item" href="{{ route('landing-sass-v1')}}">FAQ</a></li>
+                   <li><a class="dropdown-item" href="{{ route('faq')}}">FAQ</a></li>
                    
                    @guest 
                    {{-- <li class="nav-item dropdown">
