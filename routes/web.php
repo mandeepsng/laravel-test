@@ -31,6 +31,10 @@ Route::get('/', function () {
 
 // Auth::routes();
 Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/faq', function () {return view('frontend.faq');})->name('faq');
+Route::get('/about', function () {return view('frontend.about');})->name('about');
+Route::get('/contact', function () { return view('frontend.contact'); })->name('contact');
+
 Route::post('/register', [RegisterController::class, 'store'])->name('register');
 
 
@@ -232,7 +236,6 @@ Route::get('/account-home', function () { return view('account-home'); })->name(
 
 Route::get('/404-error', function () { return view('404-error'); })->name('404-error');
 Route::get('/about-v2', function () { return view('about-v2'); })->name('about-v2');
-Route::get('/about', function () { return view('about'); })->name('about');
 Route::get('/account-app-integration', function () { return view('account-app-integration'); })->name('account-app-integration');
 Route::get('/account-appearance', function () { return view('account-appearance'); })->name('account-appearance');
 Route::get('/account-billing', function () { return view('account-billing'); })->name('account-billing');

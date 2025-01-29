@@ -11,7 +11,7 @@
       <!--Subscription section end-->
 
       <!--Features start-->
-      @include('homepage.features')
+      {{-- @include('homepage.features') --}}
       <!--Features end-->
 
       @include('homepage.blog-features')
@@ -23,15 +23,15 @@
       <!--Visualize & plan end-->
 
       <!--Testimonial start-->
-      @include('homepage.testimonial')
+      {{-- @include('homepage.testimonial') --}}
       <!--Testimonial end-->
 
       <!--Integrate apps start-->
-      @include('homepage.integrate')
+      {{-- @include('homepage.integrate') --}}
       <!--Integrate apps end-->
 
       <!--Call to action start-->
-      @include('homepage.newsletter')
+      {{-- @include('homepage.newsletter') --}}
       <!--Call to action end-->
 
 @endsection
