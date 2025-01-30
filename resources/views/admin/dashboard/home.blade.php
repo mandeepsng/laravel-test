@@ -61,21 +61,21 @@
                   Subscription ends at: {{ $endsAt->format('d M, Y') }}
                @endif
             </p>
+            <div class="mb-5">
+               <a href="{{ url('billing-portal') }}">Manage Subscription and Token Packs</a>
+            </div>
          @else
             <p class="mb-0 fs-6">You are not subscribed to any plan.</p>
          @endif
       </div>
       
 
-      <div class="mb-5">
-         <a href="{{ url('billing-portal') }}">Manage Subscription and Token Packs</a>
-      </div>
 
-      <div class="mb-5">
+      {{-- <div class="mb-5">
             <a href="{{ route('billing') }}">
                Billing
          </a>
-      </div>
+      </div> --}}
 
       
       

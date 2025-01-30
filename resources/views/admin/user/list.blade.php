@@ -9,11 +9,6 @@
       <div class="col-12">
          <a href="{{ route('users.create') }}" class="btn btn-primary" type="submit">Create</a>
          
-         <a href="{{ route('billing', ['plan' => 2, 'shop' => Auth::user()->name]) }}">
-            <button style="padding:15px 25px;border:none;color:#007F5F;font- 
-              weight:700;font-size:20px;border-radius:10px;">Choose Plan</button>
-          </a>
-          
       </div>
 
       <div class="card border-0 mb-4 shadow-sm">

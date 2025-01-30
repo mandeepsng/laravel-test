@@ -64,7 +64,7 @@
              </a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href="{{ route('account-profile') }}">
+             <a class="nav-link" href="{{ route('user.profile.edit') }}">
                 <i class="align-bottom bx bx-user"></i>
                 <span class="ms-2">Profile</span>
              </a>
