@@ -176,6 +176,9 @@ class UserController extends Controller
     {
         $roles = Role::pluck('name','name')->all();
         $userRole = $user->roles->pluck('name','name')->all();
+
+
+        // dd($userRole);
     
         return view('admin.user.edit',compact('user','roles','userRole'));
 
@@ -187,7 +190,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-
+        // dd($request->all());
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email,' . $user->id,
@@ -240,5 +243,15 @@ class UserController extends Controller
 
         return view('admin.dashboard.home', compact('plans', 'subscription', 'planName',  'trialEndsAt', 'endsAt'));
     }
+
+
+
+    public function edit_profile()
+    {
+        $user = Auth::user();
+        // dd($user);
+        return view('admin.profile.edit', compact('user'));
+    }
+
 
 }
