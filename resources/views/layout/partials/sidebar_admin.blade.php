@@ -9,7 +9,7 @@
 
     <!-- Navbar -->
     <div class="mb-4 text-center text-md-start">
-       <a href="#" class="text-reset">
+       <a href="{{ route('user.profile.edit') }} " class="text-reset">
           <span>
              <span>View site / profile</span>
           </span>
