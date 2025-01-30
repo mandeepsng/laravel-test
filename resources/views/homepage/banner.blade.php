@@ -44,7 +44,7 @@
                <div class="bg-light-subtle p-md-4 p-2 rounded-4 border scene" data-relative-input="true">
                   <div data-depth="0.09">
                      <figure data-cues="zoomIn" data-delay="900">
-                        <img src="assets/images/landings/saas/admin-dashboard.webp" alt="landing" class="w-100 rounded-4 shadow border" />
+                        <img src="assets/images/landings/saas/dashbaord-image-png.png" alt="landing" class="w-100 rounded-4 shadow border" />
                      </figure>
                   </div>
                </div>
