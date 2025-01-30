@@ -7,7 +7,7 @@
              <div class="mb-7 mb-xl-0">
                 <div class="mb-4">
                    <a href="#">
-                      <img src="assets/images/logo/logo.svg" alt="logo" class="text-inverse" />
+                      <img src="assets/images/logo/saas-logo.png" alt="logo" class="text-inverse" />
                    </a>
                 </div>
                 <p class="mb-5">Build faster websites with Block multipurpose bootstrap 5 template. Duis imper diet mollis leo, quis ultrices erat ultrices simple dummy .</p>
