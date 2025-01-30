@@ -12,7 +12,7 @@
                 </div>
                 <p class="mb-5">Build faster websites with Block multipurpose bootstrap 5 template. Duis imper diet mollis leo, quis ultrices erat ultrices simple dummy .</p>
 
-                <form class="needs-validation" novalidate>
+                {{-- <form class="needs-validation" novalidate>
                    <h5 class="mb-3">Subscribe to our newsletter</h5>
                    <div class="row g-2">
                       <div class="col-lg-9 col-8">
@@ -26,7 +26,7 @@
                          </div>
                       </div>
                    </div>
-                </form>
+                </form> --}}
              </div>
           </div>
           <div class="offset-xxl-1 col-xxl-6 col-lg-6 offset-md-1 col-md-4">

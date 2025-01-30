@@ -59,6 +59,7 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         // Route::get('/userjson', function () { return view('admin.user.list'); })->name('user.list');
         Route::get('/userjson', [UserController::class, 'userjson'])->name('userjson');
         Route::get('/edit-user/{id}', [UserController::class, 'edit'])->name('user.edit');
+        Route::get('/my-profile', [UserController::class, 'edit_profile'])->name('user.profile.edit');
 
 
         Route::resource('roles', RoleController::class);
