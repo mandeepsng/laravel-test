@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController, StripeController, WebhookController, PlanController, BlogPostController };
+use App\Http\Controllers\{HomeController, ShopifyAppController, UserController, RoleController, PermissionController, StripeController, WebhookController, PlanController, BlogPostController, OrdersController };
 use App\Http\Controllers\Auth\{RegisterController , LoginController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -54,6 +54,8 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         Route::resource('users', UserController::class);
         Route::resource('permissions', PermissionController::class);
 
+
+        Route::get('/order-history', [OrdersController::class, 'orderHistory'])->name('order.history');
 
 
         // Route::get('/userjson', function () { return view('admin.user.list'); })->name('user.list');

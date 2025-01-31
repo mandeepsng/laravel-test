@@ -39,6 +39,9 @@
     <div class="collapse d-md-block" id="collapseAccountMenu">
        <ul class="nav flex-column nav-account">
           <li class="nav-item">
+                <span class="ms-2">Admin Section</span>
+          </li>
+          <li class="nav-item">
              <a class="nav-link" href="{{ route('admin.home') }}">
                 <i class="align-bottom bx bx-home"></i>
                 <span class="ms-2">Home</span>
@@ -129,6 +132,21 @@
                 <span class="ms-2">Appearance</span>
              </a>
           </li> --}}
+
+          <li class="nav-item">
+            <span class="ms-2">User Section</span>
+         </li>
+
+         <li class="nav-item">
+             <a class="nav-link" href="{{ route('order.history') }}">
+                <i class="align-bottom bx bx-palette"></i>
+                <span class="ms-2">Orders History</span>
+             </a>
+          </li>
+
+
+
+
           <li class="nav-item">
              
 
