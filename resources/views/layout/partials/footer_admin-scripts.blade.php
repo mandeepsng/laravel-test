@@ -7,10 +7,15 @@
              <div class="mb-7 mb-xl-0">
                 <div class="mb-4">
                    <a href="#">
-                      <img src="assets/images/logo/logo.svg" alt="logo" class="text-inverse" />
+                      <img src="assets/images/logo/saas-png-logo.png" alt="logo" class="text-inverse" />
                    </a>
                 </div>
-                <p class="mb-5">Build faster websites with Block multipurpose bootstrap 5 template. Duis imper diet mollis leo, quis ultrices erat ultrices simple dummy .</p>
+                <p class="mb-5">
+                  Build faster websites with the Block multipurpose Bootstrap template. Leverage its versatile components 
+                  to create stunning sites that cater to various needs, 
+                  from personal blogs to corporate portfolios.
+
+                </p>
 
                 {{-- <form class="needs-validation" novalidate>
                    <h5 class="mb-3">Subscribe to our newsletter</h5>

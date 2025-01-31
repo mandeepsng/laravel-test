@@ -2,7 +2,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light w-100">
        <div class="container px-3">
-          <a class="navbar-brand" href="{{ route('welcome')}}"><img src="assets/images/logo/logo.svg" alt /></a>
+          <a class="navbar-brand" href="{{ route('welcome')}}"><img src="assets/images/logo/saas-png-logo.png" alt /></a>
           <button class="navbar-toggler offcanvas-nav-btn" type="button">
              <i class="bi bi-list"></i>
           </button>
