@@ -31,12 +31,12 @@
                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-4 4.5a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.08-1.04l1.94 2.02 3.546-3.94z"/>
                         </svg>
                     </div>
-                     <h1 class="mb-1">OTP Verification</h1>
+                     <h1 class="mb-1">Order Success</h1>
                      <p class="mb-0">
                         We sent invoice to
                         <a href="#" class="text-inherit">block@example.com</a>
                      </p>
-                     <p class="mb-0">Session ID: {{ $sessionId }}</p>
+                     {{-- <p class="mb-0">Session ID: {{ $sessionId }}</p> --}}
                   </div>
                </div>
             </div>

@@ -65,6 +65,13 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
+
+            $user = Auth::user(); // Get authenticated user
+            // Check if the user is an admin
+            if ($user->role === 'admin') {
+                return redirect()->route('admin.home'); // Redirect to admin dashboard
+            }
+
             // Redirect to the intended URL or default
             return redirect()->intended($this->redirectTo);
 
