@@ -1,6 +1,21 @@
 <!-- resources/views/blog/create.blade.php -->
 @extends('layout.mainlayout_admin')
 
+@push('styles')
+<script src="https://cdn.ckeditor.com/4.25.0-lts/standard/ckeditor.js"></script>
+
+    <style>
+        .home-page .container {
+            background-color: #f0f0f0;
+        }
+
+        .custom-button {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+@endpush
+
    @section('content')
 
    <div class="col-lg-9 col-md-8">
@@ -23,6 +38,8 @@
                </div>
                <div class="col-lg-12 col-md-12">
                   <label for="content" class="form-label">Content</label>
+                  {{-- <textarea name="editor1"></textarea> --}}
+				
                   <textarea type="text" class="form-control" id="content" name="content" required style="height: 200px;"></textarea>
                   <div class="invalid-feedback">Please add content.</div>
                </div>
@@ -44,5 +61,12 @@
          </div>
       </div>
    </div>
+
+@endsection
+
+@section('script')
+   <script>
+      CKEDITOR.replace( 'content' );
+   </script>
 
 @endsection

@@ -93,7 +93,6 @@
                   render: function (data, type, row) {
                      return `
                         <div class="d-flex align-items-center">
-                              <img src="${row.avatar}" alt="avatar" class="avatar avatar-lg rounded-circle" />
                               <div class="ms-3">
                                  <div class="fs-5 fw-semibold text-dark">${row.name}</div>
                                  <small>${row.email}</small>
