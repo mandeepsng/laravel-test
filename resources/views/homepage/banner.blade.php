@@ -6,13 +6,18 @@
          <div class="col-lg-5 col-12" data-cues="slideInDown" data-group="page-title" data-delay="700">
             <div class="text-center text-lg-start" data-cue="zoomIn">
                <div class="mb-5">
-                  <span class="badge align-items-center p-2 pe-3 ps-3 fs-6 text-primary border border-primary-subtle rounded-pill mb-4">New: Our Live collaborative just landed</span>
-                  <h1 class="mb-3 display-4">Fast the development of your next project.</h1>
-                  <p class="lead mb-0">Block simplifies getting your most important work done. Boost efficiency, achieve results, and reach your goals on every project.</p>
+                  <span class="badge align-items-center p-2 pe-3 ps-3 fs-6 text-primary border border-primary-subtle rounded-pill mb-4">
+                     Our First SAAS Boilerplate just launched
+                  </span>
+                  <h1 class="mb-3 display-4">Launch SaaS in Hours, Not Weeks</h1>
+                  <p class="lead mb-0">
+                     The PHP SaaS Boilerplate with Everything you Need, Launch faster, 
+                     scale smarter, and build a profitable PHP-powered web app effortlessly.
+                  </p>
                </div>
                <div data-cues="slideInDown" data-group="page-title-buttons" data-delay="800">
-                  <a href="#" class="btn btn-primary me-2">Give it a Try</a>
-                  <a href="#" class="btn btn-light">Demo</a>
+                  <a href="./#subscription-plan" class="btn btn-primary me-2">Give it a Try</a>
+            
                </div>
 
                <div class="d-flex flex-wrap gap-4 my-6" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
@@ -24,7 +29,7 @@
                            <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
                         </svg>
                      </span>
-                     <span class="ms-2 fs-6">Credit Card is not required</span>
+                     <span class="ms-2 fs-6">Get the latest udpates FREE</span>
                   </div>
 
                   <div class="d-flex align-items-center">
@@ -34,7 +39,7 @@
                            <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z" />
                         </svg>
                      </span>
-                     <span class="ms-2 fs-6">Free until upgrade</span>
+                     <span class="ms-2 fs-6">Access the GIT repo</span>
                   </div>
                </div>
             </div>

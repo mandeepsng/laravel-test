@@ -15,7 +15,7 @@
                                 Can’t find any answer for your question?
                                 <br />
                                 Ask our
-                                <a href="#" class="text-primary">customer
+                                <a href="mailto:hellosaas@gmail.com" class="text-primary">customer
                                     support</a>
                             </p>
                         </div>

@@ -111,7 +111,7 @@
                             <a href="#" class="text-decoration-none text-reset">Docs</a>
                          </li>
                          <li class="mb-2">
-                            <a href="#" class="text-decoration-none text-reset">Support</a>
+                            <a href="mailto:hellosaas@gmail.com" class="text-decoration-none text-reset">Contact</a>
                          </li>
                       </ul>
                    </div>
