@@ -9,7 +9,7 @@
             <div class="col-lg-6 col-md-6 col-12 order-lg-2 order-1" data-cue="slideInLeft">
                 <div class="position-relative rellax mb-7 mb-lg-0" data-rellax-percentage="1" data-rellax-speed="0.8" data-disable-parallax-down="md">
                     <figure>
-                        <img src="assets/images/landings/saas/subscription_image.jpeg" alt="landing" class="img-fluid rounded-4" />
+                        <img src="assets/images/landings/saas/banner-subscription-img.jpg" alt="landing" class="img-fluid rounded-4" />
                     </figure>
                     <!-- <div class="d-flex flex-column position-absolute bottom-0 ms-4 mb-4">
                         <img
@@ -41,7 +41,8 @@
                     <small class="text-primary text-uppercase ls-md fw-semibold">Payments</small>
                     <div class="mb-5 mt-4">
                         <h2 class="mb-3">Subscriptions & Payments</h2>
-                        <p class="lead mb-0">Easily manage recurring and one-time transactions with ease. Handle subscriptions, process single payments, access the customer billing portal, integrate webhooks for real-time updates, and monitor order and subscription statistics.</p>
+                        <p class="lead mb-0">
+                            Easily manage one-time transactions with ease. Handle subscriptions, process single payments, access the customer billing portal, integrate webhooks for real-time updates, and monitor order and subscription statistics.</p>
                     </div>
                     <a href="#" class="icon-link icon-link-hover">
                         <span>Learn More</span>
@@ -57,10 +58,10 @@
         <div class="row align-items-center lg:mt-20">
             <div class="col-lg-6 col-md-6 col-12 order-lg-2 order-1" data-cue="slideInLeft">
             <div class="mt-md-5">
-                    <small class="text-primary text-uppercase ls-md fw-semibold">Auth</small>
+                    <small class="text-primary text-uppercase ls-md fw-semibold">Register</small>
                     <div class="mb-5 mt-4">
-                        <h2 class="mb-3">Registration, Social Auth, Magic Links</h2>
-                        <p class="lead mb-0">Access multiple authentication options. Traditional login and registration, a user dashboard, social authentication through Google, GitHub, and Twitter, magic link login, and secure protected routes to enhance user experience and security.</p>
+                        <h2 class="mb-3">Registration, Git Access</h2>
+                        <p class="lead mb-0">Access multiple authentication options. Traditional login and registration, a user dashboard, and access Git repo to enhance user experience and security.</p>
                     </div>
                     
 
@@ -77,7 +78,7 @@
             <div class="col-lg-5 offset-lg-1 col-md-6 col-12 order-lg-2" data-cue="slideInRight">               
                 <div class="position-relative rellax mb-7 mb-lg-0" data-rellax-percentage="1" data-rellax-speed="0.8" data-disable-parallax-down="md">
                     <figure>
-                        <img src="assets/images/landings/saas/register_image.jpeg" alt="landing" class="img-fluid rounded-4" />
+                        <img src="assets/images/landings/saas/banner-register-img.jpg" alt="landing" class="img-fluid rounded-4" />
                     </figure>
                     <!-- <div class="d-flex flex-column position-absolute bottom-0 ms-4 mb-4">
                         <img
@@ -109,7 +110,7 @@
             <div class="col-lg-6 col-md-6 col-12 order-lg-2 order-1" data-cue="slideInLeft">
                 <div class="position-relative rellax mb-7 mb-lg-0" data-rellax-percentage="1" data-rellax-speed="0.8" data-disable-parallax-down="md">
                     <figure>
-                        <img src="assets/images/landings/saas/admin-dashboard.webp" alt="landing" class="img-fluid rounded-4" />
+                        <img src="assets/images/landings/saas/banner-admin-img.jpg" alt="landing" class="img-fluid rounded-4" />
                     </figure>
                 </div>
             </div>
@@ -117,8 +118,9 @@
                 <div class="mt-md-5">
                     <small class="text-primary text-uppercase ls-md fw-semibold">Admin</small>
                     <div class="mb-5 mt-4">
-                        <h2 class="mb-3">Admin Dashboard Powered by FilamentPHP</h2>
-                        <p class="lead mb-0">Manage your platform with a robust admin dashboard powered by amazing FilamentPHP. Tools for user management, blog and article oversight, order and subscription tracking, and detailed statistical analysis to ensure smooth and informed operations.</p>
+                        <h2 class="mb-3">Admin Dashboard in Laravel</h2>
+                        <p class="lead mb-0">Manage your platform with a robust admin dashboard powered by Laravel PHP. 
+                            Tools for user management and blog, order and payment information to ensure smooth and informed operations.</p>
                     </div>
                   
                     <a href="#" class="icon-link icon-link-hover">

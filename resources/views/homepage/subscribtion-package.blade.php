@@ -1,5 +1,5 @@
 
-<section class="pt-4 mt-lg-n8">
+<section class="lg:mt-20" id="subscription-plan">
    <div class="container price-wrapper">
       <div class="row">
          <div class="col-12 z-1">
