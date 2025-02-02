@@ -6,6 +6,9 @@
       @include('homepage.banner')
       <!--Pageheader end-->
       
+      @include('homepage.preserve')
+
+
       <!--Subscription section start-->
       @include('homepage.subscribtion')
       <!--Subscription section end-->

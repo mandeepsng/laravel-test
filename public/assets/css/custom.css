@@ -16,3 +16,12 @@ blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
 .items-center {
     align-items: center;
 }
+.lt-bg-cl{
+    background-color: #BB9DF7;
+}
+.ft-cl-wh{
+    color: #fff;
+}
+.container.preserve-container{
+    max-width: 500px;
+}
