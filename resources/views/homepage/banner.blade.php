@@ -9,7 +9,7 @@
                   <span class="badge align-items-center p-2 pe-3 ps-3 fs-6 text-primary border border-primary-subtle rounded-pill mb-4">
                      Our First SAAS Boilerplate just launched
                   </span>
-                  <h1 class="mb-3 display-4">Launch SaaS in Hours, Not Weeks</h1>
+                  <h1 class="mb-3 display-4">Launch SaaS in Hours, Not Days</h1>
                   <p class="lead mb-0">
                      The PHP SaaS Boilerplate with Everything you Need, Launch faster, 
                      scale smarter, and build a profitable PHP-powered web app effortlessly.
