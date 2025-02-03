@@ -1,10 +1,10 @@
 
 <section class="my-xl-7 py-5">
     <div class="container pb-lg-5">
-        <div class="flex flex-col items-center">
+        <!-- <div class="flex flex-col items-center">
             <h2 class="inline text-4xl font-semibold"> Preserve days of development for new laravel project </h2>
             <p class="max-w-4xl mt-4 text-lg sm:text-center"> Boilerplate is a powerful Laravel Starter Kit that allows developers to create web applications quickly and efficiently. </p>
-        </div>
+        </div> -->
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-6 col-12 order-lg-2 order-1" data-cue="slideInLeft">
                 <div class="position-relative rellax mb-7 mb-lg-0" data-rellax-percentage="1" data-rellax-speed="0.8" data-disable-parallax-down="md">
@@ -42,7 +42,9 @@
                     <div class="mb-5 mt-4">
                         <h2 class="mb-3">Subscriptions & Payments</h2>
                         <p class="lead mb-0">
-                            Easily manage one-time transactions with ease. Handle subscriptions, process single payments, access the customer billing portal, integrate webhooks for real-time updates, and monitor order and subscription statistics.</p>
+                            Easily manage one-time transactions with ease. Handle subscriptions, process single payments,
+                             access the customer billing portal, integrate webhooks for real-time updates, and monitor order 
+                             </p>
                     </div>
                     <a href="#" class="icon-link icon-link-hover">
                         <span>Learn More</span>
