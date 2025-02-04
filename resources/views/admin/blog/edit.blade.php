@@ -1,6 +1,22 @@
 <!-- resources/views/blog/create.blade.php -->
 @extends('layout.mainlayout_admin')
 
+@push('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/trumbowyg@2.26.0/dist/ui/trumbowyg.min.css">
+    
+
+    <style>
+        .home-page .container {
+            background-color: #f0f0f0;
+        }
+
+        .custom-button {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+@endpush
+
    @section('content')
 
    <div class="col-lg-9 col-md-8">
@@ -21,6 +37,11 @@
                   <label for="title" class="form-label">Title</label>
                   <input type="text" class="form-control" id="title" name="title" value="{{ $blogPost->title }}" required />
                   <div class="invalid-feedback">Please enter title.</div>
+               </div>
+               <div class="col-lg-12 col-md-12">
+                  <label for="slug" class="form-label">Slug</label>
+                  <input type="text" class="form-control" id="slug" name="slug" value="{{ $blogPost->slug }}" required />
+                  <div class="invalid-feedback">Slug is required.</div>
                </div>
                <div class="col-lg-12 col-md-12">
                   <label for="content" class="form-label">Content</label>
@@ -46,4 +67,25 @@
       </div>
    </div>
 
+@endsection
+
+@section('script')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/trumbowyg@2.26.0/dist/trumbowyg.min.js"></script>
+   <script>
+      // Initialize Trumbowyg
+      $(document).ready(function () {
+            $('#content').trumbowyg();
+        });
+
+      // Generate slug from title
+      function generateSlug() {
+         let title = document.getElementById("title").value;
+         let slug = title.toLowerCase()
+                        .replace(/[^a-z0-9\s]/g, '')  // Remove special characters
+                        .replace(/\s+/g, '-')        // Replace spaces with hyphens
+                        .trim();
+         document.getElementById("slug").value = slug;
+      }
+   </script>
 @endsection
