@@ -6,14 +6,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\BlogPost;
 use Symfony\Component\Console\Input\Input;
+use Illuminate\Support\Str;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
+
 
 class BlogPostController extends Controller
 {
     // List all blog posts
-    public function index()
+    public function index(Request $request): View
     {
-        $blogPosts = BlogPost::all();
-        return view('admin.blog.index', compact('blogPosts'));
+        $blogPosts = BlogPost::orderBy('id','DESC')->paginate(10);
+        return view('admin.blog.index',compact('blogPosts'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     // Show the form for creating a new blog post
@@ -26,33 +31,30 @@ class BlogPostController extends Controller
     public function store(Request $request)
     {
 
-        // dd($request->all());
+        // Create a slug from the title
+        $request->merge(['slug' => Str::slug($request->title)]);
 
-
-        // there is also need to create slug from title
-        $request['slug'] = \Str::slug($request->title);
-
+        // Validate the request
         $request->validate([
             'title' => 'required',
             'content' => 'required',
             'meta_description' => 'required',
             'meta_keywords' => 'required',
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        // Get all input data
+        $input = $request->except(['thumbnail']); // Exclude thumbnail for now
 
-        $input = $request->all();
-
-
+        // Handle file upload
         if ($request->hasFile('thumbnail')) {
-
-            dd($request->thumbnail);
-            $imageName = time().'.'.$request->thumbnail->extension();  
+            $imageName = time() . '.' . $request->thumbnail->extension();
             $request->thumbnail->move(public_path('images'), $imageName);
-            $input['thumbnail'] = $imageName;
+            $input['thumbnail'] = 'images/' . $imageName; // Store relative path
         }
 
-        BlogPost::create($request->all());
+        // Create blog post
+        BlogPost::create($input);
 
         return redirect()->route('blog.index')->with('success', 'Blog post created successfully.');
     }
@@ -68,32 +70,36 @@ class BlogPostController extends Controller
     // Update the specified blog post in storage
     public function update(Request $request, $id)
     {
+        // Merge slug into request data
+        $request->merge(['slug' => Str::slug($request->title)]);
+
+        // Validate request
         $request->validate([
             'title' => 'required',
             'content' => 'required',
             'meta_description' => 'required',
             'meta_keywords' => 'required',
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Thumbnail is optional
         ]);
 
         $blogPost = BlogPost::findOrFail($id);
-        $input = $request->all();
+        $input = $request->except(['thumbnail']); // Exclude thumbnail initially
 
+        // Handle file upload
         if ($request->hasFile('thumbnail')) {
-            // Delete the old thumbnail if it exists
-            if ($blogPost->thumbnail && file_exists(public_path('images/' . $blogPost->thumbnail))) {
-                unlink(public_path('images/' . $blogPost->thumbnail));
+            // Delete old thumbnail if it exists
+            if (!empty($blogPost->thumbnail) && file_exists(public_path($blogPost->thumbnail))) {
+                unlink(public_path($blogPost->thumbnail));
             }
 
-            $imageName = time().'.'.$request->thumbnail->extension();  
+            // Upload new thumbnail
+            $imageName = time() . '.' . $request->thumbnail->extension();
             $request->thumbnail->move(public_path('images'), $imageName);
-            $input['thumbnail'] = $imageName;
+            $input['thumbnail'] = 'images/' . $imageName; // Store relative path
         }
 
+        // Update blog post
         $blogPost->update($input);
-
-
 
         return redirect()->route('blog.index')->with('success', 'Blog post updated successfully.');
     }
@@ -116,10 +122,14 @@ class BlogPostController extends Controller
     }
 
 
-    public function bloglist()
+    public function bloglist(Request $request): View
     {
-        $blogPosts = BlogPost::all();
-        return view('frontend.blog.blog-list-view', compact('blogPosts'));
+        // $blogPosts = BlogPost::all();
+
+        $blogPosts = BlogPost::orderBy('id','DESC')->paginate(10);
+        return view('frontend.blog.blog-list-view',compact('blogPosts'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
+
     }
 
 

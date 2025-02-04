@@ -30,7 +30,7 @@
                {{-- <h4 class="mb-1">Account Information</h4> --}}
                 <p class="mb-0 fs-6">Fill out the form below to create a new blog post. Make sure to provide all the necessary information including the title, content, meta description, and meta keywords to optimize your post for search engines.</p>
             </div>
-            <form class="row g-3 needs-validation" action="{{ route('blog.update', $blogPost->id) }}" method="POST" novalidate>
+            <form class="row g-3 needs-validation" action="{{ route('blog.update', $blogPost->id) }}" method="POST" enctype="multipart/form-data" novalidate>
                @csrf
                 @method('PUT')
                 <div class="col-lg-12 col-md-12">
@@ -58,6 +58,12 @@
                   <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" value="{{ $blogPost->meta_keywords }}" required />
                   <div class="invalid-feedback">Please enter meta keywords.</div>
                </div>
+
+               <div class="col-lg-12 col-md-12">
+                  <label for="thumbnail" class="form-label">Thumbnail</label>
+                  <input type="file" class="form-control" id="thumbnail" name="thumbnail" required />
+              </div> 
+              
                <div class="col-12 mt-4">
                   <button class="btn btn-primary me-2" type="submit">Save Changes</button>
                   <button class="btn btn-light" type="submit">Cancel</button>

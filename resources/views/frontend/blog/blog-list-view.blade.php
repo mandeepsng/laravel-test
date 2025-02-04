@@ -89,7 +89,7 @@
                         <div class="col-lg-5 col-xl-5 col-md-12 col-12">
                            <figure class="mb-4 mb-lg-0 zoom-img">
                               <a href="{{ route('blog.show', $b->slug) }}">
-                                 <img src="assets/images/blog/blog-img-9.jpg" alt="blog" class="img-fluid rounded-3" />
+                                 <img src="{{ asset($b->thumbnail) }}" alt="blog" class="img-fluid rounded-3" />
                               </a>
                            </figure>
                         </div>
@@ -152,7 +152,7 @@
                         
                      @endforelse
 
-                     <article class="row d-flex align-items-center mb-7 mb-md-5">
+                     {{-- <article class="row d-flex align-items-center mb-7 mb-md-5">
                         <div class="col-lg-5 col-xl-5 col-md-12 col-12">
                            <figure class="mb-4 mb-xl-0 zoom-img">
                               <a href="blog-single.html">
@@ -213,11 +213,12 @@
                               </div>
                            </div>
                         </div>
-                     </article>
+                     </article> --}}
                      
                      
 
                   </div>
+
                   <div class="col-lg-12">
                      <div class="mt-xl-7 mt-3">
                         <a class="btn btn-outline-primary" href="#!">
@@ -226,6 +227,8 @@
                         </a>
                      </div>
                   </div>
+
+                  
                </div>
             </div>
          </section>
