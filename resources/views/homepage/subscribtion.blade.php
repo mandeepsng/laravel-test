@@ -38,7 +38,10 @@
             </div>
             <div class="col-lg-5 offset-lg-1 col-md-6 col-12 order-lg-2" data-cue="slideInRight">
                 <div class="mt-md-5">
-                    <small class="text-primary text-uppercase ls-md fw-semibold">Payments</small>
+                    <div class="tag">
+                        <img src="assets/images/landings/saas/edited-payment-small.png" alt="landing" class="img-fluid rounded-4" />                                           
+                    </div>
+                   <small class="text-primary text-uppercase ls-md fw-semibold">Payments</small>
                     <div class="mb-5 mt-4">
                         <h2 class="mb-3">Subscriptions & Payments</h2>
                         <p class="lead mb-0">
