@@ -78,11 +78,15 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
         // Route::put('/subscription-plans/{id}', [SubscriptionPlanController::class, 'updateSubscriptionPlan'])->name('subscription-plans.update');
 
         Route::resource('blog', BlogPostController::class);
-
+        
     });
-
-
+    
+    
 });
+Route::get('/blog-json', [BlogPostController::class, 'blogjson'])->name('blog.json');
+Route::get('/blog/{slug}', [BlogPostController::class, 'blogdetail'])->name('blog.show');
+Route::get('/blog', [BlogPostController::class, 'bloglist'])->name('blog.list');
+
 
 Route::get('/dashboard', function () {
     // ...
@@ -253,7 +257,6 @@ Route::get('/blog-grid-thumbnail', function () { return view('blog-grid-thumbnai
 Route::get('/blog-list-view', function () { return view('blog-list-view'); })->name('blog-list-view');
 Route::get('/blog-sidebar', function () { return view('blog-sidebar'); })->name('blog-sidebar');
 Route::get('/blog-single', function () { return view('blog-single'); })->name('blog-single');
-Route::get('/blog', function () { return view('blog'); })->name('blog');
 Route::get('/career', function () { return view('career'); })->name('career');
 Route::get('/case-study', function () { return view('case-study'); })->name('case-study');
 Route::get('/changelog', function () { return view('changelog'); })->name('changelog');

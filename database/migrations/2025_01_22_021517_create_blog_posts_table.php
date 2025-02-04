@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('meta_description');
             $table->string('meta_keywords');
             $table->string('slug')->unique();
+            $table->string('thumbnail')->nullable(); // Adding images field
             $table->timestamps();
         });
     }
