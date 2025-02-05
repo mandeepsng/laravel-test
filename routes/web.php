@@ -22,7 +22,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Auth::routes(['verify' => true]);
 Route::get('/', function () {
     return view('landing-sass-v1');
 });

@@ -219,14 +219,32 @@
 
                   </div>
 
-                  <div class="col-lg-12">
+                  @if ($blogPosts->lastPage() > 1)
+                     <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                        <li class="page-item {{ ($blogPosts->currentPage() == 1) ? ' disabled' : '' }}">
+                           <a class="page-link" href="{{ $blogPosts->url(1) }}">Previous</a>
+                        </li>
+                        @for ($i = 1; $i <= $blogPosts->lastPage(); $i++)
+                           <li class="page-item {{ ($blogPosts->currentPage() == $i) ? ' active' : '' }}">
+                                 <a class="page-link" href="{{ $blogPosts->url($i) }}">{{ $i }}</a>
+                           </li>
+                        @endfor
+                        <li class="page-item {{ ($blogPosts->currentPage() == $blogPosts->lastPage()) ? ' disabled' : '' }}">
+                           <a class="page-link" href="{{ $blogPosts->url($blogPosts->currentPage()+1) }}">Next</a>
+                        </li>
+                        </ul>
+                     </nav>
+                  @endif
+
+                  {{-- <div class="col-lg-12">
                      <div class="mt-xl-7 mt-3">
                         <a class="btn btn-outline-primary" href="#!">
                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                            <span class="ms-2">Load More</span>
                         </a>
                      </div>
-                  </div>
+                  </div> --}}
 
                   
                </div>

@@ -2,13 +2,13 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light w-100">
        <div class="container px-3">
-          <a class="navbar-brand" href="{{ route('welcome')}}"><img src="assets/images/logo/saas-png-logo.png" alt /></a>
+          <a class="navbar-brand" href="{{ url('/')}}"><img src="assets/images/logo/saas-png-logo.png" alt /></a>
           <button class="navbar-toggler offcanvas-nav-btn" type="button">
              <i class="bi bi-list"></i>
           </button>
           <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
              <div class="offcanvas-header">
-                <a href="{{ route('index')}}" class="text-inverse"><img src="assets/images/logo/logo.svg" alt /></a>
+                <a href="{{ url('/')}}" class="text-inverse"><img src="assets/images/logo/logo.svg" alt /></a>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
              </div>
              <div class="offcanvas-body pt-0 align-items-center">

@@ -61,7 +61,7 @@
 
                <div class="col-lg-12 col-md-12">
                   <label for="thumbnail" class="form-label">Thumbnail</label>
-                  <input type="file" class="form-control" id="thumbnail" name="thumbnail" required />
+                  <input type="file" class="form-control" id="thumbnail" name="thumbnail" />
               </div> 
               
                <div class="col-12 mt-4">

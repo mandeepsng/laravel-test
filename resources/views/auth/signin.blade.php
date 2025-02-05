@@ -55,12 +55,24 @@
 
                               <input type="email" class="form-control" id="signinEmailInput" required name="email" value="{{ old('email') }}" autocomplete="email" autofocus />
 
+
+                              @error('email')
+                                 <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                 </span>
+                              @enderror
                               <div class="invalid-feedback">Please enter email.</div>
                            </div>
                            <div class="mb-3">
                               <label for="formSignUpPassword" class="form-label">Password</label>
                               <div class="password-field position-relative">
                                  <input type="password" class="form-control fakePassword" id="formSignUpPassword" required name="password" autocomplete="current-password" />
+
+                                 @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                       <strong>{{ $message }}</strong>
+                                    </span>
+                                 @enderror
 
                                  <span><i class="bi bi-eye-slash passwordToggler"></i></span>
                                  <div class="invalid-feedback">Please enter password.</div>

@@ -126,7 +126,7 @@ class BlogPostController extends Controller
     {
         // $blogPosts = BlogPost::all();
 
-        $blogPosts = BlogPost::orderBy('id','DESC')->paginate(10);
+        $blogPosts = BlogPost::orderBy('id','DESC')->paginate(5);
         return view('frontend.blog.blog-list-view',compact('blogPosts'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
 
