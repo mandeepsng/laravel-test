@@ -7,7 +7,7 @@
              <div class="mb-7 mb-xl-0">
                 <div class="mb-4">
                    <a href="#">
-                      <img src="assets/images/logo/saas-png-logo.png" alt="logo" class="text-inverse" />
+                      <img src="{{ asset('assets/images/logo/saas-png-logo.png')}}" alt="logo" class="text-inverse" />
                    </a>
                 </div>
                 <p class="mb-5">
@@ -57,6 +57,9 @@
                             </li>
                             <li class="mb-2">
                                <a href="/about" class="text-decoration-none text-reset">Software Company</a>
+                            </li>
+                            <li class="mb-2">
+                               <a href="/blog" class="text-decoration-none text-reset">Blog</a>
                             </li>
                          </ul>
                       </div>
@@ -124,9 +127,9 @@
        <div class="row align-items-center">
           <div class="col-md-9">
              <div class="small mb-3 mb-md-0">
-                Copyright © 2024
+                Copyright © 2025
 
-                <span class="text-primary"><a href="#">Block Bootstrap 5 Theme</a></span>
+                <span class="text-primary"><a href="#">Build with</a></span>
                 | Designed by
                 <span class="text-primary"><a href="#">SaasFast</a></span>
              </div>

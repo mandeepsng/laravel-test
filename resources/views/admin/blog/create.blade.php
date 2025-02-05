@@ -28,7 +28,7 @@
             <div class="mb-5">
                 <p class="mb-0 fs-6">Fill out the form below to create a new blog post. Provide all necessary details including the title, content, meta description, and meta keywords.</p>
             </div>
-            <form class="row g-3 needs-validation" action="{{ route('blog.store') }}" method="POST" novalidate>
+            <form class="row g-3 needs-validation" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data" novalidate>
                @csrf
                <div class="col-lg-12 col-md-12">
                   <label for="title" class="form-label">Title</label>
@@ -62,7 +62,7 @@
 
                <div class="col-lg-12 col-md-12">
                   <label for="thumbnail" class="form-label">Thumbnail</label>
-                  <input type="file" class="form-control" id="thumbnail" name="thumbnail" required />
+                  <input type="file" class="form-control" id="thumbnail" name="thumbnail" />
               </div>
 
                <div class="col-12 mt-4">

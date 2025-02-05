@@ -55,16 +55,22 @@ class LoginController extends Controller
 
     public function login(Request $request): RedirectResponse
     {
-        // dd('dsfsdfdsf');
 
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
+
+
+        // $user = \App\Models\User::where('email', $request->email)->first();
+
+        // if ($user && !$user->hasVerifiedEmail()) {
+
+        //     return redirect()->route('verification.notice')->with('error', 'Please verify your email before logging in.');
+        // }
  
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
 
             $user = Auth::user(); // Get authenticated user
             // Check if the user is an admin
@@ -75,10 +81,9 @@ class LoginController extends Controller
             // Redirect to the intended URL or default
             return redirect()->intended($this->redirectTo);
 
-            // return $this->authenticated($request, Auth::user());
-            // return redirect()->route('users.index');
         }
  
+
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');

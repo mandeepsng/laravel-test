@@ -29,7 +29,7 @@
                      </div>
 
                      <figure class="my-6">
-                        <img src="assets/images/blog/blog-img-6.jpg" alt="blog" class="rounded-3 img-fluid w-100" />
+                        <img src="{{ asset($blog->thumbnail) }}" alt="blog" class="rounded-3 img-fluid w-100" />
                      </figure>
                      
                      {!!  $blog->content !!}

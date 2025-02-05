@@ -9,6 +9,7 @@ use App\Http\Middleware\Subscribed;
 use Stripe\Checkout\Session;
 use Stripe\Customer;
 use Laravel\Cashier\Cashier;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
 /*
@@ -21,7 +22,7 @@ use Laravel\Cashier\Cashier;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Auth::routes(['verify' => true]);
 Route::get('/', function () {
     return view('landing-sass-v1');
 });
@@ -43,6 +44,25 @@ Route::get('/login', [LoginController::class, 'index'])->name('signin');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+ 
+
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+ 
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::middleware(['auth', 'auth.session'])->group(function () {
 

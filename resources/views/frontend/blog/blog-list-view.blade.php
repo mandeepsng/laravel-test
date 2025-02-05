@@ -89,7 +89,7 @@
                         <div class="col-lg-5 col-xl-5 col-md-12 col-12">
                            <figure class="mb-4 mb-lg-0 zoom-img">
                               <a href="{{ route('blog.show', $b->slug) }}">
-                                 <img src="assets/images/blog/blog-img-9.jpg" alt="blog" class="img-fluid rounded-3" />
+                                 <img src="{{ asset($b->thumbnail) }}" alt="blog" class="img-fluid rounded-3" />
                               </a>
                            </figure>
                         </div>
@@ -152,7 +152,7 @@
                         
                      @endforelse
 
-                     <article class="row d-flex align-items-center mb-7 mb-md-5">
+                     {{-- <article class="row d-flex align-items-center mb-7 mb-md-5">
                         <div class="col-lg-5 col-xl-5 col-md-12 col-12">
                            <figure class="mb-4 mb-xl-0 zoom-img">
                               <a href="blog-single.html">
@@ -213,19 +213,40 @@
                               </div>
                            </div>
                         </div>
-                     </article>
+                     </article> --}}
                      
                      
 
                   </div>
-                  <div class="col-lg-12">
+
+                  @if ($blogPosts->lastPage() > 1)
+                     <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                        <li class="page-item {{ ($blogPosts->currentPage() == 1) ? ' disabled' : '' }}">
+                           <a class="page-link" href="{{ $blogPosts->url(1) }}">Previous</a>
+                        </li>
+                        @for ($i = 1; $i <= $blogPosts->lastPage(); $i++)
+                           <li class="page-item {{ ($blogPosts->currentPage() == $i) ? ' active' : '' }}">
+                                 <a class="page-link" href="{{ $blogPosts->url($i) }}">{{ $i }}</a>
+                           </li>
+                        @endfor
+                        <li class="page-item {{ ($blogPosts->currentPage() == $blogPosts->lastPage()) ? ' disabled' : '' }}">
+                           <a class="page-link" href="{{ $blogPosts->url($blogPosts->currentPage()+1) }}">Next</a>
+                        </li>
+                        </ul>
+                     </nav>
+                  @endif
+
+                  {{-- <div class="col-lg-12">
                      <div class="mt-xl-7 mt-3">
                         <a class="btn btn-outline-primary" href="#!">
                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                            <span class="ms-2">Load More</span>
                         </a>
                      </div>
-                  </div>
+                  </div> --}}
+
+                  
                </div>
             </div>
          </section>

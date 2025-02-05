@@ -54,15 +54,24 @@
                </table>
             </div>
             <!-- Custom Pagination Section -->
-            <nav aria-label="Page navigation example">
-               <ul class="pagination">
-                  <li class="page-item" id="prevPage"><a class="page-link" href="#">Previous</a></li>
-                  <li class="page-item"><a class="page-link" href="#" id="page1">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#" id="page2">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#" id="page3">3</a></li>
-                  <li class="page-item" id="nextPage"><a class="page-link" href="#">Next</a></li>
-               </ul>
-            </nav>
+            <!-- Laravel Dynamic Pagination -->
+            @if ($blogPosts->lastPage() > 1)
+               <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                  <li class="page-item {{ ($blogPosts->currentPage() == 1) ? ' disabled' : '' }}">
+                     <a class="page-link" href="{{ $blogPosts->url(1) }}">Previous</a>
+                  </li>
+                  @for ($i = 1; $i <= $blogPosts->lastPage(); $i++)
+                     <li class="page-item {{ ($blogPosts->currentPage() == $i) ? ' active' : '' }}">
+                           <a class="page-link" href="{{ $blogPosts->url($i) }}">{{ $i }}</a>
+                     </li>
+                  @endfor
+                  <li class="page-item {{ ($blogPosts->currentPage() == $blogPosts->lastPage()) ? ' disabled' : '' }}">
+                     <a class="page-link" href="{{ $blogPosts->url($blogPosts->currentPage()+1) }}">Next</a>
+                  </li>
+                  </ul>
+               </nav>
+            @endif
          </div>
       </div>
    </div>
