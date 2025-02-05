@@ -9,11 +9,11 @@
             <div class="row">
                <div class="col-xl-4 offset-xl-4 col-md-12 col-12">
                   <div class="text-center">
-                     <a href="index.html"><img src="assets/images/logo/brand-icon.svg" alt="brand" class="mb-3" /></a>
+                     {{-- <a href="index.html"><img src="assets/images/logo/brand-icon.svg" alt="brand" class="mb-3" /></a> --}}
                      <h1 class="mb-1">Welcome Back</h1>
                      <p class="mb-0">
                         Don’t have an account yet?
-                        <a href="signup.html" class="text-primary">Register here</a>
+                        <a href="{{ route('signup') }}" class="text-primary">Register here</a>
                      </p>
                   </div>
                </div>
@@ -28,6 +28,13 @@
                <div class="col-xl-5 col-lg-6 col-md-8 col-12">
                   <div class="card shadow-sm mb-6">
                      <div class="card-body">
+
+                        @if(session()->has('error'))
+                           <div class="alert alert-success">
+                                 {{ session()->get('error') }}
+                              </div>
+                        @endif
+
                         <form class="needs-validation mb-6" novalidate method="POST" action="{{ route('login') }}" >
                            @csrf
 
@@ -36,6 +43,16 @@
                                  Email
                                  <span class="text-danger">*</span>
                               </label>
+
+                              <div class="text-danger pt-2">
+                                 @error('0')
+                                       {{$message}}
+                                     @enderror
+                                     @error('email')
+                                       {{$message}}
+                                     @enderror
+                                 </div>
+
                               <input type="email" class="form-control" id="signinEmailInput" required name="email" value="{{ old('email') }}" autocomplete="email" autofocus />
 
                               <div class="invalid-feedback">Please enter email.</div>
@@ -80,7 +97,7 @@
                   </div>
                </div>
             </div>
-            <div class="row">
+            {{-- <div class="row">
                <div class="col-lg-12">
                   <div class="text-center">
                      <div class="small mb-3 mb-lg-0 text-body-tertiary">
@@ -91,38 +108,11 @@
                      </div>
                   </div>
                </div>
-            </div>
+            </div> --}}
          </div>
       </section>
       <!--Sign up end-->
-      <div class="position-absolute end-0 bottom-0 m-4">
-         <div class="dropdown">
-            <button class="btn btn-light btn-icon rounded-circle d-flex align-items-center" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-               <i class="bi theme-icon-active"></i>
-               <span class="visually-hidden bs-theme-text">Toggle theme</span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bs-theme-text">
-               <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-                     <i class="bi theme-icon bi-sun-fill"></i>
-                     <span class="ms-2">Light</span>
-                  </button>
-               </li>
-               <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-                     <i class="bi theme-icon bi-moon-stars-fill"></i>
-                     <span class="ms-2">Dark</span>
-                  </button>
-               </li>
-               <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-                     <i class="bi theme-icon bi-circle-half"></i>
-                     <span class="ms-2">Auto</span>
-                  </button>
-               </li>
-            </ul>
-         </div>
-      </div>
+      
    </main>
 @endsection
 

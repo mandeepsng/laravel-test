@@ -127,9 +127,9 @@
        <div class="row align-items-center">
           <div class="col-md-9">
              <div class="small mb-3 mb-md-0">
-                Copyright © 2024
+                Copyright © 2025
 
-                <span class="text-primary"><a href="#">Block Bootstrap 5 Theme</a></span>
+                <span class="text-primary"><a href="#">Build with</a></span>
                 | Designed by
                 <span class="text-primary"><a href="#">SaasFast</a></span>
              </div>

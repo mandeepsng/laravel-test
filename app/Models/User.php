@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,9 +12,10 @@ use Osiset\ShopifyApp\Traits\ShopModel;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Permission\Traits\HasRoles;
 use Laravel\Cashier\Billable;
+use Illuminate\Auth\Events\Verified;
 
 
-class User extends Authenticatable implements IShopModel
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, SoftDeletes, ShopModel, HasRoles, Billable;
 
@@ -58,6 +59,17 @@ class User extends Authenticatable implements IShopModel
     {
         return $this->hasMany(UserSocialAccount::class);
     }
+
+    // protected static function boot()
+    // {
+    //     parent::boot();
+
+    //     static::retrieved(function ($user) {
+    //         if (!$user->hasVerifiedEmail()) {
+    //             throw new \Illuminate\Auth\AuthenticationException('Your email address is not verified.');
+    //         }
+    //     });
+    // }
 
 
 }
